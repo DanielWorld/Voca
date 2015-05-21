@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="5dp"
+    android:scrollbars="none"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:background="@drawable/counter_trans_bg">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/setting_font_size_title"/>
+
+
+            <LinearLayout
+                android:layout_below="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="5">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+
+                <com.namgyuworld.voca.customview.setting.FontSizeNumber
+                    android:id="@+id/fontSizeNumbers"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_weight="3"
+                    android:gravity="center_horizontal|center_vertical"
+                    />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:background="@drawable/counter_trans_bg">
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/setting_font_size_content_title"/>
+
+
+            <LinearLayout
+                android:layout_below="@+id/textView11"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="5">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+
+                <com.namgyuworld.voca.customview.setting.FontSizeNumberForContent
+                    android:id="@+id/fontSizeNumbersForContent"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_weight="3"
+                    android:gravity="center_horizontal|center_vertical"
+                    />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="@drawable/counter_bg">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/setting_search_voca_in_db_title"/>
+
+            <!--<AutoCompleteTextView-->
+            <!--android:id="@+id/search_voca_in_DB"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:hint="vocabulary"-->
+            <!--android:textSize="12sp"-->
+            <!--android:lines="1"-->
+            <!--android:maxWidth="150dp"-->
+            <!--android:inputType="text"-->
+            <!--android:layout_alignParentBottom="true"-->
+            <!--android:layout_alignParentLeft="true"-->
+            <!--android:layout_alignParentStart="true"/>-->
+            <com.namgyuworld.voca.customview.SearchVocaDatabase
+                android:id="@+id/search_voca_in_DB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"/>
+
+            <ImageView
+                android:id="@+id/search_voca_in_DB_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_toEndOf="@+id/search_voca_in_DB"
+                android:layout_toRightOf="@+id/search_voca_in_DB"
+                android:src="@android:drawable/ic_menu_search"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/backup_voca_db"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="@drawable/counter_trans_bg"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/setting_backup_voca_db_title"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/load_voca_db"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="@drawable/counter_bg">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/setting_load_voca_db_title"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/download_mp3_files"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="@drawable/counter_trans_bg"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/setting_download_mp3_file_title"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/voca_seekbar_visibility"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="@drawable/counter_bg"
+            >
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/setting_voca_seekbar_visibility_title"/>
+
+            <CheckBox
+                android:id="@+id/voca_seekbar_checkBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/textView3"
+                android:text="@string/checkbox_visibility"/>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</ScrollView>

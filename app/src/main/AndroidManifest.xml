@@ -1,0 +1,71 @@
+<manifest
+    package="com.namgyuworld.voca"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+
+    <!-- Google Cloud Messaging (GCM)-->
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <permission
+        android:name="com.namgyuworld.voca.permission.C2D_MESSAGE"
+        android:protectionLevel="signature"/>
+    <uses-permission android:name="com.namgyuworld.voca.permission.C2D_MESSAGE"/>
+    <!-- END-->
+
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_voca"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+
+        <!--This meta-data tag is required to use Google Play Services.-->
+        <meta-data android:name="com.google.android.gms.version"
+                   android:value="@integer/google_play_services_version" />
+
+        <!-- Google Cloud Messaging (GCM) -->
+        <receiver
+            android:name=".push.receiver.PushReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <category android:name="com.namgyuworld.android"/>
+            </intent-filter>
+        </receiver>
+        <!-- END -->
+        <!-- Auto mp3 audio download service -->
+        <service android:name=".service.AutoDownloadAudioService" />
+
+        <activity
+            android:name=".activity.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".MainActivity" />
+        <activity android:name=".util.filebrowser.FileBrowserActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".activity.voca.SearchVocaActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.settings.SettingActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/PopupTheme"/>
+
+        <!--Include the AdActivity configChanges and theme. -->
+        <activity android:name="com.google.android.gms.ads.AdActivity"
+                  android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+                  android:theme="@android:style/Theme.Translucent" />
+
+    </application>
+
+</manifest>

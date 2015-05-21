@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.namgyuworld.voca.customview.TopMenuBar
+        android:id="@+id/topMenuBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"/>
+
+    <com.namgyuworld.voca.customview.VocaSeekBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/voca_seekBar"
+        android:layout_below="@+id/topMenuBar"
+        android:layout_centerHorizontal="true"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/view_pager_frame"
+        android:layout_below="@+id/voca_seekBar"
+        >
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@android:drawable/ic_media_rew"
+            android:id="@+id/voca_left"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"/>
+
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@android:drawable/ic_media_ff"
+            android:id="@+id/voca_right"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"/>
+
+        <android.support.v4.view.ViewPager
+            android:background="@drawable/viewpager"
+            android:layout_margin="5dp"
+            android:layout_toRightOf="@+id/voca_left"
+            android:layout_toLeftOf="@+id/voca_right"
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </android.support.v4.view.ViewPager>
+        </RelativeLayout>
+
+
+
+
+</RelativeLayout>

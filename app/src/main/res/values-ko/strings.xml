@@ -1,0 +1,42 @@
+<resources>
+
+    <string name="app_name">영영단어장</string>
+
+    <!-- Hint message -->
+    <string name="hint_find_voca">단어찾기</string>
+    <string name="hint_search_voca_in_db">검색할 단어 입력해주세요</string>
+
+    <!-- Setting title -->
+    <string name="setting_font_size_title">단어 크기</string>
+    <string name="setting_font_size_content_title">단어 의미 크기</string>
+    <string name="setting_search_voca_in_db_title">단어장에서 단어 검색하기</string>
+    <string name="setting_backup_voca_db_title">단어장 백업하기</string>
+    <string name="setting_load_voca_db_title">단어장 불러오기</string>
+    <string name="setting_download_mp3_file_title">단어장 mp3 파일 다운로드</string>
+    <string name="setting_voca_seekbar_visibility_title">네비게이션바 보이기 여부 설정</string>
+
+    <!-- Setting question -->
+    <string name="setting_backup_db_question">단어장 데이터를 백업할까요?</string>
+    <string name="setting_load_db_question">단어장 데이터를 불러올까요?</string>
+
+    <!-- Setting toast message -->
+    <string name="setting_backup_db_succeed">데이터 백업에 성공하셨습니다.</string>
+    <string name="setting_backup_db_failed">데이터 백업에 실패하셨습니다.</string>
+    <string name="setting_load_db_succeed">데이터 불러오기에 성공하셨습니다.</string>
+    <string name="setting_load_db_failed">데이터 불러오기에 실패하셨습니다.</string>
+
+    <!-- Checkbox message-->
+    <string name="checkbox_visibility">보임</string>
+
+
+    <!-- TopMenuBar message -->
+    <string name="delete_voca_check">이 단어를 삭제할까요?</string>
+    <string name="yes">예</string>
+    <string name="no">아니오</string>
+
+    <!-- Search voca -->
+    <string name="voca_add_title">단어 추가하기</string>
+    <string name="voca_add_voca">단어</string>
+    <string name="voca_add_meaning">의미/예제</string>
+
+</resources>

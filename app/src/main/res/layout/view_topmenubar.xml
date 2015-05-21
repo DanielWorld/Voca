@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+    >
+
+    <LinearLayout
+        android:id="@+id/topMenuBar_above"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentTop="true">
+
+        <TextView
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:text="@string/app_name"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+
+        <ImageButton
+            android:id="@+id/voca_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_menu_search"
+            />
+        <ImageButton
+            android:id="@+id/voca_sound"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_lock_silent_mode_off"
+            />
+
+
+        <ImageButton
+            android:id="@+id/voca_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_notification_clear_all"
+            />
+        <ImageButton
+            android:id="@+id/voca_setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_menu_today"
+            />
+
+        </LinearLayout>
+
+    <RelativeLayout
+        android:layout_below="@+id/topMenuBar_above"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:orientation="horizontal"
+        android:background="@drawable/voca_typebox">
+
+        <EditText
+            android:id="@+id/voca_type_word"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_find_voca"
+            android:lines="1"
+            android:singleLine="true"
+            android:inputType="textPersonName"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:background="@android:color/transparent"
+            android:paddingLeft="10dp"
+            android:layout_toLeftOf="@+id/delete_voca_type_word"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="5dp"
+            />
+
+        <ImageView
+            android:id="@+id/delete_voca_type_word"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_delete"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"/>
+
+        </RelativeLayout>
+
+</RelativeLayout>

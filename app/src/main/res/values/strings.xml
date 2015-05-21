@@ -1,0 +1,41 @@
+<resources>
+
+    <string name="app_name">Voca</string>
+
+    <!-- Hint message -->
+    <string name="hint_find_voca">Find voca</string>
+    <string name="hint_search_voca_in_db">search voca in DB</string>
+
+    <!-- Setting title -->
+    <string name="setting_font_size_title">Text Font size</string>
+    <string name="setting_font_size_content_title">Text content Font size</string>
+    <string name="setting_search_voca_in_db_title">Search Voca in DB</string>
+    <string name="setting_backup_voca_db_title">Backup voca database</string>
+    <string name="setting_load_voca_db_title">Load voca database</string>
+    <string name="setting_download_mp3_file_title">Download mp3 files</string>
+    <string name="setting_voca_seekbar_visibility_title">Voca seekBar visibility</string>
+
+    <!-- Setting question -->
+    <string name="setting_backup_db_question">Do you wanna back up database file?</string>
+    <string name="setting_load_db_question">Do you wanna load database file?</string>
+
+    <!-- Setting toast message -->
+    <string name="setting_backup_db_succeed">Succeed to back up database file</string>
+    <string name="setting_backup_db_failed">Failed to back up database file</string>
+    <string name="setting_load_db_succeed">Succeed to load database file</string>
+    <string name="setting_load_db_failed">Failed to load database file</string>
+
+    <!-- Checkbox message-->
+    <string name="checkbox_visibility">Visibility</string>
+
+
+    <!-- TopMenuBar message -->
+    <string name="delete_voca_check">Delete this vocabulary?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+    <!-- Search voca -->
+    <string name="voca_add_title">Add vocabulary</string>
+    <string name="voca_add_voca">Voca</string>
+    <string name="voca_add_meaning">Meaning/Example</string>
+</resources>
