@@ -41,7 +41,6 @@ android.support.v4.app.DialogFragment:
     private static final java.lang.String SAVED_CANCELABLE
     private static final java.lang.String SAVED_SHOWS_DIALOG
     private static final java.lang.String SAVED_BACK_STACK_ID
-android.support.v4.app.DialogFragment$DialogStyle
 android.support.v4.app.Fragment:
     static final int INITIALIZING
     static final int CREATED
@@ -81,7 +80,6 @@ android.support.v4.app.FragmentPagerAdapter:
 android.support.v4.app.FragmentStatePagerAdapter:
     private static final java.lang.String TAG
     private static final boolean DEBUG
-android.support.v4.app.FragmentTransaction$Transit
 android.support.v4.app.FragmentTransitionCompat21:
     35:380:FragmentTransitionCompat21()
 android.support.v4.app.INotificationSideChannel$Stub:
@@ -166,8 +164,6 @@ android.support.v4.app.NotificationCompatApi21:
     private static final java.lang.String KEY_PARTICIPANTS
     private static final java.lang.String KEY_TIMESTAMP
     29:55:NotificationCompatApi21()
-android.support.v4.app.NotificationCompatBase:
-    22:38:NotificationCompatBase()
 android.support.v4.app.NotificationCompatBase$UnreadConversation:
     abstract java.lang.String getParticipant()
 android.support.v4.app.NotificationCompatGingerbread:
@@ -175,7 +171,7 @@ android.support.v4.app.NotificationCompatGingerbread:
 android.support.v4.app.NotificationCompatHoneycomb:
     25:25:NotificationCompatHoneycomb()
 android.support.v4.app.NotificationCompatIceCreamSandwich:
-    25:25:NotificationCompatIceCreamSandwich()
+    25:27:NotificationCompatIceCreamSandwich()
 android.support.v4.app.NotificationCompatJellybean:
     public static final java.lang.String TAG
     static final java.lang.String EXTRA_LOCAL_ONLY
@@ -474,6 +470,7 @@ android.support.v4.media.session.MediaSessionCompatApi14:
     static final int STATE_CONNECTING
     static final int STATE_SKIPPING_TO_PREVIOUS
     static final int STATE_SKIPPING_TO_NEXT
+    static final int STATE_SKIPPING_TO_QUEUE_ITEM
     private static final long ACTION_STOP
     private static final long ACTION_PAUSE
     private static final long ACTION_PLAY
@@ -511,7 +508,11 @@ android.support.v4.media.session.MediaSessionCompatApi21$QueueItem:
 android.support.v4.media.session.MediaSessionCompatApi22:
     20:20:MediaSessionCompatApi22()
 android.support.v4.media.session.PlaybackStateCompatApi21:
-    22:22:PlaybackStateCompatApi21()
+    26:79:PlaybackStateCompatApi21()
+android.support.v4.media.session.PlaybackStateCompatApi21$CustomAction:
+    79:79:PlaybackStateCompatApi21$CustomAction()
+android.support.v4.media.session.PlaybackStateCompatApi22:
+    25:25:PlaybackStateCompatApi22()
 android.support.v4.net.ConnectivityManagerCompatGingerbread:
     33:33:ConnectivityManagerCompatGingerbread()
 android.support.v4.net.ConnectivityManagerCompatHoneycombMR2:
@@ -648,24 +649,19 @@ android.support.v4.view.VelocityTrackerCompatHoneycomb:
 android.support.v4.view.ViewCompat:
     private static final java.lang.String TAG
     private static final long FAKE_FRAME_TIME
-android.support.v4.view.ViewCompat$AccessibilityLiveRegion
 android.support.v4.view.ViewCompat$BaseViewCompatImpl:
-    451:451:public boolean isImportantForAccessibility(android.view.View)
-    710:710:public void setPivotY(android.view.View,float)
+    453:453:public boolean isImportantForAccessibility(android.view.View)
+    712:712:public void setPivotY(android.view.View,float)
 android.support.v4.view.ViewCompat$HCViewCompatImpl:
-    1061:1062:public void setPivotY(android.view.View,float)
-android.support.v4.view.ViewCompat$ImportantForAccessibility
-android.support.v4.view.ViewCompat$LayerType
-android.support.v4.view.ViewCompat$LayoutDirectionMode
+    1068:1069:public void setPivotY(android.view.View,float)
 android.support.v4.view.ViewCompat$LollipopViewCompatImpl:
-    1446:1446:public boolean isImportantForAccessibility(android.view.View)
-android.support.v4.view.ViewCompat$OverScroll
-android.support.v4.view.ViewCompat$ResolvedLayoutDirectionMode
+    1458:1458:public boolean isImportantForAccessibility(android.view.View)
 android.support.v4.view.ViewCompat$ViewCompatImpl:
     public abstract boolean isImportantForAccessibility(android.view.View)
     public abstract void setPivotY(android.view.View,float)
 android.support.v4.view.ViewCompatBase:
-    23:23:ViewCompatBase()
+    private static final java.lang.String TAG
+    25:25:ViewCompatBase()
 android.support.v4.view.ViewCompatEclairMr1:
     public static final java.lang.String TAG
     27:27:ViewCompatEclairMr1()
@@ -711,7 +707,7 @@ android.support.v4.view.ViewPager:
     private static final int DRAW_ORDER_DEFAULT
     private static final int DRAW_ORDER_FORWARD
     private static final int DRAW_ORDER_REVERSE
-    782:783:void smoothScrollTo(int,int)
+    815:816:void smoothScrollTo(int,int)
 android.support.v4.view.ViewParentCompatKitKat:
     22:22:ViewParentCompatKitKat()
 android.support.v4.view.ViewParentCompatLollipop:
@@ -728,6 +724,8 @@ android.support.v4.view.ViewPropertyAnimatorCompatJellybeanMr2:
     21:21:ViewPropertyAnimatorCompatJellybeanMr2()
 android.support.v4.view.ViewPropertyAnimatorCompatKK:
     21:21:ViewPropertyAnimatorCompatKK()
+android.support.v4.view.ViewPropertyAnimatorCompatLollipop:
+    21:21:ViewPropertyAnimatorCompatLollipop()
 android.support.v4.view.accessibility.AccessibilityEventCompatIcs:
     25:25:AccessibilityEventCompatIcs()
     40:41:public static void setScrollable(android.view.accessibility.AccessibilityEvent,boolean)
@@ -823,9 +821,6 @@ android.support.v4.widget.DrawerLayout:
     private static final boolean CHILDREN_DISALLOW_INTERCEPT
     private static final float TOUCH_SLOP_SENSITIVITY
     745:754:void moveDrawerToOffset(android.view.View,float)
-android.support.v4.widget.DrawerLayout$EdgeGravity
-android.support.v4.widget.DrawerLayout$LockMode
-android.support.v4.widget.DrawerLayout$State
 android.support.v4.widget.DrawerLayoutCompatApi21:
     31:86:DrawerLayoutCompatApi21()
 android.support.v4.widget.EdgeEffectCompatIcs:
@@ -835,6 +830,7 @@ android.support.v4.widget.EdgeEffectCompatLollipop:
 android.support.v4.widget.ListPopupWindowCompatKitKat:
     26:26:ListPopupWindowCompatKitKat()
 android.support.v4.widget.MaterialProgressDrawable:
+    private static final float FULL_ROTATION
     static final int LARGE
     static final int DEFAULT
     private static final int CIRCLE_DIAMETER
@@ -843,6 +839,9 @@ android.support.v4.widget.MaterialProgressDrawable:
     private static final int CIRCLE_DIAMETER_LARGE
     private static final float CENTER_RADIUS_LARGE
     private static final float STROKE_WIDTH_LARGE
+    private static final float COLOR_START_DELAY_OFFSET
+    private static final float END_TRIM_START_DELAY_OFFSET
+    private static final float START_TRIM_DURATION_OFFSET
     private static final int ANIMATION_DURATION
     private static final float NUM_POINTS
     private static final int ARROW_WIDTH
@@ -851,10 +850,10 @@ android.support.v4.widget.MaterialProgressDrawable:
     private static final int ARROW_WIDTH_LARGE
     private static final int ARROW_HEIGHT_LARGE
     private static final float MAX_PROGRESS_ARC
-    248:248:private float getRotation()
+    256:256:private float getRotation()
 android.support.v4.widget.MaterialProgressDrawable$Ring:
-    610:610:public float getRotation()
-    626:626:public float getInsets()
+    708:708:public float getRotation()
+    724:724:public float getInsets()
 android.support.v4.widget.NestedScrollView:
     static final int ANIMATED_SCROLL_GAP
     static final float MAX_SCROLL_FACTOR
@@ -1167,8 +1166,8 @@ android.support.v7.widget.LinearLayoutManager:
     private static final java.lang.String TAG
     private static final boolean DEBUG
     private static final float MAX_SCROLL_FACTOR
-    1727:1734:private void logChildren()
-    1747:1784:void validateChildOrder()
+    1748:1755:private void logChildren()
+    1768:1805:void validateChildOrder()
 android.support.v7.widget.LinearLayoutManager$LayoutState:
     static final java.lang.String TAG
     static final int LAYOUT_START
@@ -1177,7 +1176,7 @@ android.support.v7.widget.LinearLayoutManager$LayoutState:
     static final int ITEM_DIRECTION_HEAD
     static final int ITEM_DIRECTION_TAIL
     static final int SCOLLING_OFFSET_NaN
-    1958:1960:void log()
+    2013:2015:void log()
 android.support.v7.widget.LinearSmoothScroller:
     private static final java.lang.String TAG
     private static final boolean DEBUG
@@ -1207,12 +1206,12 @@ android.support.v7.widget.RecyclerView:
     private static final int INVALID_POINTER
 android.support.v7.widget.RecyclerView$RecycledViewPool:
     private static final int DEFAULT_MAX_SCRAP
-    3745:3752:int size()
+    4024:4031:int size()
 android.support.v7.widget.RecyclerView$Recycler:
     private static final int DEFAULT_CACHE_SIZE
-    4202:4203:void recycleViewInternal(android.view.View)
+    4481:4482:void recycleViewInternal(android.view.View)
 android.support.v7.widget.RecyclerView$State:
-    8521:8527:android.support.v7.widget.RecyclerView$State reset()
+    8968:8974:android.support.v7.widget.RecyclerView$State reset()
 android.support.v7.widget.RecyclerView$ViewHolder:
     static final int FLAG_BOUND
     static final int FLAG_UPDATE
@@ -1238,11 +1237,11 @@ android.support.v7.widget.StaggeredGridLayoutManager:
 android.support.v7.widget.StaggeredGridLayoutManager$LazySpanLookup:
     private static final int MIN_SIZE
 android.support.v7.widget.StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem:
-    2585:2586:public void invalidateSpanGaps()
+    2625:2626:public void invalidateSpanGaps()
 android.support.v7.widget.StaggeredGridLayoutManager$Span:
     static final int INVALID_LINE
-    2235:2249:int getNormalizedOffset(int,int,int)
-    2261:2269:boolean isEmpty(int,int)
+    2275:2289:int getNormalizedOffset(int,int,int)
+    2301:2309:boolean isEmpty(int,int)
 android.support.v7.widget.SuggestionsAdapter:
     private static final boolean DBG
     private static final java.lang.String LOG_TAG
@@ -1269,8 +1268,81 @@ android.support.v7.widget.Toolbar$LayoutParams:
     static final int CUSTOM
     static final int SYSTEM
     static final int EXPANDED
-com.namgyuworld.voca.activity.settings.SettingActivity:
-    142:179:private void backupDatabase()
+android.support.v7.widget.helper.ItemTouchHelper:
+    private static final java.lang.String TAG
+    private static final boolean DEBUG
+    private static final int ACTIVE_POINTER_ID_NONE
+    private static final int DIRECTION_FLAG_COUNT
+    private static final int ACTION_MODE_IDLE_MASK
+    private static final int ACTION_MODE_SWIPE_MASK
+    private static final int ACTION_MODE_DRAG_MASK
+android.support.v7.widget.helper.ItemTouchHelper$Callback:
+    static final int RELATIVE_DIR_FLAGS
+    private static final int ABS_HORIZONTAL_DIR_FLAGS
+    private static final long DRAG_SCROLL_ACCELERATION_LIMIT_TIME_MS
+android.support.v7.widget.helper.ItemTouchUIUtilImpl:
+    30:101:ItemTouchUIUtilImpl()
+com.namgyuworld.utility.RegexUtil:
+    private static final java.lang.String USER_ID_PATTERN
+    private static final java.lang.String PASSWORD_PATTERN
+com.namgyuworld.utility.cryptography.Base64$Coder:
+    public abstract boolean process(byte[],int,int,boolean)
+    public abstract int maxOutputSize(int)
+com.namgyuworld.utility.cryptography.Base64$Decoder:
+    private static final int SKIP
+    private static final int EQUALS
+    240:240:public int maxOutputSize(int)
+com.namgyuworld.utility.cryptography.Base64$Encoder:
+    public static final int LINE_GROUPS
+    586:586:public int maxOutputSize(int)
+com.namgyuworld.utility.cryptography.CryptoUtil:
+    private static final java.lang.String CIPHER_TRANSFORMATION
+    private static final java.lang.String CIPHER
+    private static final java.lang.String RANDOM_ALGORITHM
+    private static final int AES_KEY_LENGTH_BITS
+    private static final int IV_LENGTH_BYTES
+    private static final int PBE_ITERATION_COUNT
+    private static final int PBE_SALT_LENGTH_BITS
+    private static final java.lang.String PBE_ALGORITHM
+    private static final int BASE64_FLAGS
+    private static final java.lang.String HMAC_ALGORITHM
+    private static final int HMAC_KEY_LENGTH_BITS
+com.namgyuworld.utility.google.adid.GoogleAdvertisingIdClient$AdInfo:
+    105:105:public boolean isLimitAdTrackingEnabled()
+com.namgyuworld.utility.root.exec.Command$CommandHandler:
+    public static final java.lang.String ACTION
+    public static final java.lang.String TEXT
+    public static final int COMMAND_OUTPUT
+    public static final int COMMAND_COMPLETED
+    public static final int COMMAND_TERMINATED
+com.namgyuworld.utility.root.exec.Shell:
+    private static final java.lang.String token
+com.namgyuworld.utility.volley.InternalUtils:
+    12:12:InternalUtils()
+com.namgyuworld.utility.volley.Request:
+    private static final java.lang.String DEFAULT_PARAMS_ENCODING
+    private static final long SLOW_REQUEST_THRESHOLD_MS
+com.namgyuworld.utility.volley.RequestQueue:
+    private static final int DEFAULT_NETWORK_THREAD_POOL_SIZE
+com.namgyuworld.utility.volley.VolleyLog$MarkerLog:
+    private static final long MIN_DURATION_FOR_LOGGING_MS
+com.namgyuworld.utility.volley.toolbox.DiskBasedCache:
+    private static final int DEFAULT_DISK_USAGE_BYTES
+    private static final float HYSTERESIS_FACTOR
+    private static final int CACHE_MAGIC
+com.namgyuworld.utility.volley.toolbox.HttpClientStack:
+    private static final java.lang.String HEADER_CONTENT_TYPE
+    67:71:private static java.util.List getPostParameterPairs(java.util.Map)
+com.namgyuworld.utility.volley.toolbox.HurlStack:
+    private static final java.lang.String HEADER_CONTENT_TYPE
+com.namgyuworld.utility.volley.toolbox.ImageRequest:
+    private static final int IMAGE_TIMEOUT_MS
+    private static final int IMAGE_MAX_RETRIES
+    private static final float IMAGE_BACKOFF_MULT
+com.namgyuworld.utility.volley.toolbox.PoolingByteArrayOutputStream:
+    private static final int DEFAULT_SIZE
+com.namgyuworld.utility.volley.toolbox.Volley:
+    private static final java.lang.String DEFAULT_CACHE_DIR
 com.namgyuworld.voca.database.VocaDBOpenHelper:
     private static final int DB_VERSION
     private static final java.lang.String DB_TABLE
@@ -1278,6 +1350,20 @@ com.namgyuworld.voca.service.AutoDownloadAudioService:
     private static final java.lang.String SERVICE_NAME
 com.namgyuworld.voca.util.SharedPrefUtil:
     private static final java.lang.String KEY_PREF
+com.tozny.crypto.android.AesCbcWithIntegrity:
+    private static final java.lang.String CIPHER_TRANSFORMATION
+    private static final java.lang.String CIPHER
+    private static final java.lang.String RANDOM_ALGORITHM
+    private static final int AES_KEY_LENGTH_BITS
+    private static final int IV_LENGTH_BYTES
+    private static final int PBE_ITERATION_COUNT
+    private static final int PBE_SALT_LENGTH_BITS
+    private static final java.lang.String PBE_ALGORITHM
+    private static final java.lang.String HMAC_ALGORITHM
+    private static final int HMAC_KEY_LENGTH_BITS
+com.tozny.crypto.android.AesCbcWithIntegrity$PrngFixes:
+    private static final int VERSION_CODE_JELLY_BEAN
+    private static final int VERSION_CODE_JELLY_BEAN_MR2
 org.jsoup.examples.HtmlToPlainText$FormattingVisitor:
     private static final int maxWidth
 org.jsoup.helper.DataUtil:

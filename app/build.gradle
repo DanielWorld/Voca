@@ -1,12 +1,20 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        release {
+            keyAlias 'namgyuworld_android'
+            keyPassword 'namgyuworld_jesus9014'
+            storeFile file('/Users/danielpark/Downloads/keystore.jks')
+            storePassword 'daniel_android_park_dev'
+        }
+    }
     compileSdkVersion 22
     buildToolsVersion "22.0.1"
 
     defaultConfig {
         applicationId "com.namgyuworld.voca"
-        minSdkVersion 9
+        minSdkVersion 10
         targetSdkVersion 22
         versionCode 12
         versionName "1.1.2"
@@ -15,6 +23,7 @@ android {
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
     }
 }
@@ -25,4 +34,5 @@ dependencies {
     compile 'com.google.android.gms:play-services-analytics:7.0.0'
     compile 'com.google.android.gms:play-services-ads:7.0.0'
     compile 'com.android.support:recyclerview-v7:+'
+    compile project(':DanielParkUtility-release')
 }

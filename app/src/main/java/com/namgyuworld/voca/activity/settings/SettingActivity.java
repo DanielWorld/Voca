@@ -14,6 +14,7 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.namgyuworld.voca.R;
+import com.namgyuworld.voca.activity.view.FilebrowserActivity;
 import com.namgyuworld.voca.customview.SearchVocaDatabase;
 import com.namgyuworld.voca.database.VocaDBOpenHelper;
 import com.namgyuworld.voca.service.AutoDownloadAudioService;
@@ -21,7 +22,6 @@ import com.namgyuworld.voca.util.AppUtil;
 import com.namgyuworld.voca.util.Logger;
 import com.namgyuworld.voca.util.SharedPrefUtil;
 import com.namgyuworld.voca.util.convert.StringUtil;
-import com.namgyuworld.voca.util.filebrowser.FileBrowserActivity;
 import com.namgyuworld.voca.util.filepath.FilePath;
 
 import java.io.File;
@@ -45,6 +45,8 @@ public class SettingActivity extends Activity implements View.OnClickListener {
     SearchVocaDatabase mSearchVocaDBView;
 
     CheckBox vocaSeekBarVisibility;
+
+    final int GET_FILE_PATH_FROM_BROWSER = 12392;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -116,8 +118,7 @@ public class SettingActivity extends Activity implements View.OnClickListener {
                         .setPositiveButton(getString(R.string.yes), new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-//                                backupDatabase();
-                                startActivity(new Intent(SettingActivity.this, FileBrowserActivity.class));
+                                backupDatabase();
                             }
                         }).setNegativeButton(getString(R.string.no), null).create().show();
                 break;
@@ -126,7 +127,8 @@ public class SettingActivity extends Activity implements View.OnClickListener {
                         .setPositiveButton(getString(R.string.yes), new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                loadDatabase();
+//                                loadDatabase();
+                                startActivityForResult(new Intent(SettingActivity.this, FilebrowserActivity.class), GET_FILE_PATH_FROM_BROWSER);
                             }
                         }).setNegativeButton(getString(R.string.no), null).create().show();
                 break;
@@ -182,9 +184,10 @@ public class SettingActivity extends Activity implements View.OnClickListener {
     /**
      * Load database file from 'Download' to '/data/...'
      */
-    private void loadDatabase() {
+    private void loadDatabase(String filePath) {
         String databasePath = FilePath.getVocaDatabasePath(SettingActivity.this, VocaDBOpenHelper.DB_NAME);
-        String downloadPath = FilePath.getVocaFileDownloadPath(SettingActivity.this, VocaDBOpenHelper.DB_NAME);
+//        String downloadPath = FilePath.getVocaFileDownloadPath(SettingActivity.this, VocaDBOpenHelper.DB_NAME);
+        String downloadPath = filePath;
 
         InputStream myInput = null;
         OutputStream myOutput = null;
@@ -218,6 +221,18 @@ public class SettingActivity extends Activity implements View.OnClickListener {
                     myInput.close();
             } catch (Exception e) {
                 LOG.e(TAG, e.getMessage());
+            }
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(resultCode == RESULT_OK){
+            // Get file path from FileBrowserActivity
+            if(requestCode == GET_FILE_PATH_FROM_BROWSER){
+                loadDatabase(data.getStringExtra("loadDBPath"));
             }
         }
     }
