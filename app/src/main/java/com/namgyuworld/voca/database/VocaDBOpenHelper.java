@@ -6,7 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.namgyuworld.voca.MainActivity;
+import com.namgyuworld.voca.activity.MainActivity;
 import com.namgyuworld.voca.model.VocaPOJO;
 import com.namgyuworld.voca.util.Consts;
 import com.namgyuworld.voca.util.Logger;

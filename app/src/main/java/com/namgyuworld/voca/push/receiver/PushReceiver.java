@@ -8,7 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
 
-import com.namgyuworld.voca.MainActivity;
+import com.namgyuworld.voca.activity.MainActivity;
 import com.namgyuworld.voca.R;
 import com.namgyuworld.voca.util.Logger;
 

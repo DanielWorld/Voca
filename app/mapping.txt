@@ -30706,7 +30706,7 @@ com.namgyuworld.voca.BuildConfig -> com.namgyuworld.voca.BuildConfig:
     java.lang.String FLAVOR -> FLAVOR
     int VERSION_CODE -> VERSION_CODE
     java.lang.String VERSION_NAME -> VERSION_NAME
-com.namgyuworld.voca.MainActivity -> com.namgyuworld.voca.MainActivity:
+com.namgyuworld.voca.activity.MainActivity -> com.namgyuworld.voca.activity.MainActivity:
     java.lang.String TAG -> b
     com.namgyuworld.voca.util.Logger LOG -> c
     android.support.v4.view.ViewPager pager -> d
@@ -30731,28 +30731,28 @@ com.namgyuworld.voca.MainActivity -> com.namgyuworld.voca.MainActivity:
     312:313:void setCurrentPage(android.view.View) -> setCurrentPage
     317:336:void onBackPressed() -> onBackPressed
     343:350:boolean onKeyUp(int,android.view.KeyEvent) -> onKeyUp
-    39:39:java.util.List access$000(com.namgyuworld.voca.MainActivity) -> a
-    39:39:com.namgyuworld.voca.customview.TopMenuBar access$100(com.namgyuworld.voca.MainActivity) -> b
-    39:39:com.namgyuworld.voca.customview.VocaSeekBar access$200(com.namgyuworld.voca.MainActivity) -> c
-    39:39:java.lang.String access$300(com.namgyuworld.voca.MainActivity) -> d
-    39:39:com.namgyuworld.voca.util.Logger access$400(com.namgyuworld.voca.MainActivity) -> e
-    39:39:android.support.v4.view.ViewPager access$500(com.namgyuworld.voca.MainActivity) -> f
-    39:39:boolean access$602(com.namgyuworld.voca.MainActivity,boolean) -> a
-com.namgyuworld.voca.MainActivity$1 -> bdp:
-    com.namgyuworld.voca.MainActivity this$0 -> a
+    39:39:java.util.List access$000(com.namgyuworld.voca.activity.MainActivity) -> a
+    39:39:com.namgyuworld.voca.customview.TopMenuBar access$100(com.namgyuworld.voca.activity.MainActivity) -> b
+    39:39:com.namgyuworld.voca.customview.VocaSeekBar access$200(com.namgyuworld.voca.activity.MainActivity) -> c
+    39:39:java.lang.String access$300(com.namgyuworld.voca.activity.MainActivity) -> d
+    39:39:com.namgyuworld.voca.util.Logger access$400(com.namgyuworld.voca.activity.MainActivity) -> e
+    39:39:android.support.v4.view.ViewPager access$500(com.namgyuworld.voca.activity.MainActivity) -> f
+    39:39:boolean access$602(com.namgyuworld.voca.activity.MainActivity,boolean) -> a
+com.namgyuworld.voca.activity.MainActivity$1 -> bdp:
+    com.namgyuworld.voca.activity.MainActivity this$0 -> a
     87:87:void onPageScrolled(int,float,int) -> onPageScrolled
     92:102:void onPageSelected(int) -> onPageSelected
     107:107:void onPageScrollStateChanged(int) -> onPageScrollStateChanged
-com.namgyuworld.voca.MainActivity$2 -> bdq:
-    com.namgyuworld.voca.MainActivity this$0 -> a
+com.namgyuworld.voca.activity.MainActivity$2 -> bdq:
+    com.namgyuworld.voca.activity.MainActivity this$0 -> a
     124:134:void handleMessage(android.os.Message) -> handleMessage
-com.namgyuworld.voca.MainActivity$3 -> bdr:
-    com.namgyuworld.voca.MainActivity this$0 -> a
+com.namgyuworld.voca.activity.MainActivity$3 -> bdr:
+    com.namgyuworld.voca.activity.MainActivity this$0 -> a
     230:231:void onProgressChanged(android.widget.SeekBar,int,boolean) -> onProgressChanged
     236:236:void onStartTrackingTouch(android.widget.SeekBar) -> onStartTrackingTouch
     241:241:void onStopTrackingTouch(android.widget.SeekBar) -> onStopTrackingTouch
-com.namgyuworld.voca.MainActivity$4 -> bds:
-    com.namgyuworld.voca.MainActivity this$0 -> a
+com.namgyuworld.voca.activity.MainActivity$4 -> bds:
+    com.namgyuworld.voca.activity.MainActivity this$0 -> a
     333:334:void run() -> run
 com.namgyuworld.voca.Manifest -> com.namgyuworld.voca.Manifest:
 com.namgyuworld.voca.Manifest$permission -> com.namgyuworld.voca.Manifest$permission:

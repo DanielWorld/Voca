@@ -18,7 +18,7 @@ import android.widget.Toast;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
-import com.namgyuworld.voca.MainActivity;
+import com.namgyuworld.voca.activity.MainActivity;
 import com.namgyuworld.voca.R;
 import com.namgyuworld.voca.activity.voca.SearchVocaActivity;
 import com.namgyuworld.voca.activity.settings.SettingActivity;

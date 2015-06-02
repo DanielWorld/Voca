@@ -16535,21 +16535,21 @@ com.namgyuworld.voca.BuildConfig: java.lang.String FLAVOR
 com.namgyuworld.voca.BuildConfig: int VERSION_CODE
 com.namgyuworld.voca.BuildConfig: java.lang.String VERSION_NAME
 com.namgyuworld.voca.BuildConfig: BuildConfig()
-com.namgyuworld.voca.MainActivity
-com.namgyuworld.voca.MainActivity: android.os.Handler mHanlder
-com.namgyuworld.voca.MainActivity: MainActivity()
-com.namgyuworld.voca.MainActivity: void onCreate(android.os.Bundle)
-com.namgyuworld.voca.MainActivity: void onClick(android.view.View)
-com.namgyuworld.voca.MainActivity: void onStart()
-com.namgyuworld.voca.MainActivity: void onStop()
-com.namgyuworld.voca.MainActivity: void onResume()
-com.namgyuworld.voca.MainActivity: void RefreshVocaPage()
-com.namgyuworld.voca.MainActivity: void addView(android.view.View)
-com.namgyuworld.voca.MainActivity: void removeView(android.view.View)
-com.namgyuworld.voca.MainActivity: android.view.View getCurrentPage()
-com.namgyuworld.voca.MainActivity: void setCurrentPage(android.view.View)
-com.namgyuworld.voca.MainActivity: void onBackPressed()
-com.namgyuworld.voca.MainActivity: boolean onKeyUp(int,android.view.KeyEvent)
+com.namgyuworld.voca.activity.MainActivity
+com.namgyuworld.voca.activity.MainActivity: android.os.Handler mHanlder
+com.namgyuworld.voca.activity.MainActivity: MainActivity()
+com.namgyuworld.voca.activity.MainActivity: void onCreate(android.os.Bundle)
+com.namgyuworld.voca.activity.MainActivity: void onClick(android.view.View)
+com.namgyuworld.voca.activity.MainActivity: void onStart()
+com.namgyuworld.voca.activity.MainActivity: void onStop()
+com.namgyuworld.voca.activity.MainActivity: void onResume()
+com.namgyuworld.voca.activity.MainActivity: void RefreshVocaPage()
+com.namgyuworld.voca.activity.MainActivity: void addView(android.view.View)
+com.namgyuworld.voca.activity.MainActivity: void removeView(android.view.View)
+com.namgyuworld.voca.activity.MainActivity: android.view.View getCurrentPage()
+com.namgyuworld.voca.activity.MainActivity: void setCurrentPage(android.view.View)
+com.namgyuworld.voca.activity.MainActivity: void onBackPressed()
+com.namgyuworld.voca.activity.MainActivity: boolean onKeyUp(int,android.view.KeyEvent)
 com.namgyuworld.voca.Manifest
 com.namgyuworld.voca.Manifest: Manifest()
 com.namgyuworld.voca.Manifest$permission
