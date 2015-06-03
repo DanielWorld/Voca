@@ -16535,21 +16535,6 @@ com.namgyuworld.voca.BuildConfig: java.lang.String FLAVOR
 com.namgyuworld.voca.BuildConfig: int VERSION_CODE
 com.namgyuworld.voca.BuildConfig: java.lang.String VERSION_NAME
 com.namgyuworld.voca.BuildConfig: BuildConfig()
-com.namgyuworld.voca.activity.MainActivity
-com.namgyuworld.voca.activity.MainActivity: android.os.Handler mHanlder
-com.namgyuworld.voca.activity.MainActivity: MainActivity()
-com.namgyuworld.voca.activity.MainActivity: void onCreate(android.os.Bundle)
-com.namgyuworld.voca.activity.MainActivity: void onClick(android.view.View)
-com.namgyuworld.voca.activity.MainActivity: void onStart()
-com.namgyuworld.voca.activity.MainActivity: void onStop()
-com.namgyuworld.voca.activity.MainActivity: void onResume()
-com.namgyuworld.voca.activity.MainActivity: void RefreshVocaPage()
-com.namgyuworld.voca.activity.MainActivity: void addView(android.view.View)
-com.namgyuworld.voca.activity.MainActivity: void removeView(android.view.View)
-com.namgyuworld.voca.activity.MainActivity: android.view.View getCurrentPage()
-com.namgyuworld.voca.activity.MainActivity: void setCurrentPage(android.view.View)
-com.namgyuworld.voca.activity.MainActivity: void onBackPressed()
-com.namgyuworld.voca.activity.MainActivity: boolean onKeyUp(int,android.view.KeyEvent)
 com.namgyuworld.voca.Manifest
 com.namgyuworld.voca.Manifest: Manifest()
 com.namgyuworld.voca.Manifest$permission
@@ -17172,6 +17157,8 @@ com.namgyuworld.voca.R$id: int voca_delete
 com.namgyuworld.voca.R$id: int voca_left
 com.namgyuworld.voca.R$id: int voca_right
 com.namgyuworld.voca.R$id: int voca_search
+com.namgyuworld.voca.R$id: int voca_search_in_webview
+com.namgyuworld.voca.R$id: int voca_search_in_webview_btn
 com.namgyuworld.voca.R$id: int voca_seekBar
 com.namgyuworld.voca.R$id: int voca_seekbar_checkBox
 com.namgyuworld.voca.R$id: int voca_seekbar_visibility
@@ -17927,6 +17914,21 @@ com.namgyuworld.voca.R$xml
 com.namgyuworld.voca.R$xml: int ecommerce_tracker
 com.namgyuworld.voca.R$xml: int global_tracker
 com.namgyuworld.voca.R$xml: R$xml()
+com.namgyuworld.voca.activity.MainActivity
+com.namgyuworld.voca.activity.MainActivity: android.os.Handler mHanlder
+com.namgyuworld.voca.activity.MainActivity: MainActivity()
+com.namgyuworld.voca.activity.MainActivity: void onCreate(android.os.Bundle)
+com.namgyuworld.voca.activity.MainActivity: void onClick(android.view.View)
+com.namgyuworld.voca.activity.MainActivity: void onStart()
+com.namgyuworld.voca.activity.MainActivity: void onStop()
+com.namgyuworld.voca.activity.MainActivity: void onResume()
+com.namgyuworld.voca.activity.MainActivity: void RefreshVocaPage()
+com.namgyuworld.voca.activity.MainActivity: void addView(android.view.View)
+com.namgyuworld.voca.activity.MainActivity: void removeView(android.view.View)
+com.namgyuworld.voca.activity.MainActivity: android.view.View getCurrentPage()
+com.namgyuworld.voca.activity.MainActivity: void setCurrentPage(android.view.View)
+com.namgyuworld.voca.activity.MainActivity: void onBackPressed()
+com.namgyuworld.voca.activity.MainActivity: boolean onKeyUp(int,android.view.KeyEvent)
 com.namgyuworld.voca.activity.SplashActivity
 com.namgyuworld.voca.activity.SplashActivity: SplashActivity()
 com.namgyuworld.voca.activity.SplashActivity: void onCreate(android.os.Bundle)
@@ -17994,6 +17996,7 @@ com.namgyuworld.voca.customview.TopMenuBarForWebview: TopMenuBarForWebview(andro
 com.namgyuworld.voca.customview.TopMenuBarForWebview: TopMenuBarForWebview(android.content.Context,android.util.AttributeSet)
 com.namgyuworld.voca.customview.TopMenuBarForWebview: TopMenuBarForWebview(android.content.Context,android.util.AttributeSet,int)
 com.namgyuworld.voca.customview.TopMenuBarForWebview: TopMenuBarForWebview(android.content.Context,android.util.AttributeSet,int,int)
+com.namgyuworld.voca.customview.TopMenuBarForWebview: void setHandler(android.os.Handler)
 com.namgyuworld.voca.customview.TopMenuBarForWebview: void setWord(java.lang.String)
 com.namgyuworld.voca.customview.TopMenuBarForWebview: void setVocaContents(java.lang.String)
 com.namgyuworld.voca.customview.TopMenuBarForWebview: java.lang.String getWord()

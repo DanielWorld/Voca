@@ -1,8 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="horizontal"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
+
+    <ImageButton
+        android:id="@+id/voca_search_in_webview_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:src="@android:drawable/ic_menu_search"/>
+
+    <EditText
+        android:id="@+id/voca_search_in_webview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:lines="1"
+        android:singleLine="true"
+        android:maxWidth="100dp"
+        android:inputType="textPersonName"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:background="@android:color/transparent"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/voca_search_in_webview_btn"
+        android:hint="Search word"/>
+
+    <ImageView
+        android:layout_margin="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/voca_search_in_webview"
+        android:layout_centerVertical="true"
+        android:src="@android:drawable/ic_input_add"
+        android:id="@+id/voca_add_custom"/>
+
+    <ImageView
+        android:layout_margin="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/voca_add_custom"
+        android:layout_centerVertical="true"
+        android:src="@android:drawable/btn_star_big_on"
+        android:adjustViewBounds="true"
+        android:id="@+id/voca_add"/>
 
     <TextView
         android:layout_margin="5dp"
@@ -10,27 +50,19 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Vocabulary"
-        android:layout_gravity="center_vertical"
-        android:gravity="center_vertical"
+        android:lines="1"
+        android:singleLine="true"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/voca_add"
         android:id="@+id/voca_that_we_need_to_search_for"/>
 
-    <ImageView
-        android:layout_margin="5dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:src="@android:drawable/btn_star_big_on"
-        android:adjustViewBounds="true"
-        android:id="@+id/voca_add"/>
 
 
 
-    <ImageView
-        android:layout_margin="5dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:gravity="center_vertical"
-        android:src="@android:drawable/ic_input_add"
-        android:id="@+id/voca_add_custom"/>
-</LinearLayout>
+
+
+
+
+
+</RelativeLayout>

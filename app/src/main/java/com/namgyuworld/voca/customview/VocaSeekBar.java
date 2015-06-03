@@ -40,9 +40,8 @@ public class VocaSeekBar extends SeekBar{
     private void init(Context ctx){
         Resources res = ctx.getResources();
 
-        Bitmap bitmap = BitmapUtil.decodeBitmapFromResouce(res, R.drawable.ic_voca, 45, 45);
+        Bitmap bitmap = BitmapUtil.decodeBitmapFromResouce(res, R.drawable.ic_voca, 30, 30);
         setThumb(new BitmapDrawable(res, bitmap));
         setProgressDrawable(res.getDrawable(R.drawable.seekbar));
-
     }
 }

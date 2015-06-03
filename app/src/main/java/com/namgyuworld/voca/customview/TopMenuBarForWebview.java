@@ -6,6 +6,8 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Build;
+import android.os.Handler;
+import android.os.Message;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -30,6 +32,10 @@ public class TopMenuBarForWebview extends LinearLayout implements View.OnClickLi
     private TextView tv;
     private String contents = "";
 
+    private EditText mEditText;
+
+    private Handler h;
+
     public TopMenuBarForWebview(Context context) {
         super(context);
         initialize(context);
@@ -52,6 +58,10 @@ public class TopMenuBarForWebview extends LinearLayout implements View.OnClickLi
         initialize(context);
     }
 
+    public void setHandler(Handler h){
+        this.h = h;
+    }
+
     private void initialize(Context mContext) {
         this.mContext = mContext;
         View v = LayoutInflater.from(mContext).inflate(R.layout.view_topmenubar_webview, null);
@@ -59,6 +69,10 @@ public class TopMenuBarForWebview extends LinearLayout implements View.OnClickLi
         v.findViewById(R.id.voca_add_custom).setOnClickListener(this);
         tv = (TextView) v.findViewById(R.id.voca_that_we_need_to_search_for);
         tv.setOnClickListener(this);
+
+        mEditText = (EditText) v.findViewById(R.id.voca_search_in_webview);
+        v.findViewById(R.id.voca_search_in_webview_btn).setOnClickListener(this);
+
         addView(v);
     }
 
@@ -122,7 +136,22 @@ public class TopMenuBarForWebview extends LinearLayout implements View.OnClickLi
                             }
                         })
                         .create().show();
+                break;
+            case R.id.voca_search_in_webview_btn:
 
+                if(StringUtil.isNullorEmpty(mEditText.getText().toString())) {
+                    return;
+                }
+                else {
+
+                    Message msg = Message.obtain();
+                    msg.what = 12345;
+                    msg.obj = mEditText.getText().toString();
+                    // then clear mEditText
+                    mEditText.setText("");
+
+                    h.sendMessage(msg);
+                }
                 break;
         }
     }

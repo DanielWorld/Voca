@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -59,6 +61,22 @@ public class SearchVocaActivity extends Activity {
 
     private TopMenuBarForWebview mTopMenuBar;
 
+    private Handler handler = new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            switch (msg.what){
+                case 12345:
+                    word = String.valueOf(msg.obj);
+                    if(mWebView != null) {
+                        mWebView.loadUrl(URL + word);
+                    }
+                    getSearchResult();
+                    break;
+            }
+        }
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,9 +85,9 @@ public class SearchVocaActivity extends Activity {
         Bundle data = getIntent().getExtras();
         word = data.getString(Consts.SEARCH_WORD_KEY);
 
-
         mTopMenuBar = (TopMenuBarForWebview) findViewById(R.id.topMenuBar_for_webview);
         mTopMenuBar.setWord(word); // save word which you're searching for.
+        mTopMenuBar.setHandler(handler);
 
         LinearLayout mLayout = (LinearLayout) findViewById(R.id.search_voca_layout);
         tv = (TextView) findViewById(R.id.result_of_voca_search);

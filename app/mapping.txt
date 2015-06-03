@@ -16585,8 +16585,8 @@ com.android.volley.Request -> com.android.volley.Request:
     557:557:com.android.volley.VolleyError parseNetworkError(com.android.volley.VolleyError) -> parseNetworkError
     void deliverResponse(java.lang.Object) -> deliverResponse
     576:579:void deliverError(com.android.volley.VolleyError) -> deliverError
-    587:592:int compareTo(com.android.volley.Request) -> compareTo
-    599:600:java.lang.String toString() -> toString
+    587:594:int compareTo(com.android.volley.Request) -> compareTo
+    599:601:java.lang.String toString() -> toString
     38:38:int compareTo(java.lang.Object) -> compareTo
     38:38:com.android.volley.VolleyLog$MarkerLog access$000(com.android.volley.Request) -> access$000
 com.android.volley.Request$1 -> com.android.volley.Request$1:
@@ -16680,7 +16680,7 @@ com.android.volley.VolleyLog -> com.android.volley.VolleyLog:
     68:69:void e(java.lang.Throwable,java.lang.String,java.lang.Object[]) -> e
     72:73:void wtf(java.lang.String,java.lang.Object[]) -> wtf
     76:77:void wtf(java.lang.Throwable,java.lang.String,java.lang.Object[]) -> wtf
-    84:101:java.lang.String buildMessage(java.lang.String,java.lang.Object[]) -> buildMessage
+    84:102:java.lang.String buildMessage(java.lang.String,java.lang.Object[]) -> buildMessage
 com.android.volley.VolleyLog$MarkerLog -> com.android.volley.VolleyLog$MarkerLog:
     boolean ENABLED -> ENABLED
     long MIN_DURATION_FOR_LOGGING_MS -> MIN_DURATION_FOR_LOGGING_MS
@@ -16835,7 +16835,7 @@ com.android.volley.toolbox.ImageLoader -> com.android.volley.toolbox.ImageLoader
     302:311:void onGetImageError(java.lang.String,com.android.volley.VolleyError) -> onGetImageError
     457:488:void batchResponse(java.lang.String,com.android.volley.toolbox.ImageLoader$BatchedImageRequest) -> batchResponse
     491:494:void throwIfNotOnMainThread() -> throwIfNotOnMainThread
-    503:503:java.lang.String getCacheKey(java.lang.String,int,int,android.widget.ImageView$ScaleType) -> getCacheKey
+    503:505:java.lang.String getCacheKey(java.lang.String,int,int,android.widget.ImageView$ScaleType) -> getCacheKey
     42:42:java.util.HashMap access$100(com.android.volley.toolbox.ImageLoader) -> access$100
     42:42:java.util.HashMap access$200(com.android.volley.toolbox.ImageLoader) -> access$200
     42:42:java.lang.Runnable access$602(com.android.volley.toolbox.ImageLoader,java.lang.Runnable) -> access$602
@@ -30706,54 +30706,6 @@ com.namgyuworld.voca.BuildConfig -> com.namgyuworld.voca.BuildConfig:
     java.lang.String FLAVOR -> FLAVOR
     int VERSION_CODE -> VERSION_CODE
     java.lang.String VERSION_NAME -> VERSION_NAME
-com.namgyuworld.voca.activity.MainActivity -> com.namgyuworld.voca.activity.MainActivity:
-    java.lang.String TAG -> b
-    com.namgyuworld.voca.util.Logger LOG -> c
-    android.support.v4.view.ViewPager pager -> d
-    com.namgyuworld.voca.adapter.MainPagerAdapter pagerAdapter -> e
-    com.namgyuworld.voca.customview.TopMenuBar mTopMenuBar -> f
-    java.util.List mList -> g
-    com.namgyuworld.voca.customview.VocaSeekBar mVocaSeekBar -> h
-    boolean exitFlag -> i
-    com.namgyuworld.voca.util.SharedPrefUtil mPref -> a
-    android.os.Handler mHanlder -> mHanlder
-    67:140:void onCreate(android.os.Bundle) -> onCreate
-    143:158:void init() -> a
-    164:180:void onClick(android.view.View) -> onClick
-    187:192:void startGoogleAnalytics() -> b
-    196:201:void onStart() -> onStart
-    205:209:void onStop() -> onStop
-    213:243:void onResume() -> onResume
-    249:282:void RefreshVocaPage() -> RefreshVocaPage
-    287:290:void addView(android.view.View) -> addView
-    295:300:void removeView(android.view.View) -> removeView
-    305:305:android.view.View getCurrentPage() -> getCurrentPage
-    312:313:void setCurrentPage(android.view.View) -> setCurrentPage
-    317:336:void onBackPressed() -> onBackPressed
-    343:350:boolean onKeyUp(int,android.view.KeyEvent) -> onKeyUp
-    39:39:java.util.List access$000(com.namgyuworld.voca.activity.MainActivity) -> a
-    39:39:com.namgyuworld.voca.customview.TopMenuBar access$100(com.namgyuworld.voca.activity.MainActivity) -> b
-    39:39:com.namgyuworld.voca.customview.VocaSeekBar access$200(com.namgyuworld.voca.activity.MainActivity) -> c
-    39:39:java.lang.String access$300(com.namgyuworld.voca.activity.MainActivity) -> d
-    39:39:com.namgyuworld.voca.util.Logger access$400(com.namgyuworld.voca.activity.MainActivity) -> e
-    39:39:android.support.v4.view.ViewPager access$500(com.namgyuworld.voca.activity.MainActivity) -> f
-    39:39:boolean access$602(com.namgyuworld.voca.activity.MainActivity,boolean) -> a
-com.namgyuworld.voca.activity.MainActivity$1 -> bdp:
-    com.namgyuworld.voca.activity.MainActivity this$0 -> a
-    87:87:void onPageScrolled(int,float,int) -> onPageScrolled
-    92:102:void onPageSelected(int) -> onPageSelected
-    107:107:void onPageScrollStateChanged(int) -> onPageScrollStateChanged
-com.namgyuworld.voca.activity.MainActivity$2 -> bdq:
-    com.namgyuworld.voca.activity.MainActivity this$0 -> a
-    124:134:void handleMessage(android.os.Message) -> handleMessage
-com.namgyuworld.voca.activity.MainActivity$3 -> bdr:
-    com.namgyuworld.voca.activity.MainActivity this$0 -> a
-    230:231:void onProgressChanged(android.widget.SeekBar,int,boolean) -> onProgressChanged
-    236:236:void onStartTrackingTouch(android.widget.SeekBar) -> onStartTrackingTouch
-    241:241:void onStopTrackingTouch(android.widget.SeekBar) -> onStopTrackingTouch
-com.namgyuworld.voca.activity.MainActivity$4 -> bds:
-    com.namgyuworld.voca.activity.MainActivity this$0 -> a
-    333:334:void run() -> run
 com.namgyuworld.voca.Manifest -> com.namgyuworld.voca.Manifest:
 com.namgyuworld.voca.Manifest$permission -> com.namgyuworld.voca.Manifest$permission:
     java.lang.String C2D_MESSAGE -> C2D_MESSAGE
@@ -31369,6 +31321,8 @@ com.namgyuworld.voca.R$id -> com.namgyuworld.voca.R$id:
     int voca_left -> voca_left
     int voca_right -> voca_right
     int voca_search -> voca_search
+    int voca_search_in_webview -> voca_search_in_webview
+    int voca_search_in_webview_btn -> voca_search_in_webview_btn
     int voca_seekBar -> voca_seekBar
     int voca_seekbar_checkBox -> voca_seekbar_checkBox
     int voca_seekbar_visibility -> voca_seekbar_visibility
@@ -32116,11 +32070,61 @@ com.namgyuworld.voca.R$styleable -> com.namgyuworld.voca.R$styleable:
 com.namgyuworld.voca.R$xml -> com.namgyuworld.voca.R$xml:
     int ecommerce_tracker -> ecommerce_tracker
     int global_tracker -> global_tracker
+com.namgyuworld.voca.activity.MainActivity -> com.namgyuworld.voca.activity.MainActivity:
+    java.lang.String TAG -> b
+    com.namgyuworld.voca.util.Logger LOG -> c
+    android.support.v4.view.ViewPager pager -> d
+    com.namgyuworld.voca.adapter.MainPagerAdapter pagerAdapter -> e
+    com.namgyuworld.voca.customview.TopMenuBar mTopMenuBar -> f
+    java.util.List mList -> g
+    com.namgyuworld.voca.customview.VocaSeekBar mVocaSeekBar -> h
+    boolean isBackKeyPressed -> i
+    boolean isNoMoreToast -> j
+    android.widget.Toast warningToast -> k
+    com.namgyuworld.voca.util.SharedPrefUtil mPref -> a
+    android.os.Handler mHanlder -> mHanlder
+    68:143:void onCreate(android.os.Bundle) -> onCreate
+    146:161:void init() -> a
+    167:183:void onClick(android.view.View) -> onClick
+    190:195:void startGoogleAnalytics() -> b
+    199:204:void onStart() -> onStart
+    208:212:void onStop() -> onStop
+    216:246:void onResume() -> onResume
+    252:285:void RefreshVocaPage() -> RefreshVocaPage
+    290:293:void addView(android.view.View) -> addView
+    298:303:void removeView(android.view.View) -> removeView
+    308:308:android.view.View getCurrentPage() -> getCurrentPage
+    315:316:void setCurrentPage(android.view.View) -> setCurrentPage
+    320:342:void onBackPressed() -> onBackPressed
+    349:356:boolean onKeyUp(int,android.view.KeyEvent) -> onKeyUp
+    37:37:java.util.List access$000(com.namgyuworld.voca.activity.MainActivity) -> a
+    37:37:com.namgyuworld.voca.customview.TopMenuBar access$100(com.namgyuworld.voca.activity.MainActivity) -> b
+    37:37:com.namgyuworld.voca.customview.VocaSeekBar access$200(com.namgyuworld.voca.activity.MainActivity) -> c
+    37:37:java.lang.String access$300(com.namgyuworld.voca.activity.MainActivity) -> d
+    37:37:com.namgyuworld.voca.util.Logger access$400(com.namgyuworld.voca.activity.MainActivity) -> e
+    37:37:android.support.v4.view.ViewPager access$500(com.namgyuworld.voca.activity.MainActivity) -> f
+    37:37:boolean access$602(com.namgyuworld.voca.activity.MainActivity,boolean) -> a
+com.namgyuworld.voca.activity.MainActivity$1 -> bdp:
+    com.namgyuworld.voca.activity.MainActivity this$0 -> a
+    90:90:void onPageScrolled(int,float,int) -> onPageScrolled
+    95:105:void onPageSelected(int) -> onPageSelected
+    110:110:void onPageScrollStateChanged(int) -> onPageScrollStateChanged
+com.namgyuworld.voca.activity.MainActivity$2 -> bdq:
+    com.namgyuworld.voca.activity.MainActivity this$0 -> a
+    127:137:void handleMessage(android.os.Message) -> handleMessage
+com.namgyuworld.voca.activity.MainActivity$3 -> bdr:
+    com.namgyuworld.voca.activity.MainActivity this$0 -> a
+    233:234:void onProgressChanged(android.widget.SeekBar,int,boolean) -> onProgressChanged
+    239:239:void onStartTrackingTouch(android.widget.SeekBar) -> onStartTrackingTouch
+    244:244:void onStopTrackingTouch(android.widget.SeekBar) -> onStopTrackingTouch
+com.namgyuworld.voca.activity.MainActivity$4 -> bds:
+    com.namgyuworld.voca.activity.MainActivity this$0 -> a
+    339:340:void run() -> run
 com.namgyuworld.voca.activity.SplashActivity -> com.namgyuworld.voca.activity.SplashActivity:
-    20:31:void onCreate(android.os.Bundle) -> onCreate
+    19:30:void onCreate(android.os.Bundle) -> onCreate
 com.namgyuworld.voca.activity.SplashActivity$1 -> bdt:
     com.namgyuworld.voca.activity.SplashActivity this$0 -> a
-    27:29:void run() -> run
+    26:28:void run() -> run
 com.namgyuworld.voca.activity.settings.SettingActivity -> com.namgyuworld.voca.activity.settings.SettingActivity:
     java.lang.String TAG -> h
     com.namgyuworld.voca.util.Logger LOG -> i
@@ -32172,37 +32176,43 @@ com.namgyuworld.voca.activity.voca.SearchVocaActivity -> com.namgyuworld.voca.ac
     android.app.ProgressDialog pd -> g
     android.widget.TextView tv -> h
     com.namgyuworld.voca.customview.TopMenuBarForWebview mTopMenuBar -> i
-    64:109:void onCreate(android.os.Bundle) -> onCreate
-    115:120:void startGoogleAnalytics() -> a
-    125:127:void onStart() -> onStart
-    132:134:void onStop() -> onStop
-    137:138:void startProgressDialog() -> b
-    141:143:void stopProgressDialog() -> c
-    150:249:void getSearchResult() -> d
-    46:46:java.lang.String access$002(com.namgyuworld.voca.activity.voca.SearchVocaActivity,java.lang.String) -> a
-    46:46:java.lang.String access$000(com.namgyuworld.voca.activity.voca.SearchVocaActivity) -> a
-    46:46:java.lang.String access$100(com.namgyuworld.voca.activity.voca.SearchVocaActivity) -> b
-    46:46:com.namgyuworld.voca.util.Logger access$200(com.namgyuworld.voca.activity.voca.SearchVocaActivity) -> c
-    46:46:android.widget.TextView access$300(com.namgyuworld.voca.activity.voca.SearchVocaActivity) -> d
-    46:46:com.namgyuworld.voca.customview.TopMenuBarForWebview access$400(com.namgyuworld.voca.activity.voca.SearchVocaActivity) -> e
-    46:46:void access$500(com.namgyuworld.voca.activity.voca.SearchVocaActivity) -> f
+    android.os.Handler handler -> j
+    82:127:void onCreate(android.os.Bundle) -> onCreate
+    133:138:void startGoogleAnalytics() -> a
+    143:145:void onStart() -> onStart
+    150:152:void onStop() -> onStop
+    155:156:void startProgressDialog() -> b
+    159:161:void stopProgressDialog() -> c
+    168:267:void getSearchResult() -> d
+    48:48:java.lang.String access$002(com.namgyuworld.voca.activity.voca.SearchVocaActivity,java.lang.String) -> a
+    48:48:android.webkit.WebView access$100(com.namgyuworld.voca.activity.voca.SearchVocaActivity) -> a
+    48:48:java.lang.String access$000(com.namgyuworld.voca.activity.voca.SearchVocaActivity) -> b
+    48:48:void access$200(com.namgyuworld.voca.activity.voca.SearchVocaActivity) -> c
+    48:48:java.lang.String access$300(com.namgyuworld.voca.activity.voca.SearchVocaActivity) -> d
+    48:48:com.namgyuworld.voca.util.Logger access$400(com.namgyuworld.voca.activity.voca.SearchVocaActivity) -> e
+    48:48:android.widget.TextView access$500(com.namgyuworld.voca.activity.voca.SearchVocaActivity) -> f
+    48:48:com.namgyuworld.voca.customview.TopMenuBarForWebview access$600(com.namgyuworld.voca.activity.voca.SearchVocaActivity) -> g
+    48:48:void access$700(com.namgyuworld.voca.activity.voca.SearchVocaActivity) -> h
 com.namgyuworld.voca.activity.voca.SearchVocaActivity$1 -> bdy:
     com.namgyuworld.voca.activity.voca.SearchVocaActivity this$0 -> a
+    67:77:void handleMessage(android.os.Message) -> handleMessage
 com.namgyuworld.voca.activity.voca.SearchVocaActivity$2 -> bdz:
     com.namgyuworld.voca.activity.voca.SearchVocaActivity this$0 -> a
-    84:86:void onPageStarted(android.webkit.WebView,java.lang.String,android.graphics.Bitmap) -> onPageStarted
-    90:92:void onPageFinished(android.webkit.WebView,java.lang.String) -> onPageFinished
-    96:98:void onReceivedError(android.webkit.WebView,int,java.lang.String,java.lang.String) -> onReceivedError
 com.namgyuworld.voca.activity.voca.SearchVocaActivity$3 -> bea:
     com.namgyuworld.voca.activity.voca.SearchVocaActivity this$0 -> a
-    158:231:void onResponse(java.lang.String) -> a
-    155:155:void onResponse(java.lang.Object) -> onResponse
+    102:104:void onPageStarted(android.webkit.WebView,java.lang.String,android.graphics.Bitmap) -> onPageStarted
+    108:110:void onPageFinished(android.webkit.WebView,java.lang.String) -> onPageFinished
+    114:116:void onReceivedError(android.webkit.WebView,int,java.lang.String,java.lang.String) -> onReceivedError
 com.namgyuworld.voca.activity.voca.SearchVocaActivity$4 -> beb:
     com.namgyuworld.voca.activity.voca.SearchVocaActivity this$0 -> a
-    236:237:void onErrorResponse(com.android.volley.VolleyError) -> onErrorResponse
+    176:249:void onResponse(java.lang.String) -> a
+    173:173:void onResponse(java.lang.Object) -> onResponse
 com.namgyuworld.voca.activity.voca.SearchVocaActivity$5 -> bec:
     com.namgyuworld.voca.activity.voca.SearchVocaActivity this$0 -> a
-    243:245:java.util.Map getHeaders() -> getHeaders
+    254:255:void onErrorResponse(com.android.volley.VolleyError) -> onErrorResponse
+com.namgyuworld.voca.activity.voca.SearchVocaActivity$6 -> bed:
+    com.namgyuworld.voca.activity.voca.SearchVocaActivity this$0 -> a
+    261:263:java.util.Map getHeaders() -> getHeaders
 com.namgyuworld.voca.adapter.FilebrowserAdapter -> com.namgyuworld.voca.adapter.FilebrowserAdapter:
     java.lang.String TAG -> a
     com.namgyuworld.voca.util.Logger LOG -> b
@@ -32220,7 +32230,7 @@ com.namgyuworld.voca.adapter.FilebrowserAdapter -> com.namgyuworld.voca.adapter.
     195:207:java.util.ArrayList currentFileList(java.lang.String) -> a
     28:28:void onBindViewHolder(android.support.v7.widget.RecyclerView$ViewHolder,int) -> onBindViewHolder
     28:28:android.support.v7.widget.RecyclerView$ViewHolder onCreateViewHolder(android.view.ViewGroup,int) -> onCreateViewHolder
-com.namgyuworld.voca.adapter.FilebrowserAdapter$1 -> bed:
+com.namgyuworld.voca.adapter.FilebrowserAdapter$1 -> bee:
     com.namgyuworld.voca.model.FilebrowserModel val$name -> a
     com.namgyuworld.voca.adapter.FilebrowserAdapter this$0 -> b
     167:168:void onClick(android.view.View) -> onClick
@@ -32263,14 +32273,14 @@ com.namgyuworld.voca.customview.TopMenuBar -> com.namgyuworld.voca.customview.To
     39:39:void access$000(com.namgyuworld.voca.customview.TopMenuBar,android.content.Context) -> a
     39:39:android.speech.tts.TextToSpeech access$100(com.namgyuworld.voca.customview.TopMenuBar) -> a
     39:39:java.lang.String access$200(com.namgyuworld.voca.customview.TopMenuBar) -> b
-com.namgyuworld.voca.customview.TopMenuBar$1 -> bee:
+com.namgyuworld.voca.customview.TopMenuBar$1 -> bef:
     android.content.Context val$mContext -> a
     com.namgyuworld.voca.customview.TopMenuBar this$0 -> b
     98:100:void onAdClosed() -> onAdClosed
-com.namgyuworld.voca.customview.TopMenuBar$2 -> bef:
+com.namgyuworld.voca.customview.TopMenuBar$2 -> beg:
     com.namgyuworld.voca.customview.TopMenuBar this$0 -> a
     129:134:void onInit(int) -> onInit
-com.namgyuworld.voca.customview.TopMenuBar$3 -> beg:
+com.namgyuworld.voca.customview.TopMenuBar$3 -> beh:
     com.namgyuworld.voca.customview.TopMenuBar this$0 -> a
     146:147:void onClick(android.content.DialogInterface,int) -> onClick
 com.namgyuworld.voca.customview.TopMenuBarForWebview -> com.namgyuworld.voca.customview.TopMenuBarForWebview:
@@ -32279,23 +32289,26 @@ com.namgyuworld.voca.customview.TopMenuBarForWebview -> com.namgyuworld.voca.cus
     android.content.Context mContext -> c
     android.widget.TextView tv -> d
     java.lang.String contents -> e
-    56:63:void initialize(android.content.Context) -> a
-    71:73:void setWord(java.lang.String) -> setWord
-    76:78:void setVocaContents(java.lang.String) -> setVocaContents
-    81:81:java.lang.String getWord() -> getWord
-    85:85:java.lang.String getContents() -> getContents
-    90:128:void onClick(android.view.View) -> onClick
-    25:25:android.content.Context access$000(com.namgyuworld.voca.customview.TopMenuBarForWebview) -> a
-com.namgyuworld.voca.customview.TopMenuBarForWebview$1 -> beh:
+    android.widget.EditText mEditText -> f
+    android.os.Handler h -> g
+    62:63:void setHandler(android.os.Handler) -> setHandler
+    66:77:void initialize(android.content.Context) -> a
+    85:87:void setWord(java.lang.String) -> setWord
+    90:92:void setVocaContents(java.lang.String) -> setVocaContents
+    95:95:java.lang.String getWord() -> getWord
+    99:99:java.lang.String getContents() -> getContents
+    104:157:void onClick(android.view.View) -> onClick
+    27:27:android.content.Context access$000(com.namgyuworld.voca.customview.TopMenuBarForWebview) -> a
+com.namgyuworld.voca.customview.TopMenuBarForWebview$1 -> bei:
     com.namgyuworld.voca.customview.TopMenuBarForWebview this$0 -> a
-    122:122:void onClick(android.content.DialogInterface,int) -> onClick
-com.namgyuworld.voca.customview.TopMenuBarForWebview$2 -> bei:
+    136:136:void onClick(android.content.DialogInterface,int) -> onClick
+com.namgyuworld.voca.customview.TopMenuBarForWebview$2 -> bej:
     android.widget.EditText val$vocaEdit -> a
     android.widget.EditText val$contentEdit -> b
     com.namgyuworld.voca.customview.TopMenuBarForWebview this$0 -> c
-    108:116:void onClick(android.content.DialogInterface,int) -> onClick
+    122:130:void onClick(android.content.DialogInterface,int) -> onClick
 com.namgyuworld.voca.customview.VocaSeekBar -> com.namgyuworld.voca.customview.VocaSeekBar:
-    41:47:void init(android.content.Context) -> a
+    41:46:void init(android.content.Context) -> a
 com.namgyuworld.voca.customview.setting.FilebrowserTopView -> com.namgyuworld.voca.customview.setting.FilebrowserTopView:
     android.os.Handler mHandler -> a
     android.widget.TextView currentPathView -> b
@@ -32305,7 +32318,7 @@ com.namgyuworld.voca.customview.setting.FilebrowserTopView -> com.namgyuworld.vo
     59:80:void init(android.content.Context) -> a
     21:21:android.widget.TextView access$000(com.namgyuworld.voca.customview.setting.FilebrowserTopView) -> a
     21:21:android.os.Handler access$100(com.namgyuworld.voca.customview.setting.FilebrowserTopView) -> b
-com.namgyuworld.voca.customview.setting.FilebrowserTopView$1 -> bej:
+com.namgyuworld.voca.customview.setting.FilebrowserTopView$1 -> bek:
     android.content.Context val$context -> a
     com.namgyuworld.voca.customview.setting.FilebrowserTopView this$0 -> b
     67:74:void onClick(android.view.View) -> onClick
@@ -32321,7 +32334,7 @@ com.namgyuworld.voca.customview.setting.FontSizeNumber -> com.namgyuworld.voca.c
     170:179:void rearrangeTextViewSize(int) -> a
     20:20:java.lang.String access$000(com.namgyuworld.voca.customview.setting.FontSizeNumber) -> a
     20:20:com.namgyuworld.voca.util.Logger access$100(com.namgyuworld.voca.customview.setting.FontSizeNumber) -> b
-com.namgyuworld.voca.customview.setting.FontSizeNumber$1 -> bek:
+com.namgyuworld.voca.customview.setting.FontSizeNumber$1 -> bel:
     int val$currentFontSizeIndex -> a
     com.namgyuworld.voca.customview.setting.FontSizeNumber this$0 -> b
     101:107:void run() -> run
@@ -32337,7 +32350,7 @@ com.namgyuworld.voca.customview.setting.FontSizeNumberForContent -> com.namgyuwo
     170:179:void rearrangeTextViewSize(int) -> a
     20:20:java.lang.String access$000(com.namgyuworld.voca.customview.setting.FontSizeNumberForContent) -> a
     20:20:com.namgyuworld.voca.util.Logger access$100(com.namgyuworld.voca.customview.setting.FontSizeNumberForContent) -> b
-com.namgyuworld.voca.customview.setting.FontSizeNumberForContent$1 -> bel:
+com.namgyuworld.voca.customview.setting.FontSizeNumberForContent$1 -> bem:
     int val$currentFontSizeIndex -> a
     com.namgyuworld.voca.customview.setting.FontSizeNumberForContent this$0 -> b
     101:107:void run() -> run
@@ -32393,13 +32406,13 @@ com.namgyuworld.voca.push.GCM -> com.namgyuworld.voca.push.GCM:
     24:24:com.namgyuworld.voca.util.Logger access$200() -> c
     24:24:com.namgyuworld.voca.push.util.GoogleCloudMessaging access$300() -> d
     24:24:void access$400(java.lang.String) -> a
-com.namgyuworld.voca.push.GCM$1 -> bem:
+com.namgyuworld.voca.push.GCM$1 -> ben:
     android.content.Context val$mContext -> a
     51:84:java.lang.String doInBackground(java.lang.Void[]) -> a
     91:91:void onPostExecute(java.lang.String) -> a
     44:44:void onPostExecute(java.lang.Object) -> onPostExecute
     44:44:java.lang.Object doInBackground(java.lang.Object[]) -> doInBackground
-com.namgyuworld.voca.push.GCM$2 -> ben:
+com.namgyuworld.voca.push.GCM$2 -> beo:
     com.namgyuworld.voca.push.model.PushContentsItem val$contents -> a
     130:185:java.lang.Void doInBackground(java.lang.Void[]) -> a
     123:123:java.lang.Object doInBackground(java.lang.Object[]) -> doInBackground
@@ -32432,7 +32445,7 @@ com.namgyuworld.voca.push.util.GoogleCloudMessaging -> com.namgyuworld.voca.push
     76:83:void b(java.lang.String[]) -> b
     86:90:void b(android.content.Intent) -> a
     93:100:java.lang.String c(java.lang.String[]) -> a
-com.namgyuworld.voca.push.util.GoogleCloudMessaging$1 -> beo:
+com.namgyuworld.voca.push.util.GoogleCloudMessaging$1 -> bep:
     com.namgyuworld.voca.push.util.GoogleCloudMessaging this$0 -> a
     31:33:void handleMessage(android.os.Message) -> handleMessage
 com.namgyuworld.voca.service.AutoDownloadAudioService -> com.namgyuworld.voca.service.AutoDownloadAudioService:
@@ -32517,7 +32530,7 @@ com.namgyuworld.voca.util.download.DownloadAudio -> com.namgyuworld.voca.util.do
     32:104:void startDownload(java.lang.String,java.lang.String) -> startDownload
     19:19:java.lang.String access$000() -> a
     19:19:com.namgyuworld.voca.util.Logger access$100() -> b
-com.namgyuworld.voca.util.download.DownloadAudio$1 -> bep:
+com.namgyuworld.voca.util.download.DownloadAudio$1 -> beq:
     java.lang.String val$audioURL -> a
     java.io.File val$file -> b
     56:57:void onPreExecute() -> onPreExecute
@@ -32587,7 +32600,7 @@ com.tozny.crypto.android.AesCbcWithIntegrity$PrngFixes$LinuxPRNGSecureRandom -> 
     824:826:byte[] engineGenerateSeed(int) -> engineGenerateSeed
     830:844:java.io.DataInputStream getUrandomInputStream() -> a
     848:853:java.io.OutputStream getUrandomOutputStream() -> b
-com.tozny.crypto.android.AesCbcWithIntegrity$PrngFixes$LinuxPRNGSecureRandomProvider -> beq:
+com.tozny.crypto.android.AesCbcWithIntegrity$PrngFixes$LinuxPRNGSecureRandomProvider -> ber:
 com.tozny.crypto.android.AesCbcWithIntegrity$SecretKeys -> com.tozny.crypto.android.AesCbcWithIntegrity$SecretKeys:
     javax.crypto.SecretKey confidentialityKey -> a
     javax.crypto.SecretKey integrityKey -> b
@@ -32704,8 +32717,8 @@ org.jsoup.UnsupportedMimeTypeException -> org.jsoup.UnsupportedMimeTypeException
 org.jsoup.examples.HtmlToPlainText -> org.jsoup.examples.HtmlToPlainText:
     26:35:void main(java.lang.String[]) -> main
     43:47:java.lang.String getPlainText(org.jsoup.nodes.Element) -> getPlainText
-org.jsoup.examples.HtmlToPlainText$1 -> ber:
-org.jsoup.examples.HtmlToPlainText$FormattingVisitor -> bes:
+org.jsoup.examples.HtmlToPlainText$1 -> bes:
+org.jsoup.examples.HtmlToPlainText$FormattingVisitor -> bet:
     int width -> b
     java.lang.StringBuilder accum -> c
     org.jsoup.examples.HtmlToPlainText this$0 -> a
@@ -32732,8 +32745,8 @@ org.jsoup.helper.DescendableLinkedList -> org.jsoup.helper.DescendableLinkedList
     32:32:java.lang.Object peekLast() -> peekLast
     40:40:java.lang.Object pollLast() -> pollLast
     48:48:java.util.Iterator descendingIterator() -> descendingIterator
-org.jsoup.helper.DescendableLinkedList$1 -> bet:
-org.jsoup.helper.DescendableLinkedList$DescendingIterator -> beu:
+org.jsoup.helper.DescendableLinkedList$1 -> beu:
+org.jsoup.helper.DescendableLinkedList$DescendingIterator -> bev:
     java.util.ListIterator iter -> b
     org.jsoup.helper.DescendableLinkedList this$0 -> a
     64:64:boolean hasNext() -> hasNext
@@ -32771,8 +32784,8 @@ org.jsoup.helper.HttpConnection -> org.jsoup.helper.HttpConnection:
     195:195:org.jsoup.Connection$Response response() -> response
     199:200:org.jsoup.Connection response(org.jsoup.Connection$Response) -> response
     25:25:java.lang.String access$200(java.lang.String) -> a
-org.jsoup.helper.HttpConnection$1 -> bev:
-org.jsoup.helper.HttpConnection$Base -> bew:
+org.jsoup.helper.HttpConnection$1 -> bew:
+org.jsoup.helper.HttpConnection$Base -> bex:
     java.net.URL url -> a
     org.jsoup.Connection$Method method -> b
     java.util.Map headers -> c
@@ -32938,13 +32951,13 @@ org.jsoup.nodes.Attributes -> org.jsoup.nodes.Attributes:
     17:17:java.util.LinkedHashMap access$100(org.jsoup.nodes.Attributes) -> a
     17:17:java.util.LinkedHashMap access$102(org.jsoup.nodes.Attributes,java.util.LinkedHashMap) -> a
     17:17:java.lang.String access$300(java.lang.String) -> a
-org.jsoup.nodes.Attributes$1 -> bex:
-org.jsoup.nodes.Attributes$Dataset -> bey:
+org.jsoup.nodes.Attributes$1 -> bey:
+org.jsoup.nodes.Attributes$Dataset -> bez:
     org.jsoup.nodes.Attributes this$0 -> a
     199:199:java.util.Set entrySet() -> entrySet
     204:208:java.lang.String put(java.lang.String,java.lang.String) -> a
     191:191:java.lang.Object put(java.lang.Object,java.lang.Object) -> put
-org.jsoup.nodes.Attributes$Dataset$DatasetIterator -> bez:
+org.jsoup.nodes.Attributes$Dataset$DatasetIterator -> bfa:
     java.util.Iterator attrIter -> b
     org.jsoup.nodes.Attribute attr -> c
     org.jsoup.nodes.Attributes$Dataset this$1 -> a
@@ -32952,7 +32965,7 @@ org.jsoup.nodes.Attributes$Dataset$DatasetIterator -> bez:
     237:237:java.util.Map$Entry next() -> a
     241:242:void remove() -> remove
     225:225:java.lang.Object next() -> next
-org.jsoup.nodes.Attributes$Dataset$EntrySet -> bfa:
+org.jsoup.nodes.Attributes$Dataset$EntrySet -> bfb:
     org.jsoup.nodes.Attributes$Dataset this$1 -> a
     213:213:java.util.Iterator iterator() -> iterator
     217:221:int size() -> size
@@ -33140,7 +33153,7 @@ org.jsoup.nodes.Element -> org.jsoup.nodes.Element:
     21:21:java.lang.Object clone() -> clone
     21:21:void access$000(java.lang.StringBuilder,org.jsoup.nodes.TextNode) -> a
     21:21:org.jsoup.parser.Tag access$100(org.jsoup.nodes.Element) -> a
-org.jsoup.nodes.Element$1 -> bfb:
+org.jsoup.nodes.Element$1 -> bfc:
     java.lang.StringBuilder val$accum -> a
     org.jsoup.nodes.Element this$0 -> b
     849:859:void head(org.jsoup.nodes.Node,int) -> head
@@ -33237,12 +33250,12 @@ org.jsoup.nodes.Node -> org.jsoup.nodes.Node:
     605:621:org.jsoup.nodes.Node clone() -> clone
     632:646:org.jsoup.nodes.Node doClone(org.jsoup.nodes.Node) -> doClone
     20:20:java.lang.Object clone() -> clone
-org.jsoup.nodes.Node$1 -> bfc:
+org.jsoup.nodes.Node$1 -> bfd:
     java.lang.String val$baseUri -> a
     org.jsoup.nodes.Node this$0 -> b
     144:145:void head(org.jsoup.nodes.Node,int) -> head
     148:148:void tail(org.jsoup.nodes.Node,int) -> tail
-org.jsoup.nodes.Node$OuterHtmlVisitor -> bfd:
+org.jsoup.nodes.Node$OuterHtmlVisitor -> bfe:
     java.lang.StringBuilder accum -> a
     org.jsoup.nodes.Document$OutputSettings out -> b
     659:660:void head(org.jsoup.nodes.Node,int) -> head
@@ -33275,7 +33288,7 @@ org.jsoup.nodes.XmlDeclaration -> org.jsoup.nodes.XmlDeclaration:
     36:41:void outerHtmlHead(java.lang.StringBuilder,int,org.jsoup.nodes.Document$OutputSettings) -> a
     43:43:void outerHtmlTail(java.lang.StringBuilder,int,org.jsoup.nodes.Document$OutputSettings) -> b
     46:46:java.lang.String toString() -> toString
-org.jsoup.parser.CharacterReader -> bfe:
+org.jsoup.parser.CharacterReader -> bff:
     char[] input -> a
     int length -> b
     int pos -> c
@@ -33308,7 +33321,7 @@ org.jsoup.parser.CharacterReader -> bfe:
     265:269:boolean matchConsumeIgnoreCase(java.lang.String) -> e
     275:277:boolean containsIgnoreCase(java.lang.String) -> f
     282:282:java.lang.String toString() -> toString
-org.jsoup.parser.HtmlTreeBuilder -> bff:
+org.jsoup.parser.HtmlTreeBuilder -> bfg:
     java.lang.String[] TagsScriptStyle -> e
     java.lang.String[] TagsSearchInScope -> a
     java.lang.String[] TagSearchList -> f
@@ -33402,7 +33415,7 @@ org.jsoup.parser.HtmlTreeBuilder -> bff:
     683:684:void insertMarkerToFormattingElements() -> v
     687:706:void insertInFosterParent(org.jsoup.nodes.Node) -> a
     710:710:java.lang.String toString() -> toString
-org.jsoup.parser.HtmlTreeBuilderState -> bfg:
+org.jsoup.parser.HtmlTreeBuilderState -> bfh:
     org.jsoup.parser.HtmlTreeBuilderState Initial -> a
     org.jsoup.parser.HtmlTreeBuilderState BeforeHtml -> b
     org.jsoup.parser.HtmlTreeBuilderState BeforeHead -> c
@@ -33438,69 +33451,69 @@ org.jsoup.parser.HtmlTreeBuilderState -> bfg:
     13:13:void access$200(org.jsoup.parser.Token$StartTag,org.jsoup.parser.HtmlTreeBuilder) -> a
     13:13:void access$300(org.jsoup.parser.Token$StartTag,org.jsoup.parser.HtmlTreeBuilder) -> b
     13:13:java.lang.String access$400() -> a
-org.jsoup.parser.HtmlTreeBuilderState$1 -> bfh:
+org.jsoup.parser.HtmlTreeBuilderState$1 -> bfi:
     16:34:boolean process(org.jsoup.parser.Token,org.jsoup.parser.HtmlTreeBuilder) -> a
-org.jsoup.parser.HtmlTreeBuilderState$10 -> bfi:
+org.jsoup.parser.HtmlTreeBuilderState$10 -> bfj:
     901:932:boolean process(org.jsoup.parser.Token,org.jsoup.parser.HtmlTreeBuilder) -> a
-org.jsoup.parser.HtmlTreeBuilderState$11 -> bfj:
+org.jsoup.parser.HtmlTreeBuilderState$11 -> bfk:
     937:967:boolean process(org.jsoup.parser.Token,org.jsoup.parser.HtmlTreeBuilder) -> a
-org.jsoup.parser.HtmlTreeBuilderState$12 -> bfk:
+org.jsoup.parser.HtmlTreeBuilderState$12 -> bfl:
     972:1015:boolean process(org.jsoup.parser.Token,org.jsoup.parser.HtmlTreeBuilder) -> a
     1019:1022:boolean anythingElse(org.jsoup.parser.Token,org.jsoup.parser.TreeBuilder) -> a
-org.jsoup.parser.HtmlTreeBuilderState$13 -> bfl:
+org.jsoup.parser.HtmlTreeBuilderState$13 -> bfm:
     1027:1067:boolean process(org.jsoup.parser.Token,org.jsoup.parser.HtmlTreeBuilder) -> a
     1071:1078:boolean exitTableBody(org.jsoup.parser.Token,org.jsoup.parser.HtmlTreeBuilder) -> b
     1082:1082:boolean anythingElse(org.jsoup.parser.Token,org.jsoup.parser.HtmlTreeBuilder) -> c
-org.jsoup.parser.HtmlTreeBuilderState$14 -> bfm:
+org.jsoup.parser.HtmlTreeBuilderState$14 -> bfn:
     1087:1131:boolean process(org.jsoup.parser.Token,org.jsoup.parser.HtmlTreeBuilder) -> a
     1135:1135:boolean anythingElse(org.jsoup.parser.Token,org.jsoup.parser.HtmlTreeBuilder) -> b
     1139:1143:boolean handleMissingTr(org.jsoup.parser.Token,org.jsoup.parser.TreeBuilder) -> a
-org.jsoup.parser.HtmlTreeBuilderState$15 -> bfn:
+org.jsoup.parser.HtmlTreeBuilderState$15 -> bfo:
     1148:1189:boolean process(org.jsoup.parser.Token,org.jsoup.parser.HtmlTreeBuilder) -> a
     1193:1193:boolean anythingElse(org.jsoup.parser.Token,org.jsoup.parser.HtmlTreeBuilder) -> b
     1197:1201:void closeCell(org.jsoup.parser.HtmlTreeBuilder) -> a
-org.jsoup.parser.HtmlTreeBuilderState$16 -> bfo:
+org.jsoup.parser.HtmlTreeBuilderState$16 -> bfp:
     1205:1283:boolean process(org.jsoup.parser.Token,org.jsoup.parser.HtmlTreeBuilder) -> a
     1287:1288:boolean anythingElse(org.jsoup.parser.Token,org.jsoup.parser.HtmlTreeBuilder) -> b
-org.jsoup.parser.HtmlTreeBuilderState$17 -> bfp:
+org.jsoup.parser.HtmlTreeBuilderState$17 -> bfq:
     1293:1305:boolean process(org.jsoup.parser.Token,org.jsoup.parser.HtmlTreeBuilder) -> a
-org.jsoup.parser.HtmlTreeBuilderState$18 -> bfq:
+org.jsoup.parser.HtmlTreeBuilderState$18 -> bfr:
     1311:1334:boolean process(org.jsoup.parser.Token,org.jsoup.parser.HtmlTreeBuilder) -> a
-org.jsoup.parser.HtmlTreeBuilderState$19 -> bfr:
+org.jsoup.parser.HtmlTreeBuilderState$19 -> bfs:
     1339:1380:boolean process(org.jsoup.parser.Token,org.jsoup.parser.HtmlTreeBuilder) -> a
-org.jsoup.parser.HtmlTreeBuilderState$2 -> bfs:
+org.jsoup.parser.HtmlTreeBuilderState$2 -> bft:
     39:57:boolean process(org.jsoup.parser.Token,org.jsoup.parser.HtmlTreeBuilder) -> a
     61:63:boolean anythingElse(org.jsoup.parser.Token,org.jsoup.parser.HtmlTreeBuilder) -> b
-org.jsoup.parser.HtmlTreeBuilderState$20 -> bft:
+org.jsoup.parser.HtmlTreeBuilderState$20 -> bfu:
     1385:1404:boolean process(org.jsoup.parser.Token,org.jsoup.parser.HtmlTreeBuilder) -> a
-org.jsoup.parser.HtmlTreeBuilderState$21 -> bfu:
+org.jsoup.parser.HtmlTreeBuilderState$21 -> bfv:
     1409:1420:boolean process(org.jsoup.parser.Token,org.jsoup.parser.HtmlTreeBuilder) -> a
-org.jsoup.parser.HtmlTreeBuilderState$22 -> bfv:
+org.jsoup.parser.HtmlTreeBuilderState$22 -> bfw:
     1425:1437:boolean process(org.jsoup.parser.Token,org.jsoup.parser.HtmlTreeBuilder) -> a
-org.jsoup.parser.HtmlTreeBuilderState$23 -> bfw:
+org.jsoup.parser.HtmlTreeBuilderState$23 -> bfx:
     1442:1442:boolean process(org.jsoup.parser.Token,org.jsoup.parser.HtmlTreeBuilder) -> a
-org.jsoup.parser.HtmlTreeBuilderState$24 -> bfx:
+org.jsoup.parser.HtmlTreeBuilderState$24 -> bfy:
     int[] $SwitchMap$org$jsoup$parser$Token$TokenType -> a
-org.jsoup.parser.HtmlTreeBuilderState$3 -> bfy:
+org.jsoup.parser.HtmlTreeBuilderState$3 -> bfz:
     68:91:boolean process(org.jsoup.parser.Token,org.jsoup.parser.HtmlTreeBuilder) -> a
-org.jsoup.parser.HtmlTreeBuilderState$4 -> bfz:
+org.jsoup.parser.HtmlTreeBuilderState$4 -> bga:
     96:158:boolean process(org.jsoup.parser.Token,org.jsoup.parser.HtmlTreeBuilder) -> a
     162:163:boolean anythingElse(org.jsoup.parser.Token,org.jsoup.parser.TreeBuilder) -> a
-org.jsoup.parser.HtmlTreeBuilderState$5 -> bga:
+org.jsoup.parser.HtmlTreeBuilderState$5 -> bgb:
     168:186:boolean process(org.jsoup.parser.Token,org.jsoup.parser.HtmlTreeBuilder) -> a
     190:192:boolean anythingElse(org.jsoup.parser.Token,org.jsoup.parser.HtmlTreeBuilder) -> b
-org.jsoup.parser.HtmlTreeBuilderState$6 -> bgb:
+org.jsoup.parser.HtmlTreeBuilderState$6 -> bgc:
     197:237:boolean process(org.jsoup.parser.Token,org.jsoup.parser.HtmlTreeBuilder) -> a
     241:243:boolean anythingElse(org.jsoup.parser.Token,org.jsoup.parser.HtmlTreeBuilder) -> b
-org.jsoup.parser.HtmlTreeBuilderState$7 -> bgc:
+org.jsoup.parser.HtmlTreeBuilderState$7 -> bgd:
     248:755:boolean process(org.jsoup.parser.Token,org.jsoup.parser.HtmlTreeBuilder) -> a
     759:777:boolean anyOtherEndTag(org.jsoup.parser.Token,org.jsoup.parser.HtmlTreeBuilder) -> b
-org.jsoup.parser.HtmlTreeBuilderState$8 -> bgd:
+org.jsoup.parser.HtmlTreeBuilderState$8 -> bge:
     783:796:boolean process(org.jsoup.parser.Token,org.jsoup.parser.HtmlTreeBuilder) -> a
-org.jsoup.parser.HtmlTreeBuilderState$9 -> bge:
+org.jsoup.parser.HtmlTreeBuilderState$9 -> bgf:
     801:883:boolean process(org.jsoup.parser.Token,org.jsoup.parser.HtmlTreeBuilder) -> a
     887:896:boolean anythingElse(org.jsoup.parser.Token,org.jsoup.parser.HtmlTreeBuilder) -> b
-org.jsoup.parser.HtmlTreeBuilderState$Constants -> bgf:
+org.jsoup.parser.HtmlTreeBuilderState$Constants -> bgg:
     java.lang.String[] InBodyStartToHead -> a
     java.lang.String[] InBodyStartPClosers -> b
     java.lang.String[] Headings -> c
@@ -33541,7 +33554,7 @@ org.jsoup.parser.ParseError -> org.jsoup.parser.ParseError:
     25:25:java.lang.String getErrorMessage() -> getErrorMessage
     33:33:int getPosition() -> getPosition
     38:38:java.lang.String toString() -> toString
-org.jsoup.parser.ParseErrorList -> bgg:
+org.jsoup.parser.ParseErrorList -> bgh:
     int maxSize -> a
     20:20:boolean canAddError() -> a
     28:28:org.jsoup.parser.ParseErrorList noTracking() -> b
@@ -33602,7 +33615,7 @@ org.jsoup.parser.Tag -> org.jsoup.parser.Tag:
     202:212:int hashCode() -> hashCode
     216:216:java.lang.String toString() -> toString
     304:305:void register(org.jsoup.parser.Tag) -> a
-org.jsoup.parser.Token -> bgh:
+org.jsoup.parser.Token -> bgi:
     org.jsoup.parser.Token$TokenType type -> a
     17:17:java.lang.String tokenType() -> a
     224:224:boolean isDoctype() -> b
@@ -33616,17 +33629,17 @@ org.jsoup.parser.Token -> bgh:
     256:256:boolean isCharacter() -> j
     260:260:org.jsoup.parser.Token$Character asCharacter() -> k
     264:264:boolean isEOF() -> l
-org.jsoup.parser.Token$1 -> bgi:
-org.jsoup.parser.Token$Character -> bgj:
+org.jsoup.parser.Token$1 -> bgj:
+org.jsoup.parser.Token$Character -> bgk:
     java.lang.String data -> b
     208:208:java.lang.String getData() -> m
     213:213:java.lang.String toString() -> toString
-org.jsoup.parser.Token$Comment -> bgk:
+org.jsoup.parser.Token$Comment -> bgl:
     java.lang.StringBuilder data -> b
     boolean bogus -> c
     190:190:java.lang.String getData() -> m
     195:195:java.lang.String toString() -> toString
-org.jsoup.parser.Token$Doctype -> bgl:
+org.jsoup.parser.Token$Doctype -> bgm:
     java.lang.StringBuilder name -> b
     java.lang.StringBuilder publicIdentifier -> c
     java.lang.StringBuilder systemIdentifier -> d
@@ -33635,12 +33648,12 @@ org.jsoup.parser.Token$Doctype -> bgl:
     35:35:java.lang.String getPublicIdentifier() -> n
     39:39:java.lang.String getSystemIdentifier() -> o
     43:43:boolean isForceQuirks() -> p
-org.jsoup.parser.Token$EOF -> bgm:
-org.jsoup.parser.Token$EndTag -> bgn:
+org.jsoup.parser.Token$EOF -> bgn:
+org.jsoup.parser.Token$EndTag -> bgo:
     177:177:java.lang.String toString() -> toString
-org.jsoup.parser.Token$StartTag -> bgo:
+org.jsoup.parser.Token$StartTag -> bgp:
     157:160:java.lang.String toString() -> toString
-org.jsoup.parser.Token$Tag -> bgp:
+org.jsoup.parser.Token$Tag -> bgq:
     java.lang.String tagName -> b
     java.lang.String pendingAttributeName -> e
     java.lang.StringBuilder pendingAttributeValue -> f
@@ -33660,7 +33673,7 @@ org.jsoup.parser.Token$Tag -> bgp:
     122:124:void appendAttributeValue(char) -> c
     127:129:void appendAttributeValue(char[]) -> a
     132:134:void ensureAttributeValue() -> r
-org.jsoup.parser.Token$TokenType -> bgq:
+org.jsoup.parser.Token$TokenType -> bgr:
     org.jsoup.parser.Token$TokenType Doctype -> a
     org.jsoup.parser.Token$TokenType StartTag -> b
     org.jsoup.parser.Token$TokenType EndTag -> c
@@ -33704,7 +33717,7 @@ org.jsoup.parser.TokenQueue -> org.jsoup.parser.TokenQueue:
     375:379:java.lang.String consumeAttributeKey() -> consumeAttributeKey
     387:389:java.lang.String remainder() -> remainder
     393:393:java.lang.String toString() -> toString
-org.jsoup.parser.Tokeniser -> bgr:
+org.jsoup.parser.Tokeniser -> bgs:
     org.jsoup.parser.CharacterReader reader -> e
     org.jsoup.parser.ParseErrorList errors -> f
     org.jsoup.parser.TokeniserState state -> g
@@ -33740,7 +33753,7 @@ org.jsoup.parser.Tokeniser -> bgr:
     214:216:void characterReferenceError(java.lang.String) -> b
     219:221:void error(java.lang.String) -> c
     236:248:java.lang.String unescapeEntities(boolean) -> b
-org.jsoup.parser.TokeniserState -> bgs:
+org.jsoup.parser.TokeniserState -> bgt:
     org.jsoup.parser.TokeniserState Data -> a
     org.jsoup.parser.TokeniserState CharacterReferenceInData -> b
     org.jsoup.parser.TokeniserState Rcdata -> c
@@ -33818,142 +33831,142 @@ org.jsoup.parser.TokeniserState -> bgs:
     6:6:java.lang.String access$100() -> a
     6:6:void access$200(org.jsoup.parser.Tokeniser,org.jsoup.parser.CharacterReader,org.jsoup.parser.TokeniserState) -> a
     6:6:void access$300(org.jsoup.parser.Tokeniser,org.jsoup.parser.CharacterReader,org.jsoup.parser.TokeniserState,org.jsoup.parser.TokeniserState) -> a
-org.jsoup.parser.TokeniserState$1 -> bgt:
+org.jsoup.parser.TokeniserState$1 -> bgu:
     10:29:void read(org.jsoup.parser.Tokeniser,org.jsoup.parser.CharacterReader) -> a
-org.jsoup.parser.TokeniserState$10 -> bgu:
+org.jsoup.parser.TokeniserState$10 -> bgv:
     185:211:void read(org.jsoup.parser.Tokeniser,org.jsoup.parser.CharacterReader) -> a
-org.jsoup.parser.TokeniserState$11 -> bgv:
+org.jsoup.parser.TokeniserState$11 -> bgw:
     216:230:void read(org.jsoup.parser.Tokeniser,org.jsoup.parser.CharacterReader) -> a
-org.jsoup.parser.TokeniserState$12 -> bgw:
+org.jsoup.parser.TokeniserState$12 -> bgx:
     234:243:void read(org.jsoup.parser.Tokeniser,org.jsoup.parser.CharacterReader) -> a
-org.jsoup.parser.TokeniserState$13 -> bgx:
+org.jsoup.parser.TokeniserState$13 -> bgy:
     247:283:void read(org.jsoup.parser.Tokeniser,org.jsoup.parser.CharacterReader) -> a
     286:289:void anythingElse(org.jsoup.parser.Tokeniser,org.jsoup.parser.CharacterReader) -> b
-org.jsoup.parser.TokeniserState$14 -> bgy:
+org.jsoup.parser.TokeniserState$14 -> bgz:
     293:300:void read(org.jsoup.parser.Tokeniser,org.jsoup.parser.CharacterReader) -> a
-org.jsoup.parser.TokeniserState$15 -> bgz:
+org.jsoup.parser.TokeniserState$15 -> bha:
     304:311:void read(org.jsoup.parser.Tokeniser,org.jsoup.parser.CharacterReader) -> a
-org.jsoup.parser.TokeniserState$16 -> bha:
+org.jsoup.parser.TokeniserState$16 -> bhb:
     315:316:void read(org.jsoup.parser.Tokeniser,org.jsoup.parser.CharacterReader) -> a
-org.jsoup.parser.TokeniserState$17 -> bhb:
+org.jsoup.parser.TokeniserState$17 -> bhc:
     320:334:void read(org.jsoup.parser.Tokeniser,org.jsoup.parser.CharacterReader) -> a
-org.jsoup.parser.TokeniserState$18 -> bhc:
+org.jsoup.parser.TokeniserState$18 -> bhd:
     338:346:void read(org.jsoup.parser.Tokeniser,org.jsoup.parser.CharacterReader) -> a
-org.jsoup.parser.TokeniserState$19 -> bhd:
+org.jsoup.parser.TokeniserState$19 -> bhe:
     350:351:void read(org.jsoup.parser.Tokeniser,org.jsoup.parser.CharacterReader) -> a
-org.jsoup.parser.TokeniserState$2 -> bhe:
+org.jsoup.parser.TokeniserState$2 -> bhf:
     34:40:void read(org.jsoup.parser.Tokeniser,org.jsoup.parser.CharacterReader) -> a
-org.jsoup.parser.TokeniserState$20 -> bhf:
+org.jsoup.parser.TokeniserState$20 -> bhg:
     355:361:void read(org.jsoup.parser.Tokeniser,org.jsoup.parser.CharacterReader) -> a
-org.jsoup.parser.TokeniserState$21 -> bhg:
+org.jsoup.parser.TokeniserState$21 -> bhh:
     365:371:void read(org.jsoup.parser.Tokeniser,org.jsoup.parser.CharacterReader) -> a
-org.jsoup.parser.TokeniserState$22 -> bhh:
+org.jsoup.parser.TokeniserState$22 -> bhi:
     375:398:void read(org.jsoup.parser.Tokeniser,org.jsoup.parser.CharacterReader) -> a
-org.jsoup.parser.TokeniserState$23 -> bhi:
+org.jsoup.parser.TokeniserState$23 -> bhj:
     402:426:void read(org.jsoup.parser.Tokeniser,org.jsoup.parser.CharacterReader) -> a
-org.jsoup.parser.TokeniserState$24 -> bhj:
+org.jsoup.parser.TokeniserState$24 -> bhk:
     430:457:void read(org.jsoup.parser.Tokeniser,org.jsoup.parser.CharacterReader) -> a
-org.jsoup.parser.TokeniserState$25 -> bhk:
+org.jsoup.parser.TokeniserState$25 -> bhl:
     461:473:void read(org.jsoup.parser.Tokeniser,org.jsoup.parser.CharacterReader) -> a
-org.jsoup.parser.TokeniserState$26 -> bhl:
+org.jsoup.parser.TokeniserState$26 -> bhm:
     477:486:void read(org.jsoup.parser.Tokeniser,org.jsoup.parser.CharacterReader) -> a
-org.jsoup.parser.TokeniserState$27 -> bhm:
+org.jsoup.parser.TokeniserState$27 -> bhn:
     490:491:void read(org.jsoup.parser.Tokeniser,org.jsoup.parser.CharacterReader) -> a
-org.jsoup.parser.TokeniserState$28 -> bhn:
+org.jsoup.parser.TokeniserState$28 -> bho:
     495:496:void read(org.jsoup.parser.Tokeniser,org.jsoup.parser.CharacterReader) -> a
-org.jsoup.parser.TokeniserState$29 -> bho:
+org.jsoup.parser.TokeniserState$29 -> bhp:
     500:523:void read(org.jsoup.parser.Tokeniser,org.jsoup.parser.CharacterReader) -> a
-org.jsoup.parser.TokeniserState$3 -> bhp:
+org.jsoup.parser.TokeniserState$3 -> bhq:
     45:65:void read(org.jsoup.parser.Tokeniser,org.jsoup.parser.CharacterReader) -> a
-org.jsoup.parser.TokeniserState$30 -> bhq:
+org.jsoup.parser.TokeniserState$30 -> bhr:
     527:550:void read(org.jsoup.parser.Tokeniser,org.jsoup.parser.CharacterReader) -> a
-org.jsoup.parser.TokeniserState$31 -> bhr:
+org.jsoup.parser.TokeniserState$31 -> bhs:
     554:580:void read(org.jsoup.parser.Tokeniser,org.jsoup.parser.CharacterReader) -> a
-org.jsoup.parser.TokeniserState$32 -> bhs:
+org.jsoup.parser.TokeniserState$32 -> bht:
     584:591:void read(org.jsoup.parser.Tokeniser,org.jsoup.parser.CharacterReader) -> a
-org.jsoup.parser.TokeniserState$33 -> bht:
+org.jsoup.parser.TokeniserState$33 -> bhu:
     595:596:void read(org.jsoup.parser.Tokeniser,org.jsoup.parser.CharacterReader) -> a
-org.jsoup.parser.TokeniserState$34 -> bhu:
+org.jsoup.parser.TokeniserState$34 -> bhv:
     601:640:void read(org.jsoup.parser.Tokeniser,org.jsoup.parser.CharacterReader) -> a
-org.jsoup.parser.TokeniserState$35 -> bhv:
+org.jsoup.parser.TokeniserState$35 -> bhw:
     645:682:void read(org.jsoup.parser.Tokeniser,org.jsoup.parser.CharacterReader) -> a
-org.jsoup.parser.TokeniserState$36 -> bhw:
+org.jsoup.parser.TokeniserState$36 -> bhx:
     686:727:void read(org.jsoup.parser.Tokeniser,org.jsoup.parser.CharacterReader) -> a
-org.jsoup.parser.TokeniserState$37 -> bhx:
+org.jsoup.parser.TokeniserState$37 -> bhy:
     731:775:void read(org.jsoup.parser.Tokeniser,org.jsoup.parser.CharacterReader) -> a
-org.jsoup.parser.TokeniserState$38 -> bhy:
+org.jsoup.parser.TokeniserState$38 -> bhz:
     779:805:void read(org.jsoup.parser.Tokeniser,org.jsoup.parser.CharacterReader) -> a
-org.jsoup.parser.TokeniserState$39 -> bhz:
+org.jsoup.parser.TokeniserState$39 -> bia:
     809:835:void read(org.jsoup.parser.Tokeniser,org.jsoup.parser.CharacterReader) -> a
-org.jsoup.parser.TokeniserState$4 -> bia:
+org.jsoup.parser.TokeniserState$4 -> bib:
     69:75:void read(org.jsoup.parser.Tokeniser,org.jsoup.parser.CharacterReader) -> a
-org.jsoup.parser.TokeniserState$40 -> bib:
+org.jsoup.parser.TokeniserState$40 -> bic:
     839:882:void read(org.jsoup.parser.Tokeniser,org.jsoup.parser.CharacterReader) -> a
-org.jsoup.parser.TokeniserState$41 -> bic:
+org.jsoup.parser.TokeniserState$41 -> bid:
     887:913:void read(org.jsoup.parser.Tokeniser,org.jsoup.parser.CharacterReader) -> a
-org.jsoup.parser.TokeniserState$42 -> bid:
+org.jsoup.parser.TokeniserState$42 -> bie:
     917:932:void read(org.jsoup.parser.Tokeniser,org.jsoup.parser.CharacterReader) -> a
-org.jsoup.parser.TokeniserState$43 -> bie:
+org.jsoup.parser.TokeniserState$43 -> bif:
     938:945:void read(org.jsoup.parser.Tokeniser,org.jsoup.parser.CharacterReader) -> a
-org.jsoup.parser.TokeniserState$44 -> bif:
+org.jsoup.parser.TokeniserState$44 -> big:
     949:963:void read(org.jsoup.parser.Tokeniser,org.jsoup.parser.CharacterReader) -> a
-org.jsoup.parser.TokeniserState$45 -> big:
+org.jsoup.parser.TokeniserState$45 -> bih:
     967:991:void read(org.jsoup.parser.Tokeniser,org.jsoup.parser.CharacterReader) -> a
-org.jsoup.parser.TokeniserState$46 -> bih:
+org.jsoup.parser.TokeniserState$46 -> bii:
     995:1019:void read(org.jsoup.parser.Tokeniser,org.jsoup.parser.CharacterReader) -> a
-org.jsoup.parser.TokeniserState$47 -> bii:
+org.jsoup.parser.TokeniserState$47 -> bij:
     1023:1041:void read(org.jsoup.parser.Tokeniser,org.jsoup.parser.CharacterReader) -> a
-org.jsoup.parser.TokeniserState$48 -> bij:
+org.jsoup.parser.TokeniserState$48 -> bik:
     1045:1064:void read(org.jsoup.parser.Tokeniser,org.jsoup.parser.CharacterReader) -> a
-org.jsoup.parser.TokeniserState$49 -> bik:
+org.jsoup.parser.TokeniserState$49 -> bil:
     1068:1097:void read(org.jsoup.parser.Tokeniser,org.jsoup.parser.CharacterReader) -> a
-org.jsoup.parser.TokeniserState$5 -> bil:
+org.jsoup.parser.TokeniserState$5 -> bim:
     79:96:void read(org.jsoup.parser.Tokeniser,org.jsoup.parser.CharacterReader) -> a
-org.jsoup.parser.TokeniserState$50 -> bim:
+org.jsoup.parser.TokeniserState$50 -> bin:
     1101:1125:void read(org.jsoup.parser.Tokeniser,org.jsoup.parser.CharacterReader) -> a
-org.jsoup.parser.TokeniserState$51 -> bin:
+org.jsoup.parser.TokeniserState$51 -> bio:
     1129:1152:void read(org.jsoup.parser.Tokeniser,org.jsoup.parser.CharacterReader) -> a
-org.jsoup.parser.TokeniserState$52 -> bio:
+org.jsoup.parser.TokeniserState$52 -> bip:
     1156:1187:void read(org.jsoup.parser.Tokeniser,org.jsoup.parser.CharacterReader) -> a
-org.jsoup.parser.TokeniserState$53 -> bip:
+org.jsoup.parser.TokeniserState$53 -> biq:
     1191:1222:void read(org.jsoup.parser.Tokeniser,org.jsoup.parser.CharacterReader) -> a
-org.jsoup.parser.TokeniserState$54 -> biq:
+org.jsoup.parser.TokeniserState$54 -> bir:
     1226:1248:void read(org.jsoup.parser.Tokeniser,org.jsoup.parser.CharacterReader) -> a
-org.jsoup.parser.TokeniserState$55 -> bir:
+org.jsoup.parser.TokeniserState$55 -> bis:
     1252:1288:void read(org.jsoup.parser.Tokeniser,org.jsoup.parser.CharacterReader) -> a
-org.jsoup.parser.TokeniserState$56 -> bis:
+org.jsoup.parser.TokeniserState$56 -> bit:
     1292:1325:void read(org.jsoup.parser.Tokeniser,org.jsoup.parser.CharacterReader) -> a
-org.jsoup.parser.TokeniserState$57 -> bit:
+org.jsoup.parser.TokeniserState$57 -> biu:
     1329:1353:void read(org.jsoup.parser.Tokeniser,org.jsoup.parser.CharacterReader) -> a
-org.jsoup.parser.TokeniserState$58 -> biu:
+org.jsoup.parser.TokeniserState$58 -> biv:
     1357:1381:void read(org.jsoup.parser.Tokeniser,org.jsoup.parser.CharacterReader) -> a
-org.jsoup.parser.TokeniserState$59 -> biv:
+org.jsoup.parser.TokeniserState$59 -> biw:
     1385:1419:void read(org.jsoup.parser.Tokeniser,org.jsoup.parser.CharacterReader) -> a
-org.jsoup.parser.TokeniserState$6 -> biw:
+org.jsoup.parser.TokeniserState$6 -> bix:
     100:117:void read(org.jsoup.parser.Tokeniser,org.jsoup.parser.CharacterReader) -> a
-org.jsoup.parser.TokeniserState$60 -> bix:
+org.jsoup.parser.TokeniserState$60 -> biy:
     1423:1456:void read(org.jsoup.parser.Tokeniser,org.jsoup.parser.CharacterReader) -> a
-org.jsoup.parser.TokeniserState$61 -> biy:
+org.jsoup.parser.TokeniserState$61 -> biz:
     1460:1496:void read(org.jsoup.parser.Tokeniser,org.jsoup.parser.CharacterReader) -> a
-org.jsoup.parser.TokeniserState$62 -> biz:
+org.jsoup.parser.TokeniserState$62 -> bja:
     1500:1533:void read(org.jsoup.parser.Tokeniser,org.jsoup.parser.CharacterReader) -> a
-org.jsoup.parser.TokeniserState$63 -> bja:
+org.jsoup.parser.TokeniserState$63 -> bjb:
     1537:1561:void read(org.jsoup.parser.Tokeniser,org.jsoup.parser.CharacterReader) -> a
-org.jsoup.parser.TokeniserState$64 -> bjb:
+org.jsoup.parser.TokeniserState$64 -> bjc:
     1565:1589:void read(org.jsoup.parser.Tokeniser,org.jsoup.parser.CharacterReader) -> a
-org.jsoup.parser.TokeniserState$65 -> bjc:
+org.jsoup.parser.TokeniserState$65 -> bjd:
     1593:1616:void read(org.jsoup.parser.Tokeniser,org.jsoup.parser.CharacterReader) -> a
-org.jsoup.parser.TokeniserState$66 -> bjd:
+org.jsoup.parser.TokeniserState$66 -> bje:
     1620:1634:void read(org.jsoup.parser.Tokeniser,org.jsoup.parser.CharacterReader) -> a
-org.jsoup.parser.TokeniserState$67 -> bje:
+org.jsoup.parser.TokeniserState$67 -> bjf:
     1638:1642:void read(org.jsoup.parser.Tokeniser,org.jsoup.parser.CharacterReader) -> a
-org.jsoup.parser.TokeniserState$7 -> bjf:
+org.jsoup.parser.TokeniserState$7 -> bjg:
     121:135:void read(org.jsoup.parser.Tokeniser,org.jsoup.parser.CharacterReader) -> a
-org.jsoup.parser.TokeniserState$8 -> bjg:
+org.jsoup.parser.TokeniserState$8 -> bjh:
     140:161:void read(org.jsoup.parser.Tokeniser,org.jsoup.parser.CharacterReader) -> a
-org.jsoup.parser.TokeniserState$9 -> bjh:
+org.jsoup.parser.TokeniserState$9 -> bji:
     165:179:void read(org.jsoup.parser.Tokeniser,org.jsoup.parser.CharacterReader) -> a
-org.jsoup.parser.TreeBuilder -> bji:
+org.jsoup.parser.TreeBuilder -> bjj:
     org.jsoup.parser.CharacterReader reader -> c
     org.jsoup.parser.Tokeniser tokeniser -> d
     org.jsoup.nodes.Document doc -> doc
@@ -33976,7 +33989,7 @@ org.jsoup.parser.XmlTreeBuilder -> org.jsoup.parser.XmlTreeBuilder:
     89:91:void insert(org.jsoup.parser.Token$Doctype) -> a
     100:124:void popStackToClose(org.jsoup.parser.Token$EndTag) -> a
     127:129:java.util.List parseFragment(java.lang.String,java.lang.String,org.jsoup.parser.ParseErrorList) -> b
-org.jsoup.parser.XmlTreeBuilder$1 -> bjj:
+org.jsoup.parser.XmlTreeBuilder$1 -> bjk:
     int[] $SwitchMap$org$jsoup$parser$Token$TokenType -> a
 org.jsoup.safety.Cleaner -> org.jsoup.safety.Cleaner:
     org.jsoup.safety.Whitelist whitelist -> a
@@ -33986,8 +33999,8 @@ org.jsoup.safety.Cleaner -> org.jsoup.safety.Cleaner:
     124:139:org.jsoup.safety.Cleaner$ElementMeta createSafeElement(org.jsoup.nodes.Element) -> a
     23:23:org.jsoup.safety.Whitelist access$000(org.jsoup.safety.Cleaner) -> a
     23:23:org.jsoup.safety.Cleaner$ElementMeta access$100(org.jsoup.safety.Cleaner,org.jsoup.nodes.Element) -> a
-org.jsoup.safety.Cleaner$1 -> bjk:
-org.jsoup.safety.Cleaner$CleaningVisitor -> bjl:
+org.jsoup.safety.Cleaner$1 -> bjl:
+org.jsoup.safety.Cleaner$CleaningVisitor -> bjm:
     int numDiscarded -> b
     org.jsoup.nodes.Element root -> c
     org.jsoup.nodes.Element destination -> d
@@ -33995,7 +34008,7 @@ org.jsoup.safety.Cleaner$CleaningVisitor -> bjl:
     83:107:void head(org.jsoup.nodes.Node,int) -> head
     110:113:void tail(org.jsoup.nodes.Node,int) -> tail
     72:72:int access$300(org.jsoup.safety.Cleaner$CleaningVisitor) -> a
-org.jsoup.safety.Cleaner$ElementMeta -> bjm:
+org.jsoup.safety.Cleaner$ElementMeta -> bjn:
     org.jsoup.nodes.Element el -> a
     int numAttribsDiscarded -> b
 org.jsoup.safety.Whitelist -> org.jsoup.safety.Whitelist:
@@ -34018,37 +34031,37 @@ org.jsoup.safety.Whitelist -> org.jsoup.safety.Whitelist:
     340:355:boolean isSafeAttribute(java.lang.String,org.jsoup.nodes.Element,org.jsoup.nodes.Attribute) -> isSafeAttribute
     361:373:boolean testValidProtocol(org.jsoup.nodes.Element,org.jsoup.nodes.Attribute,java.util.Set) -> a
     377:385:org.jsoup.nodes.Attributes getEnforcedAttributes(java.lang.String) -> a
-org.jsoup.safety.Whitelist$AttributeKey -> bjn:
+org.jsoup.safety.Whitelist$AttributeKey -> bjo:
     406:406:org.jsoup.safety.Whitelist$AttributeKey valueOf(java.lang.String) -> a
-org.jsoup.safety.Whitelist$AttributeValue -> bjo:
+org.jsoup.safety.Whitelist$AttributeValue -> bjp:
     416:416:org.jsoup.safety.Whitelist$AttributeValue valueOf(java.lang.String) -> a
-org.jsoup.safety.Whitelist$Protocol -> bjp:
+org.jsoup.safety.Whitelist$Protocol -> bjq:
     426:426:org.jsoup.safety.Whitelist$Protocol valueOf(java.lang.String) -> a
-org.jsoup.safety.Whitelist$TagName -> bjq:
+org.jsoup.safety.Whitelist$TagName -> bjr:
     396:396:org.jsoup.safety.Whitelist$TagName valueOf(java.lang.String) -> a
-org.jsoup.safety.Whitelist$TypedValue -> bjr:
+org.jsoup.safety.Whitelist$TypedValue -> bjs:
     java.lang.String value -> a
     440:443:int hashCode() -> hashCode
     448:455:boolean equals(java.lang.Object) -> equals
     460:460:java.lang.String toString() -> toString
 org.jsoup.select.Collector -> org.jsoup.select.Collector:
     23:25:org.jsoup.select.Elements collect(org.jsoup.select.Evaluator,org.jsoup.nodes.Element) -> collect
-org.jsoup.select.Collector$Accumulator -> bjs:
+org.jsoup.select.Collector$Accumulator -> bjt:
     org.jsoup.nodes.Element root -> a
     org.jsoup.select.Elements elements -> b
     org.jsoup.select.Evaluator eval -> c
     40:45:void head(org.jsoup.nodes.Node,int) -> head
     49:49:void tail(org.jsoup.nodes.Node,int) -> tail
-org.jsoup.select.CombiningEvaluator -> bjt:
+org.jsoup.select.CombiningEvaluator -> bju:
     java.util.ArrayList evaluators -> a
     int num -> b
     30:30:org.jsoup.select.Evaluator rightMostEvaluator() -> a
     34:35:void replaceRightMostEvaluator(org.jsoup.select.Evaluator) -> a
     39:40:void updateNumEvaluators() -> b
-org.jsoup.select.CombiningEvaluator$And -> bju:
+org.jsoup.select.CombiningEvaluator$And -> bjv:
     53:58:boolean matches(org.jsoup.nodes.Element,org.jsoup.nodes.Element) -> matches
     63:63:java.lang.String toString() -> toString
-org.jsoup.select.CombiningEvaluator$Or -> bjv:
+org.jsoup.select.CombiningEvaluator$Or -> bjw:
     86:88:void add(org.jsoup.select.Evaluator) -> b
     92:97:boolean matches(org.jsoup.nodes.Element,org.jsoup.nodes.Element) -> matches
     102:102:java.lang.String toString() -> toString
@@ -34242,7 +34255,7 @@ org.jsoup.select.NodeTraversor -> org.jsoup.select.NodeTraversor:
 org.jsoup.select.NodeVisitor -> org.jsoup.select.NodeVisitor:
     void head(org.jsoup.nodes.Node,int) -> head
     void tail(org.jsoup.nodes.Node,int) -> tail
-org.jsoup.select.QueryParser -> bjw:
+org.jsoup.select.QueryParser -> bjx:
     java.lang.String[] combinators -> a
     java.lang.String[] AttributeEvals -> b
     org.jsoup.parser.TokenQueue tq -> c
@@ -34277,25 +34290,25 @@ org.jsoup.select.Selector -> org.jsoup.select.Selector:
     116:116:org.jsoup.select.Elements select() -> a
     121:133:org.jsoup.select.Elements filterOut(java.util.Collection,java.util.Collection) -> a
 org.jsoup.select.Selector$SelectorParseException -> org.jsoup.select.Selector$SelectorParseException:
-org.jsoup.select.StructuralEvaluator -> bjx:
+org.jsoup.select.StructuralEvaluator -> bjy:
     org.jsoup.select.Evaluator evaluator -> a
-org.jsoup.select.StructuralEvaluator$Has -> bjy:
+org.jsoup.select.StructuralEvaluator$Has -> bjz:
     23:27:boolean matches(org.jsoup.nodes.Element,org.jsoup.nodes.Element) -> matches
     31:31:java.lang.String toString() -> toString
-org.jsoup.select.StructuralEvaluator$ImmediateParent -> bjz:
+org.jsoup.select.StructuralEvaluator$ImmediateParent -> bka:
     78:82:boolean matches(org.jsoup.nodes.Element,org.jsoup.nodes.Element) -> matches
     86:86:java.lang.String toString() -> toString
-org.jsoup.select.StructuralEvaluator$ImmediatePreviousSibling -> bka:
+org.jsoup.select.StructuralEvaluator$ImmediatePreviousSibling -> bkb:
     121:125:boolean matches(org.jsoup.nodes.Element,org.jsoup.nodes.Element) -> matches
     129:129:java.lang.String toString() -> toString
-org.jsoup.select.StructuralEvaluator$Not -> bkb:
+org.jsoup.select.StructuralEvaluator$Not -> bkc:
     41:41:boolean matches(org.jsoup.nodes.Element,org.jsoup.nodes.Element) -> matches
     45:45:java.lang.String toString() -> toString
-org.jsoup.select.StructuralEvaluator$Parent -> bkc:
+org.jsoup.select.StructuralEvaluator$Parent -> bkd:
     55:64:boolean matches(org.jsoup.nodes.Element,org.jsoup.nodes.Element) -> matches
     68:68:java.lang.String toString() -> toString
-org.jsoup.select.StructuralEvaluator$PreviousSibling -> bkd:
+org.jsoup.select.StructuralEvaluator$PreviousSibling -> bke:
     96:107:boolean matches(org.jsoup.nodes.Element,org.jsoup.nodes.Element) -> matches
     111:111:java.lang.String toString() -> toString
-org.jsoup.select.StructuralEvaluator$Root -> bke:
+org.jsoup.select.StructuralEvaluator$Root -> bkf:
     13:13:boolean matches(org.jsoup.nodes.Element,org.jsoup.nodes.Element) -> matches

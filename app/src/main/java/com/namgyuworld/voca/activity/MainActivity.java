@@ -48,7 +48,10 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private VocaSeekBar mVocaSeekBar;
 
     // Decide to exit the application or not.
-    private boolean exitFlag;
+    private boolean isBackKeyPressed = false;
+    // Is no more showing toast message?
+    private boolean isNoMoreToast = false;
+    private Toast warningToast;
 
     SharedPrefUtil mPref;
 
@@ -72,6 +75,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
         LOG.i(TAG, "onCreate()");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        warningToast = Toast.makeText(this, "Press one more time to exit", Toast.LENGTH_SHORT);
 
         init();
 
@@ -312,23 +317,26 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
     @Override
     public void onBackPressed() {
-        if (exitFlag) {
+        if (isBackKeyPressed) {
             // Save current page
 //            mPref.setCurrentPage(pager.getCurrentItem());
             /**
              * No need to save current page, cause you've already done that before terminating the application.
              */
-
+            warningToast.cancel();
+            isNoMoreToast = true;
             super.onBackPressed();
-
         }
 
-        exitFlag = true;
-        Toast.makeText(MainActivity.this, "Press one more time to exit.", Toast.LENGTH_SHORT).show();
+        isBackKeyPressed = true;
+
+        if(!isNoMoreToast)
+            warningToast.show();
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                exitFlag = false;
+                isBackKeyPressed = false;
             }
         }, 2000);
     }
