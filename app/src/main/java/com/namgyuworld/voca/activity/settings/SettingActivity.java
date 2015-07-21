@@ -13,13 +13,13 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import com.namgyuworld.utility.Logger;
 import com.namgyuworld.voca.R;
 import com.namgyuworld.voca.activity.view.FilebrowserActivity;
 import com.namgyuworld.voca.customview.SearchVocaDatabase;
 import com.namgyuworld.voca.database.VocaDBOpenHelper;
 import com.namgyuworld.voca.service.AutoDownloadAudioService;
 import com.namgyuworld.voca.util.AppUtil;
-import com.namgyuworld.voca.util.Logger;
 import com.namgyuworld.voca.util.SharedPrefUtil;
 import com.namgyuworld.voca.util.convert.StringUtil;
 import com.namgyuworld.voca.util.filepath.FilePath;

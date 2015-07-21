@@ -2,7 +2,6 @@ package com.namgyuworld.voca.customview;
 
 import android.annotation.TargetApi;
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Build;
@@ -16,9 +15,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.namgyuworld.utility.Logger;
 import com.namgyuworld.voca.R;
 import com.namgyuworld.voca.database.VocaDBOpenHelper;
-import com.namgyuworld.voca.util.Logger;
 import com.namgyuworld.voca.util.convert.StringUtil;
 
 /**

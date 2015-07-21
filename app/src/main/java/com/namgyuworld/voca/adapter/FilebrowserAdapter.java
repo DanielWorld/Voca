@@ -11,16 +11,15 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.namgyuworld.utility.Logger;
 import com.namgyuworld.utility.file.FilePath;
 import com.namgyuworld.utility.file.FileUtil;
 import com.namgyuworld.voca.R;
 import com.namgyuworld.voca.model.FilebrowserModel;
-import com.namgyuworld.voca.util.Logger;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 
 /**
  * Created by danielpark on 5/31/15.

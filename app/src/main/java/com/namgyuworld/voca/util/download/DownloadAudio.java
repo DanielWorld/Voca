@@ -2,7 +2,7 @@ package com.namgyuworld.voca.util.download;
 
 import android.os.AsyncTask;
 
-import com.namgyuworld.voca.util.Logger;
+import com.namgyuworld.utility.Logger;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -10,7 +10,6 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 
 /**

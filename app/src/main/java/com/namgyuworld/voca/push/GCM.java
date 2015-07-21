@@ -3,11 +3,21 @@ package com.namgyuworld.voca.push;
 import android.content.Context;
 import android.os.AsyncTask;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import com.namgyuworld.utility.Logger;
+import com.namgyuworld.utility.StringUtil;
+import com.namgyuworld.utility.cryptography.CryptoUtil;
+import com.namgyuworld.voca.network.URLs;
 import com.namgyuworld.voca.push.model.PushContentsItem;
 import com.namgyuworld.voca.push.util.ConvertJavaToJson;
 import com.namgyuworld.voca.push.util.GoogleCloudMessaging;
 import com.namgyuworld.voca.util.AppUtil;
-import com.namgyuworld.voca.util.Logger;
 import com.namgyuworld.voca.util.SharedPrefUtil;
 
 import java.io.BufferedReader;
@@ -17,6 +27,10 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.crypto.SecretKey;
 
 /**
  * Created by Daniel Park on 2015-04-12.
@@ -36,7 +50,8 @@ public class GCM {
         /**
          * Google Developer console project number
          */
-        final String SENDER_ID = "This is sender id (project number)";
+//        final String SENDER_ID = "This is sender id (project number)";
+        final String SENDER_ID = "451697939073";
 
         mPref = new SharedPrefUtil(mContext);
         gcm = GoogleCloudMessaging.getInstance(mContext);
@@ -54,7 +69,10 @@ public class GCM {
                 if (previousVersionCode == currentVersionCode && mPref.getAppVersionCode() != 0) {
                     LOG.i(TAG, "Same versionCode.. No need to request Registration ID");
 //                    return "previous registraion ID";
-                    return mPref.getGCMRegistrationID();
+                    // If GCM registration id exists
+                    if(!StringUtil.isNullorEmpty(mPref.getGCMRegistrationID())) {
+                        return mPref.getGCMRegistrationID();
+                    }
                 } else {
                     LOG.i(TAG, "Different versionCode. Request new Registration ID");
                     // Initialize the record that previous redId was sent to Server
@@ -79,15 +97,17 @@ public class GCM {
                     LOG.i(TAG, "Try to send GCM regId to server");
                     mPref.setGCMRegIdToServer(true);
                     // Send to Server your registration ID
-                    sendRegIDtoServer(regId);
+                    sendRegIDtoServer(mContext, regId);
                 }
                 return regId;
             }
 
             @Override
-            protected void onPostExecute(String s) {
+            protected void onPostExecute(String savedRegID) {
                 // This is for push notification test
 //                 sendPushToGCM("skdfjklds", "dfjldskfjkl");
+                // TEST...
+                sendRegIDtoServer(mContext, savedRegID);
             }
         }.execute();
     }
@@ -95,9 +115,35 @@ public class GCM {
     /**
      * Send registration ID to Server
      */
-    private static void sendRegIDtoServer(String regId) {
-        //...
-        //...
+    private static void sendRegIDtoServer(final Context context, final String regId) {
+
+        // Use volley
+        RequestQueue mRequestQueue = Volley.newRequestQueue(context);
+        StringRequest request = new StringRequest(URLs.getURL(URLs.ConnectionMethod.SEND_REG_ID), new Response.Listener<String>(){
+
+            @Override
+            public void onResponse(String response) {
+
+                LOG.i(TAG, "response: " + response);
+
+            }
+        },
+        new Response.ErrorListener(){
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                LOG.i(TAG, "error: " + error.getMessage());
+            }
+        }){
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String> header = new HashMap<>();
+                header.put("Authorization", "key=" + com.namgyuworld.utility.AppUtil.getAppKeyHash(context));
+                header.put("Reg_ID", "key=" + regId);
+//                return super.getHeaders();
+                return header;
+            }
+        };
+        mRequestQueue.add(request);
     }
 
     /**

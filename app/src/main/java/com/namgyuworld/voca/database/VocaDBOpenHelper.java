@@ -6,10 +6,10 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.namgyuworld.utility.Logger;
 import com.namgyuworld.voca.activity.MainActivity;
 import com.namgyuworld.voca.model.VocaPOJO;
 import com.namgyuworld.voca.util.Consts;
-import com.namgyuworld.voca.util.Logger;
 import com.namgyuworld.voca.util.convert.StringUtil;
 
 import java.util.ArrayList;

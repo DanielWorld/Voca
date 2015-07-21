@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.google.android.gms.analytics.GoogleAnalytics;
 import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
+import com.namgyuworld.utility.Logger;
 import com.namgyuworld.voca.MyApplication;
 import com.namgyuworld.voca.R;
 import com.namgyuworld.voca.adapter.MainPagerAdapter;
@@ -23,9 +24,7 @@ import com.namgyuworld.voca.customview.TopMenuBar;
 import com.namgyuworld.voca.customview.VocaSeekBar;
 import com.namgyuworld.voca.database.VocaDBOpenHelper;
 import com.namgyuworld.voca.model.VocaPOJO;
-import com.namgyuworld.voca.util.AppUtil;
 import com.namgyuworld.voca.util.Consts;
-import com.namgyuworld.voca.util.Logger;
 import com.namgyuworld.voca.util.SharedPrefUtil;
 import com.namgyuworld.voca.util.convert.ZeroUtil;
 
@@ -64,13 +63,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
     //-----------------------------------------------------------------------------
     @Override
     public void onCreate(Bundle savedInstanceState) {
-
-        if (AppUtil.isDebuggable(getApplicationContext())) {
-            LOG.enableLog();  // Enable Log...
-        } else {
-            LOG.disableLog(); // Disable Log...
-//            LOG.enableLog(); // Disable Log...
-        }
 
         LOG.i(TAG, "onCreate()");
         super.onCreate(savedInstanceState);

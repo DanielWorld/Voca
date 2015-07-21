@@ -2,7 +2,7 @@ package com.namgyuworld.voca.util.media;
 
 import android.media.MediaPlayer;
 
-import com.namgyuworld.voca.util.Logger;
+import com.namgyuworld.utility.Logger;
 
 /**
  * Created by Daniel Park on 2015-04-11.

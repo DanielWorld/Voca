@@ -8,9 +8,9 @@ import android.content.Intent;
 import android.os.SystemClock;
 import android.widget.Toast;
 
+import com.namgyuworld.utility.Logger;
 import com.namgyuworld.voca.database.VocaDBOpenHelper;
 import com.namgyuworld.voca.model.VocaPOJO;
-import com.namgyuworld.voca.util.Logger;
 import com.namgyuworld.voca.util.download.DownloadAudio;
 import com.namgyuworld.voca.util.filepath.FilePath;
 

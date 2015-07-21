@@ -1,6 +1,6 @@
 package com.namgyuworld.voca.util.convert;
 
-import com.namgyuworld.voca.util.Logger;
+import com.namgyuworld.utility.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
