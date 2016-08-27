@@ -1,6 +1,7 @@
 package com.namgyuworld.voca.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -9,6 +10,7 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,6 +21,7 @@ import com.google.android.gms.analytics.Tracker;
 import com.namgyuworld.utility.Logger;
 import com.namgyuworld.voca.MyApplication;
 import com.namgyuworld.voca.R;
+import com.namgyuworld.voca.activity.voca.SearchVocaActivity;
 import com.namgyuworld.voca.adapter.MainPagerAdapter;
 import com.namgyuworld.voca.customview.TopMenuBar;
 import com.namgyuworld.voca.customview.VocaSeekBar;
@@ -68,7 +71,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        warningToast = Toast.makeText(this, "Press one more time to exit", Toast.LENGTH_SHORT);
+        warningToast = Toast.makeText(this, R.string.exit_message, Toast.LENGTH_SHORT);
 
         init();
 
@@ -150,6 +153,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
         // ImageView
         findViewById(R.id.voca_left).setOnClickListener(this);
         findViewById(R.id.voca_right).setOnClickListener(this);
+
+        // Add voca
+        findViewById(R.id.voca_add).setOnClickListener(this);
     }
 
 
@@ -164,12 +170,15 @@ public class MainActivity extends Activity implements View.OnClickListener {
             case R.id.voca_left:
                 if(currentViewIndex > 0)
                     pager.setCurrentItem(currentViewIndex - 1);
-
                 break;
             case R.id.voca_right:
                 if(currentViewIndex < totalViews - 1)
                     pager.setCurrentItem(currentViewIndex + 1);
-
+                break;
+            case R.id.voca_add:
+                Intent i = new Intent(this, SearchVocaActivity.class);
+//                i.putExtra(Consts.SEARCH_WORD_KEY, mEditText.getText().toString());
+                startActivity(i);
                 break;
         }
     }

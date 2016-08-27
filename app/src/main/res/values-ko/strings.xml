@@ -39,4 +39,11 @@
     <string name="voca_add_voca">단어</string>
     <string name="voca_add_meaning">의미/예제</string>
 
+    <!-- Description -->
+    <string name="voca_description_search">단어 검색</string>
+    <string name="voca_description_sound">발음 듣기</string>
+    <string name="voca_description_delete">단어 삭제</string>
+    <string name="voca_description_settings">설정 열기</string>
+
+    <string name="exit_message">한번 더 클릭할 시 종료됩니다</string>
 </resources>

@@ -8,7 +8,9 @@
         android:id="@+id/topMenuBar_above"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="8dp"
         android:orientation="horizontal"
+        android:background="@android:color/holo_orange_light"
         android:layout_alignParentTop="true">
 
         <TextView
@@ -24,31 +26,45 @@
             android:textStyle="bold"/>
 
 
-        <ImageButton
+        <ImageView
             android:id="@+id/voca_search"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@android:drawable/ic_menu_search"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginLeft="4dp"
+            android:src="@drawable/ic_search_white_36dp"
+            android:contentDescription="@string/voca_description_search"
             />
-        <ImageButton
+
+        <ImageView
             android:id="@+id/voca_sound"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@android:drawable/ic_lock_silent_mode_off"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginLeft="4dp"
+            android:src="@drawable/ic_volume_up_white_36dp"
+            android:contentDescription="@string/voca_description_sound"
             />
 
 
-        <ImageButton
+        <ImageView
             android:id="@+id/voca_delete"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@android:drawable/ic_notification_clear_all"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginLeft="4dp"
+            android:src="@drawable/ic_delete_forever_white_36dp"
+            android:contentDescription="@string/voca_description_delete"
             />
-        <ImageButton
+
+        <ImageView
             android:id="@+id/voca_setting"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@android:drawable/ic_menu_today"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginLeft="4dp"
+            android:src="@drawable/ic_settings_white_36dp"
+            android:contentDescription="@string/voca_description_settings"
             />
 
         </LinearLayout>

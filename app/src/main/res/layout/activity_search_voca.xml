@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="5dp">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="5dp">
 
-    <com.namgyuworld.voca.customview.TopMenuBarForWebview
+    <include
+        layout="@layout/view_topmenubar_webview"
         android:id="@+id/topMenuBar_for_webview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -15,37 +16,48 @@
         android:layout_height="match_parent"
         android:layout_below="@+id/topMenuBar_for_webview"
         android:orientation="vertical"
-        android:weightSum="2">
-
+        >
 
         <LinearLayout
             android:id="@+id/search_voca_layout"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="vertical">
-        </LinearLayout>
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"></LinearLayout>
 
         <ScrollView
             android:layout_width="match_parent"
-            android:scrollbars="none"
-            android:layout_height="0dp"
-            android:layout_weight="1">
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
 
             <TextView
                 android:id="@+id/result_of_voca_search"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:text="Searching..."
                 android:textIsSelectable="true"
-                />
+                android:textSize="18sp" />
 
-            </ScrollView>
-
-
-
-
+        </ScrollView>
     </LinearLayout>
 
+    <RelativeLayout
+        android:id="@+id/voca_add"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/holo_orange_light">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/voca_add_title"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:drawableLeft="@drawable/ic_file_download_white_36dp"
+            android:drawablePadding="7dp"
+            android:layout_centerInParent="true"/>
+
+    </RelativeLayout>
 </RelativeLayout>

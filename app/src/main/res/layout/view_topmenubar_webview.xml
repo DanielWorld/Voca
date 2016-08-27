@@ -1,68 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
-              android:layout_height="match_parent">
+              android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@android:color/holo_orange_light">
 
-    <ImageButton
-        android:id="@+id/voca_search_in_webview_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_alignParentRight="true"
-        android:src="@android:drawable/ic_menu_search"/>
+    <!-- Top View -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:padding="5dp">
 
-    <EditText
-        android:id="@+id/voca_search_in_webview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:lines="1"
-        android:singleLine="true"
-        android:maxWidth="100dp"
-        android:inputType="textPersonName"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:background="@android:color/transparent"
-        android:layout_centerVertical="true"
-        android:layout_toLeftOf="@+id/voca_search_in_webview_btn"
-        android:hint="Search word"/>
+        <!-- Vocabulary -->
+        <TextView
+            android:layout_margin="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vocabulary"
+            android:maxLines="1"
+            android:lines="1"
+            android:singleLine="true"
+            android:layout_alignParentLeft="true"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_centerVertical="true"
+            android:id="@+id/voca_that_we_need_to_search_for"/>
 
-    <ImageView
-        android:layout_margin="5dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toLeftOf="@+id/voca_search_in_webview"
-        android:layout_centerVertical="true"
-        android:src="@android:drawable/ic_input_add"
-        android:id="@+id/voca_add_custom"/>
+        <!-- Search Voca-->
+        <ImageView
+            android:id="@+id/voca_search_in_webview_btn"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_search_white_36dp"
+            android:layout_alignParentRight="true"
+            android:contentDescription="@string/voca_description_search"/>
 
-    <ImageView
-        android:layout_margin="5dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toLeftOf="@+id/voca_add_custom"
-        android:layout_centerVertical="true"
-        android:src="@android:drawable/btn_star_big_on"
-        android:adjustViewBounds="true"
-        android:id="@+id/voca_add"/>
-
-    <TextView
-        android:layout_margin="5dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Vocabulary"
-        android:lines="1"
-        android:singleLine="true"
-        android:layout_alignParentLeft="true"
-        android:layout_centerVertical="true"
-        android:layout_toLeftOf="@+id/voca_add"
-        android:id="@+id/voca_that_we_need_to_search_for"/>
-
-
-
-
-
-
-
-
-
-</RelativeLayout>
+        <!-- Search Voca -->
+        <EditText
+            android:id="@+id/voca_search_in_webview"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textSize="20sp"
+            android:inputType="textPersonName"
+            android:layout_centerVertical="true"
+            android:background="@android:color/transparent"
+            android:layout_toLeftOf="@+id/voca_search_in_webview_btn"
+            android:hint="@string/voca_description_search"
+            />
+    </RelativeLayout>
+</LinearLayout>

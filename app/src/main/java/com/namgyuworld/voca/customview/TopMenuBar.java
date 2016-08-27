@@ -15,9 +15,6 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import com.google.android.gms.ads.AdListener;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.InterstitialAd;
 import com.namgyuworld.utility.Logger;
 import com.namgyuworld.voca.activity.MainActivity;
 import com.namgyuworld.voca.R;
@@ -46,11 +43,6 @@ public class TopMenuBar extends LinearLayout implements View.OnClickListener {
 
     // TTS voice
     private TextToSpeech mTTS;
-
-    /**
-     * InterstitialAd (Google Admob)
-     */
-    InterstitialAd mInterstitialAd;
 
     public TopMenuBar(Context context) {
         super(context);
@@ -87,18 +79,7 @@ public class TopMenuBar extends LinearLayout implements View.OnClickListener {
         v.findViewById(R.id.delete_voca_type_word).setOnClickListener(this); // Delete Vocabulary typed word
         addView(v);
 
-        // InterstitialAd (Google Admob)
-        mInterstitialAd = new InterstitialAd(mContext);
-        mInterstitialAd.setAdUnitId("ca-app-pub-9259248617591148/6779675913"); // This is real admob unit id
-//        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712"); // This is test admob unit id
         requestNewInterstitial(mContext);
-        mInterstitialAd.setAdListener(new AdListener() {
-            @Override
-            public void onAdClosed() {
-                requestNewInterstitial(mContext);
-                goToSearchVocaActivity(mContext);
-            }
-        });
     }
 
     /**
@@ -168,13 +149,6 @@ public class TopMenuBar extends LinearLayout implements View.OnClickListener {
     }
 
     private void requestNewInterstitial(Context ctx) {
-        // When you try to get addTestDevice, just by using Logcat - tag : 'Ads', you get hashed device id
-        // If it matches with test device, ad will show test image page.
-        AdRequest adRequest = new AdRequest.Builder()
-                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
-                .build();
-
-        mInterstitialAd.loadAd(adRequest);
     }
 
     /**
@@ -184,13 +158,9 @@ public class TopMenuBar extends LinearLayout implements View.OnClickListener {
      */
     public void goToSearchVocaActivity(Context mContext) {
         if (!StringUtil.isNullorEmpty(mEditText.getText().toString())) {
-            if (mInterstitialAd.isLoaded()) {
-                mInterstitialAd.show();
-            } else {
                 Intent i = new Intent(mContext, SearchVocaActivity.class);
                 i.putExtra(Consts.SEARCH_WORD_KEY, mEditText.getText().toString());
                 mContext.startActivity(i);
-            }
         }
         else{
             Toast.makeText(mContext, "빈 칸을 채워주세요.", Toast.LENGTH_SHORT).show();

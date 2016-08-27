@@ -4,6 +4,7 @@ import android.app.Application;
 
 import com.google.android.gms.analytics.GoogleAnalytics;
 import com.google.android.gms.analytics.Tracker;
+import com.squareup.leakcanary.LeakCanary;
 
 import java.util.HashMap;
 
@@ -14,6 +15,12 @@ public class MyApplication extends Application{
 
 
     private final String PROPERTY_ID = "UA-57192962-2";
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        LeakCanary.install(this);
+    }
 
     /**
      * Enum used to identify the tracker that needs to be used for tracking.

@@ -8,52 +8,69 @@
         android:id="@+id/topMenuBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"/>
+        android:layout_alignParentTop="true" />
 
     <com.namgyuworld.voca.customview.VocaSeekBar
+        android:id="@+id/voca_seekBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/voca_seekBar"
-        android:splitTrack="false"
         android:layout_below="@+id/topMenuBar"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:splitTrack="false" />
 
     <RelativeLayout
+        android:id="@+id/voca_add"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/holo_orange_light">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/voca_add_title"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:drawableLeft="@drawable/ic_file_download_white_36dp"
+            android:drawablePadding="7dp"
+            android:layout_centerInParent="true"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/view_pager_frame"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/view_pager_frame"
         android:layout_below="@+id/voca_seekBar"
-        >
+        android:layout_above="@+id/voca_add">
 
         <ImageView
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:src="@android:drawable/ic_media_rew"
             android:id="@+id/voca_left"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
-            android:layout_alignParentLeft="true"/>
+            android:src="@android:drawable/ic_media_rew" />
 
 
         <ImageView
+            android:id="@+id/voca_right"
             android:layout_width="35dp"
             android:layout_height="35dp"
-            android:src="@android:drawable/ic_media_ff"
-            android:id="@+id/voca_right"
+            android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:layout_alignParentRight="true"/>
+            android:src="@android:drawable/ic_media_ff" />
 
         <android.support.v4.view.ViewPager
-            android:background="@drawable/viewpager"
-            android:layout_margin="5dp"
-            android:layout_toRightOf="@+id/voca_left"
-            android:layout_toLeftOf="@+id/voca_right"
             android:id="@+id/view_pager"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        </android.support.v4.view.ViewPager>
-        </RelativeLayout>
-
-
-
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_toLeftOf="@+id/voca_right"
+            android:layout_toRightOf="@+id/voca_left"
+            android:background="@drawable/viewpager"/>
+    </RelativeLayout>
 
 </RelativeLayout>

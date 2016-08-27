@@ -38,4 +38,12 @@
     <string name="voca_add_title">Add vocabulary</string>
     <string name="voca_add_voca">Voca</string>
     <string name="voca_add_meaning">Meaning/Example</string>
+
+    <!-- Description -->
+    <string name="voca_description_search">Search Voca</string>
+    <string name="voca_description_sound">Listen Pronounce</string>
+    <string name="voca_description_delete">Delete Voca</string>
+    <string name="voca_description_settings">Open Settings</string>
+
+    <string name="exit_message">Press one more time to exit</string>
 </resources>

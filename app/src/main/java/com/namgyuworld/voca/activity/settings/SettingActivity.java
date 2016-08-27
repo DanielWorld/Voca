@@ -51,16 +51,6 @@ public class SettingActivity extends Activity implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND,
-                WindowManager.LayoutParams.FLAG_DIM_BEHIND);
-        WindowManager.LayoutParams params = this.getWindow().getAttributes();
-        params.alpha = 1.0f;
-        params.dimAmount = 0.5f;
-        this.getWindow().setAttributes((android.view.WindowManager.LayoutParams) params);
-
-        // This sets the window size, while working around the IllegalStateException thrown by ActionBarView
-        this.getWindow().setLayout(AppUtil.displayWidth(this) * 9 / 10, AppUtil.displayHeight(this) * 10 / 13 );
         setContentView(R.layout.activity_setting);
 
         init();
@@ -76,6 +66,9 @@ public class SettingActivity extends Activity implements View.OnClickListener {
         mSearchVocaDBView = (SearchVocaDatabase) findViewById(R.id.search_voca_in_DB);
         mSearchVocaDBImage = (ImageView) findViewById(R.id.search_voca_in_DB_img);
         vocaSeekBarVisibility = (CheckBox) findViewById(R.id.voca_seekbar_checkBox);
+
+        // Daniel (2016-08-27 16:42:32): TEST (구글 인앱 결제 관련)
+        findViewById(R.id.testView).setOnClickListener(this);
 
         backupDB.setOnClickListener(this);
         loadDB.setOnClickListener(this);
@@ -134,6 +127,10 @@ public class SettingActivity extends Activity implements View.OnClickListener {
                 break;
             case R.id.download_mp3_files:
                 AutoDownloadAudioService.startService(SettingActivity.this);
+                break;
+
+            case R.id.testView:
+
                 break;
         }
     }

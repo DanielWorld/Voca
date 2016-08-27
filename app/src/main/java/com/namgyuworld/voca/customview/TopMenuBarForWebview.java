@@ -28,10 +28,10 @@ public class TopMenuBarForWebview extends LinearLayout implements View.OnClickLi
     private Logger LOG = Logger.getInstance();
 
     private Context mContext;
-    private TextView tv;
+    private TextView vocaTitle;
     private String contents = "";
 
-    private EditText mEditText;
+    private EditText vocaSearchInWebView;
 
     private Handler h;
 
@@ -64,12 +64,12 @@ public class TopMenuBarForWebview extends LinearLayout implements View.OnClickLi
     private void initialize(Context mContext) {
         this.mContext = mContext;
         View v = LayoutInflater.from(mContext).inflate(R.layout.view_topmenubar_webview, null);
-        v.findViewById(R.id.voca_add).setOnClickListener(this);
-        v.findViewById(R.id.voca_add_custom).setOnClickListener(this);
-        tv = (TextView) v.findViewById(R.id.voca_that_we_need_to_search_for);
-        tv.setOnClickListener(this);
+//        v.findViewById(R.id.voca_add).setOnClickListener(this);
+//        v.findViewById(R.id.voca_add_custom).setOnClickListener(this);
+        vocaTitle = (TextView) v.findViewById(R.id.voca_that_we_need_to_search_for);
+        vocaTitle.setOnClickListener(this);
 
-        mEditText = (EditText) v.findViewById(R.id.voca_search_in_webview);
+        vocaSearchInWebView = (EditText) v.findViewById(R.id.voca_search_in_webview);
         v.findViewById(R.id.voca_search_in_webview_btn).setOnClickListener(this);
 
         addView(v);
@@ -81,7 +81,7 @@ public class TopMenuBarForWebview extends LinearLayout implements View.OnClickLi
      * @param word
      */
     public void setWord(String word) {
-        tv.setText(StringUtil.setNullToEmpty(word));
+        vocaTitle.setText(StringUtil.setNullToEmpty(word));
         LOG.i(TAG, word);
     }
 
@@ -91,7 +91,7 @@ public class TopMenuBarForWebview extends LinearLayout implements View.OnClickLi
     }
 
     public String getWord() {
-        return this.tv.getText().toString();
+        return this.vocaTitle.getText().toString();
     }
 
     public String getContents() {
@@ -104,50 +104,50 @@ public class TopMenuBarForWebview extends LinearLayout implements View.OnClickLi
             case R.id.voca_add:
             case R.id.voca_that_we_need_to_search_for:
                 new VocaDBOpenHelper(mContext).saveVoca(getWord(), getContents());
-                Toast.makeText(mContext, tv.getText().toString() + " is saved in DB", Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext, vocaTitle.getText().toString() + " is saved in DB", Toast.LENGTH_SHORT).show();
                 break;
-            case R.id.voca_add_custom:
-                View view = LayoutInflater.from(mContext).inflate(R.layout.view_add_voca_custom, null);
-
-                final EditText vocaEdit = (EditText) view.findViewById(R.id.editText);
-                final EditText contentEdit = (EditText) view.findViewById(R.id.editText2);
-
-                // Show new dialog message
-                new AlertDialog.Builder(mContext).setView(view)
-                        .setPositiveButton(getResources().getString(R.string.yes), new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-
-                                if(!StringUtil.isNullorEmpty(vocaEdit.getText().toString()) && !StringUtil.isNullorEmpty(contentEdit.getText().toString())) {
-
-                                    new VocaDBOpenHelper(mContext).saveVoca(vocaEdit.getText().toString(), contentEdit.getText().toString());
-                                    Toast.makeText(mContext, vocaEdit.getText().toString() + " is saved in DB", Toast.LENGTH_SHORT).show();
-                                }
-                                else{
-                                    Toast.makeText(mContext, "Fill in the blank", Toast.LENGTH_SHORT).show();
-                                }
-                            }
-                        })
-                        .setNegativeButton(getResources().getString(R.string.no), new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-
-                            }
-                        })
-                        .create().show();
-                break;
+//            case R.id.voca_add_custom:
+//                View view = LayoutInflater.from(mContext).inflate(R.layout.view_add_voca_custom, null);
+//
+//                final EditText vocaEdit = (EditText) view.findViewById(R.id.editText);
+//                final EditText contentEdit = (EditText) view.findViewById(R.id.editText2);
+//
+//                // Show new dialog message
+//                new AlertDialog.Builder(mContext).setView(view)
+//                        .setPositiveButton(getResources().getString(R.string.yes), new DialogInterface.OnClickListener() {
+//                            @Override
+//                            public void onClick(DialogInterface dialog, int which) {
+//
+//                                if(!StringUtil.isNullorEmpty(vocaEdit.getText().toString()) && !StringUtil.isNullorEmpty(contentEdit.getText().toString())) {
+//
+//                                    new VocaDBOpenHelper(mContext).saveVoca(vocaEdit.getText().toString(), contentEdit.getText().toString());
+//                                    Toast.makeText(mContext, vocaEdit.getText().toString() + " is saved in DB", Toast.LENGTH_SHORT).show();
+//                                }
+//                                else{
+//                                    Toast.makeText(mContext, "Fill in the blank", Toast.LENGTH_SHORT).show();
+//                                }
+//                            }
+//                        })
+//                        .setNegativeButton(getResources().getString(R.string.no), new DialogInterface.OnClickListener() {
+//                            @Override
+//                            public void onClick(DialogInterface dialog, int which) {
+//
+//                            }
+//                        })
+//                        .create().show();
+//                break;
             case R.id.voca_search_in_webview_btn:
 
-                if(StringUtil.isNullorEmpty(mEditText.getText().toString())) {
+                if(StringUtil.isNullorEmpty(vocaSearchInWebView.getText().toString())) {
                     return;
                 }
                 else {
 
                     Message msg = Message.obtain();
                     msg.what = 12345;
-                    msg.obj = mEditText.getText().toString();
-                    // then clear mEditText
-                    mEditText.setText("");
+                    msg.obj = vocaSearchInWebView.getText().toString();
+                    // then clear vocaSearchInWebView
+                    vocaSearchInWebView.setText("");
 
                     h.sendMessage(msg);
                 }

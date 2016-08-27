@@ -1,16 +1,23 @@
 package com.namgyuworld.voca.activity.voca;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -25,7 +32,7 @@ import com.google.android.gms.analytics.Tracker;
 import com.namgyuworld.utility.Logger;
 import com.namgyuworld.voca.MyApplication;
 import com.namgyuworld.voca.R;
-import com.namgyuworld.voca.customview.TopMenuBarForWebview;
+import com.namgyuworld.voca.database.VocaDBOpenHelper;
 import com.namgyuworld.voca.util.Consts;
 import com.namgyuworld.voca.util.convert.StringUtil;
 import com.namgyuworld.voca.util.convert.Regex;
@@ -45,7 +52,7 @@ import java.util.Map;
  * <br><br>
  * Created by Daniel Park on 2015-04-09.
  */
-public class SearchVocaActivity extends Activity {
+public class SearchVocaActivity extends Activity implements View.OnClickListener {
 
     final String URL = "http://www.google.com/search?q=define:";
 
@@ -53,13 +60,17 @@ public class SearchVocaActivity extends Activity {
     private Logger LOG = Logger.getInstance();
 
     private Map<String, String> mHeaders = new HashMap<String, String>(); // It is used to put Header to WebView
-    private String word; // The 'word' that you wanna search for.
+    private String word = ""; // The 'word' that you wanna search for.
 
     private WebView mWebView;
     private ProgressDialog pd; // Progress dialog
-    private TextView tv;
+    private TextView vocaSearchResult;
 
-    private TopMenuBarForWebview mTopMenuBar;
+    private TextView vocaTitle;
+    private EditText vocaSearchInWebview;
+    private String contents;
+
+    private RelativeLayout vocaAdd;
 
     private Handler handler = new Handler(){
         @Override
@@ -82,15 +93,28 @@ public class SearchVocaActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_voca);
 
-        Bundle data = getIntent().getExtras();
-        word = data.getString(Consts.SEARCH_WORD_KEY);
+        if (getIntent() != null && getIntent().getExtras() != null) {
+            Bundle data = getIntent().getExtras();
+            word = data.getString(Consts.SEARCH_WORD_KEY);
+        }
 
-        mTopMenuBar = (TopMenuBarForWebview) findViewById(R.id.topMenuBar_for_webview);
-        mTopMenuBar.setWord(word); // save word which you're searching for.
-        mTopMenuBar.setHandler(handler);
+        if (StringUtil.isNullorEmpty(word))
+            Toast.makeText(SearchVocaActivity.this, R.string.hint_search_voca_in_db, Toast.LENGTH_SHORT).show();
 
         LinearLayout mLayout = (LinearLayout) findViewById(R.id.search_voca_layout);
-        tv = (TextView) findViewById(R.id.result_of_voca_search);
+        vocaSearchResult = (TextView) findViewById(R.id.result_of_voca_search);
+
+        vocaAdd = (RelativeLayout) findViewById(R.id.voca_add);
+        vocaTitle = (TextView) findViewById(R.id.voca_that_we_need_to_search_for);
+        vocaSearchInWebview = (EditText) findViewById(R.id.voca_search_in_webview);
+
+        findViewById(R.id.voca_search_in_webview_btn).setOnClickListener(this);
+        vocaAdd.setOnClickListener(this);
+        vocaTitle.setOnClickListener(this);
+        vocaSearchInWebview.setOnClickListener(this);
+
+        // Set word
+        vocaTitle.setText(word);
 
         mWebView = new WebView(this);
         mWebView.getSettings().setJavaScriptEnabled(true);
@@ -164,6 +188,9 @@ public class SearchVocaActivity extends Activity {
      * Get the result of searching word..
      */
     private void getSearchResult() {
+
+        if (StringUtil.isNullorEmpty(word))
+            return;
 
         startProgressDialog(); // Start progress dialog
 
@@ -240,10 +267,10 @@ public class SearchVocaActivity extends Activity {
                     }
                     result += "\n";
                 }
-                tv.setText(word + result);
+                vocaSearchResult.setText(word + result);
                 // update real word
-                mTopMenuBar.setWord(word);
-                mTopMenuBar.setVocaContents(result);
+                setWord(word);
+                setVocaContents(result);
 
                 stopProgressDialog(); // Stop progress dialog
             }
@@ -265,4 +292,86 @@ public class SearchVocaActivity extends Activity {
         };
         mRequestQueue.add(request);
     }
-}
+
+    public void setWord(String word) {
+        vocaTitle.setText(StringUtil.setNullToEmpty(word));
+        LOG.i(TAG, word);
+    }
+
+    public void setVocaContents(String contents) {
+        this.contents = StringUtil.setNullToEmpty(contents);
+        LOG.i(TAG, contents);
+    }
+
+    public String getWord() {
+        return this.vocaTitle.getText().toString();
+    }
+
+    public String getContents() {
+        return this.contents;
+    }
+
+    @Override
+    public void onClick(View v) {
+        final int id = v.getId();
+
+        switch (id){
+            case R.id.voca_add:
+            case R.id.voca_that_we_need_to_search_for:
+                if (StringUtil.isNullorEmpty(getWord())) {
+                    Toast.makeText(SearchVocaActivity.this, R.string.hint_search_voca_in_db, Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                new VocaDBOpenHelper(SearchVocaActivity.this).saveVoca(getWord(), getContents());
+                Toast.makeText(SearchVocaActivity.this, vocaTitle.getText().toString() + " is saved in DB", Toast.LENGTH_SHORT).show();
+                break;
+//            case R.id.voca_add_custom:
+//                View view = LayoutInflater.from(SearchVocaActivity.this).inflate(R.layout.view_add_voca_custom, null);
+//
+//                final EditText vocaEdit = (EditText) view.findViewById(R.id.editText);
+//                final EditText contentEdit = (EditText) view.findViewById(R.id.editText2);
+//
+//                // Show new dialog message
+//                new AlertDialog.Builder(SearchVocaActivity.this).setView(view)
+//                        .setPositiveButton(getResources().getString(R.string.yes), new DialogInterface.OnClickListener() {
+//                            @Override
+//                            public void onClick(DialogInterface dialog, int which) {
+//
+//                                if(!StringUtil.isNullorEmpty(vocaEdit.getText().toString()) && !StringUtil.isNullorEmpty(contentEdit.getText().toString())) {
+//
+//                                    new VocaDBOpenHelper(SearchVocaActivity.this).saveVoca(vocaEdit.getText().toString(), contentEdit.getText().toString());
+//                                    Toast.makeText(SearchVocaActivity.this, vocaEdit.getText().toString() + " is saved in DB", Toast.LENGTH_SHORT).show();
+//                                }
+//                                else{
+//                                    Toast.makeText(SearchVocaActivity.this, "Fill in the blank", Toast.LENGTH_SHORT).show();
+//                                }
+//                            }
+//                        })
+//                        .setNegativeButton(getResources().getString(R.string.no), new DialogInterface.OnClickListener() {
+//                            @Override
+//                            public void onClick(DialogInterface dialog, int which) {
+//
+//                            }
+//                        })
+//                        .create().show();
+//                break;
+            case R.id.voca_search_in_webview_btn:
+
+                if(StringUtil.isNullorEmpty(vocaSearchInWebview.getText().toString())) {
+                    return;
+                }
+                else {
+
+                    Message msg = Message.obtain();
+                    msg.what = 12345;
+                    msg.obj = vocaSearchInWebview.getText().toString();
+                    // then clear vocaSearchInWebview
+                    vocaSearchInWebview.setText("");
+
+                    handler.sendMessage(msg);
+                }
+                break;
+        }
+        }
+    }
