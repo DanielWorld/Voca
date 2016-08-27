@@ -14,6 +14,7 @@
     <string name="setting_load_voca_db_title">Load voca database</string>
     <string name="setting_download_mp3_file_title">Download mp3 files</string>
     <string name="setting_voca_seekbar_visibility_title">Voca seekBar visibility</string>
+    <string name="settings_sponsor_title">Sponsor to Developer</string>
 
     <!-- Setting question -->
     <string name="setting_backup_db_question">Do you wanna back up database file?</string>
@@ -46,4 +47,5 @@
     <string name="voca_description_settings">Open Settings</string>
 
     <string name="exit_message">Press one more time to exit</string>
+
 </resources>

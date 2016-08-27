@@ -14,6 +14,7 @@
     <string name="setting_load_voca_db_title">단어장 불러오기</string>
     <string name="setting_download_mp3_file_title">단어장 mp3 파일 다운로드</string>
     <string name="setting_voca_seekbar_visibility_title">네비게이션바 보이기 여부 설정</string>
+    <string name="settings_sponsor_title">개발자 후원하기</string>
 
     <!-- Setting question -->
     <string name="setting_backup_db_question">단어장 데이터를 백업할까요?</string>

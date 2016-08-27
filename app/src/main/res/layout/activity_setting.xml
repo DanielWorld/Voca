@@ -187,7 +187,7 @@
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/testView"
+            android:id="@+id/sponsorView"
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:background="@drawable/counter_trans_bg">
@@ -195,7 +195,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:text="TEST"/>
+                android:text="@string/settings_sponsor_title"/>
         </RelativeLayout>
     </LinearLayout>
 

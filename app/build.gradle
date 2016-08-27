@@ -8,8 +8,8 @@ android {
         applicationId "com.namgyuworld.voca"
         minSdkVersion 14
         targetSdkVersion 22
-        versionCode 15
-        versionName "1.1.5"
+        versionCode 16
+        versionName "1.1.6"
     }
     buildTypes {
         release {

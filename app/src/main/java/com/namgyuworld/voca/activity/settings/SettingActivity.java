@@ -6,7 +6,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
@@ -19,7 +18,6 @@ import com.namgyuworld.voca.activity.view.FilebrowserActivity;
 import com.namgyuworld.voca.customview.SearchVocaDatabase;
 import com.namgyuworld.voca.database.VocaDBOpenHelper;
 import com.namgyuworld.voca.service.AutoDownloadAudioService;
-import com.namgyuworld.voca.util.AppUtil;
 import com.namgyuworld.voca.util.SharedPrefUtil;
 import com.namgyuworld.voca.util.convert.StringUtil;
 import com.namgyuworld.voca.util.filepath.FilePath;
@@ -68,7 +66,7 @@ public class SettingActivity extends Activity implements View.OnClickListener {
         vocaSeekBarVisibility = (CheckBox) findViewById(R.id.voca_seekbar_checkBox);
 
         // Daniel (2016-08-27 16:42:32): TEST (구글 인앱 결제 관련)
-        findViewById(R.id.testView).setOnClickListener(this);
+        findViewById(R.id.sponsorView).setOnClickListener(this);
 
         backupDB.setOnClickListener(this);
         loadDB.setOnClickListener(this);
@@ -129,7 +127,7 @@ public class SettingActivity extends Activity implements View.OnClickListener {
                 AutoDownloadAudioService.startService(SettingActivity.this);
                 break;
 
-            case R.id.testView:
+            case R.id.sponsorView:
 
                 break;
         }
