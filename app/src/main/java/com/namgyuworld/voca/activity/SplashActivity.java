@@ -1,10 +1,17 @@
 package com.namgyuworld.voca.activity;
 
+import android.Manifest;
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.provider.Settings;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.namgyuworld.utility.Logger;
 import com.namgyuworld.voca.BuildConfig;
@@ -21,6 +28,8 @@ import com.namgyuworld.voca.util.AppUtil;
 public class SplashActivity extends Activity {
 
     private Logger LOG = Logger.getInstance();
+
+    final int REQUEST_PERMISSION = 1001;
 
     TextView appVersionView;
 
@@ -51,6 +60,15 @@ public class SplashActivity extends Activity {
         } catch (Exception ignore) {
         }
 
+        // Daniel (2016-08-27 17:35:16): Check permissions
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED
+                || checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, REQUEST_PERMISSION);
+                return;
+            }
+        }
+
         mHandler = new Handler();
         mRunnable = new Runnable() {
             @Override
@@ -61,6 +79,44 @@ public class SplashActivity extends Activity {
         };
 
         mHandler.postDelayed(mRunnable, 2000);
+    }
+
+    @TargetApi(Build.VERSION_CODES.M)
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        if (requestCode == REQUEST_PERMISSION) {
+
+            // Daniel (2016-08-01 11:19:11): Not matched!
+            if (permissions.length != grantResults.length) {
+                finish();
+                return;
+            }
+
+            for (int index = 0; index < grantResults.length; index++) {
+                if (grantResults[index] != PackageManager.PERMISSION_GRANTED) {
+                    if (!shouldShowRequestPermissionRationale(permissions[index])) {
+                        Toast.makeText(SplashActivity.this, R.string.required_permissions_message, Toast.LENGTH_LONG).show();
+
+                        // Daniel (2016-05-02 12:00:45): Let them move to permission settings page
+                        Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS,
+                                Uri.fromParts("package", getPackageName(), null));
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
+                        startActivity(intent);
+                        // 종료
+                        finish();
+                    } else {
+                        finish();
+                    }
+                } else {
+                    startActivity(new Intent(SplashActivity.this, MainActivity.class));
+                    finish();
+                }
+            }
+        } else {
+            super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
     }
 
     @Override

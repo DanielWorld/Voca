@@ -48,4 +48,6 @@
 
     <string name="exit_message">Press one more time to exit</string>
 
+    <string name="required_permissions_message">You Must allow the app to access permissions!</string>
+
 </resources>

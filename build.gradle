@@ -17,3 +17,15 @@ allprojects {
         jcenter()
     }
 }
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+// Daniel (2016-05-21 15:33:25): 서로 dependency 가 있는 라이브러리들의 버전은 이곳에서 한번에 관리
+ext {
+    // App dependencies
+    supportLibraryVersion = '24.2.0'
+    googlePlayServiceVersion = '9.4.0'
+    espressoVersion = '2.2.2'
+}

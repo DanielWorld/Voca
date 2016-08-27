@@ -47,4 +47,6 @@
     <string name="voca_description_settings">설정 열기</string>
 
     <string name="exit_message">한번 더 클릭할 시 종료됩니다</string>
+
+    <string name="required_permissions_message">해당 퍼미션들을 반드시 허용을 해야합니다.</string>
 </resources>

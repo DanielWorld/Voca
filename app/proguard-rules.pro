@@ -1,3 +1,6 @@
+#http://proguard.sourceforge.net/manual/examples.html
+#http://proguard.sourceforge.net/manual/usage.html
+
 ##---------------Begin: proguard configuration common for all Android apps ----------
 -optimizationpasses 5
 -dontusemixedcaseclassnames
@@ -26,6 +29,7 @@
 -keep public class * extends android.preference.Preference
 -keep public class com.android.vending.licensing.ILicensingService
 -dontnote com.android.vending.licensing.ILicensingService
+-keep public class * extends java.lang.Exception
 
 # Explicitly preserve all serialization members. The Serializable interface
 # is only a marker interface, so it wouldn't save them.
@@ -72,16 +76,45 @@
 }
 ##---------------End: proguard configuration common for all Android apps ----------
 
+##---------------Begin: proguard configuration for Gson  ----------
+# Gson uses generic type information stored in a class file when working with fields. Proguard
+# removes such information by default, so configure it to keep all of it.
+-keepattributes Signature
+
+# For using GSON @Expose annotation
+-keepattributes *Annotation*
+
+# Gson specific classes
+-keep class sun.misc.Unsafe { *; }
+#-keep class com.google.gson.stream.** { *; }
+
+# Application classes that will be serialized/deserialized over Gson
+-keep class com.google.gson.examples.android.model.** { *; }
+
+##---------------End: proguard configuration for Gson  ----------
+
+# Naver Login
+-keep public class com.nhn.android.naverlogin.** {
+       public protected *;
+}
+
+## avoid proguard issues!
+-keep class org.**  {  *;  }
+-dontwarn org.**
+-dontwarn okio.**
+
+# Coordinator.Behavior
+-keep public class * extends android.support.design.widget.CoordinatorLayout$Behavior {
+    public <init>(android.content.Context, android.util.AttributeSet);
+}
+##---------------End: proguard configuration common for all Android apps ----------
+
 ##---------------Begin: Volley library --------------------
 -keep class com.android.volley.** { *; }
 
 ##---------------End: Volley library ----------------------
 
--dontwarn com.squareup.haha.guava.**
--dontwarn com.squareup.haha.perflib.**
--dontwarn com.squareup.haha.trove.**
 -dontwarn com.squareup.leakcanary.**
--keep class com.squareup.haha.** { *; }
 -keep class com.squareup.leakcanary.** { *; }
 
 # Marshmallow removed Notification.setLatestEventInfo()
