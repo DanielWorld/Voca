@@ -103,6 +103,9 @@
 -dontwarn org.**
 -dontwarn okio.**
 
+-keep class com.samsung.** { *; }
+-dontwarn com.samsung.**
+
 # Coordinator.Behavior
 -keep public class * extends android.support.design.widget.CoordinatorLayout$Behavior {
     public <init>(android.content.Context, android.util.AttributeSet);

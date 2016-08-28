@@ -1,6 +1,7 @@
 package com.namgyuworld.voca.util.convert;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
 
@@ -13,44 +14,34 @@ public class ConvertDipPixel {
 
     /**
      * Convert dip to pixel according to current display screen
-     * @param mApplicationContext - I want you to deliver getApplicationContext()
      * @param dip
      * @return pixel
      */
-    public static int ConvertDipToPixel(Context mApplicationContext, float dip){
-        // Get device display metrics
-        DisplayMetrics metrics = mApplicationContext.getResources().getDisplayMetrics();
-
-        int pixel = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dip, metrics);
-        return pixel;
+    public static int ConvertDipToPixel(float dip){
+        DisplayMetrics metrics;
+        try {
+            metrics = Resources.getSystem().getDisplayMetrics();
+            return (int) TypedValue.applyDimension(
+                    TypedValue.COMPLEX_UNIT_DIP,
+                    dip,
+                    metrics);
+        } catch (Exception e) {
+            return 0;
+        }
     }
 
     /**
      * Convert pixel to dip according to current display screen
-     * @param mApplicationContext - I want you to deliver getApplicationContext()
      * @param pixel
      * @return dip
      */
-    public static float ConvertPixelToDip(Context mApplicationContext, int pixel){
-        // Get device display metrics
-        DisplayMetrics metrics = mApplicationContext.getResources().getDisplayMetrics();
-
-        float dip = pixel / (metrics.densityDpi / 160f);
-        return dip;
+    public static float ConvertPixelToDip(int pixel){
+        DisplayMetrics metrics;
+        try{
+            metrics = Resources.getSystem().getDisplayMetrics();
+            return Math.round(pixel / metrics.density);
+        }catch (Exception e){
+            return 0;
+        }
     }
-
-    /**
-     * Convert pixel to sp according to current display screen
-     * @param mApplicationContext
-     * @param sp
-     * @return
-     */
-    public static int ConvertSPToPixel(Context mApplicationContext, float sp){
-        // Get device display metrics
-        DisplayMetrics metrics = mApplicationContext.getResources().getDisplayMetrics();
-
-        int pix = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, sp, metrics);
-        return pix;
-    }
-
 }

@@ -28,7 +28,7 @@ public class SharedPrefUtil {
      * @param versionCode
      */
     public void setAppVersionCode(int versionCode){
-        mPref.edit().putInt(KEY_VERSION_CODE, versionCode).commit();
+        mPref.edit().putInt(KEY_VERSION_CODE, versionCode).apply();
     }
 
     /**
@@ -44,7 +44,7 @@ public class SharedPrefUtil {
      * @param regId
      */
     public void setGCMRegistrationID(String regId){
-        mPref.edit().putString(KEY_GCM_REG_ID, regId).commit();
+        mPref.edit().putString(KEY_GCM_REG_ID, regId).apply();
     }
 
     /**
@@ -60,7 +60,7 @@ public class SharedPrefUtil {
      * @param flag
      */
     public void setGCMRegIdToServer(boolean flag){
-        mPref.edit().putBoolean(KEY_SEND_GCM_REG_ID_TO_SERVER, flag).commit();
+        mPref.edit().putBoolean(KEY_SEND_GCM_REG_ID_TO_SERVER, flag).apply();
     }
 
     /**
@@ -75,7 +75,7 @@ public class SharedPrefUtil {
      * Save the current page
      */
     public void setCurrentPage(int position){
-        mPref.edit().putInt(KEY_CURRENT_PAGE, position).commit();
+        mPref.edit().putInt(KEY_CURRENT_PAGE, position).apply();
     }
     /**
      * Load the current page
@@ -88,14 +88,14 @@ public class SharedPrefUtil {
      * @param size
      */
     public void setVocaFontSize(int size){
-        mPref.edit().putInt(KEY_VOCA_FONT_SIZE, size).commit();
+        mPref.edit().putInt(KEY_VOCA_FONT_SIZE, size).apply();
     }
     /**
      * Get voca font size
      * @return
      */
     public int getVocaFontSize(){
-        return mPref.getInt(KEY_VOCA_FONT_SIZE, 10);
+        return mPref.getInt(KEY_VOCA_FONT_SIZE, 15);
     }
 
     /**
@@ -103,7 +103,7 @@ public class SharedPrefUtil {
      * @param size
      */
     public void setVocaFontContentSize(int size){
-        mPref.edit().putInt(KEY_VOCA_FONT_CONTENT_SIZE, size).commit();
+        mPref.edit().putInt(KEY_VOCA_FONT_CONTENT_SIZE, size).apply();
     }
 
     /**
@@ -111,7 +111,7 @@ public class SharedPrefUtil {
      * @return
      */
     public int getVocaFontContentSize(){
-        return mPref.getInt(KEY_VOCA_FONT_CONTENT_SIZE, 10);
+        return mPref.getInt(KEY_VOCA_FONT_CONTENT_SIZE, 15);
     }
 
     /**
@@ -119,7 +119,7 @@ public class SharedPrefUtil {
      * @param flag
      */
     public void setVocaSeekBarVisible(boolean flag){
-        mPref.edit().putBoolean(KEY_SEEK_BAR_STATE, flag).commit();
+        mPref.edit().putBoolean(KEY_SEEK_BAR_STATE, flag).apply();
     }
 
     /**

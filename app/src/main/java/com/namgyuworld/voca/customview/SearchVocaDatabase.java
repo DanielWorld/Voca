@@ -47,9 +47,9 @@ public class SearchVocaDatabase extends AutoCompleteTextView{
         // Set hint message
         setHint(context.getString(R.string.hint_search_voca_in_db));
         // set Text size to 12sp
-        setTextSize(ConvertDipPixel.ConvertSPToPixel(context, 6.0f));
+        setTextSize(12.0f);
         // Set max width
-        setMaxWidth(ConvertDipPixel.ConvertDipToPixel(context, 150.0f));
+        setMaxWidth(ConvertDipPixel.ConvertDipToPixel(200.0f));
         // Set lines
         setMaxLines(1);
 

@@ -341,20 +341,4 @@ public class MainActivity extends Activity implements View.OnClickListener {
             }
         }, 2000);
     }
-
-    /**
-     * This is keyboard event
-     */
-    @Override
-    public boolean onKeyUp(int keyCode, KeyEvent event) {
-        switch(keyCode) {
-            case KeyEvent.KEYCODE_ENTER:
-                // When you click keycode enter, go to search voca activity
-                // Disable ENTER KEY function.
-                mTopMenuBar.goToSearchVocaActivity(MainActivity.this);
-                return false;
-            default:
-                return super.onKeyUp(keyCode, event);
-        }
-    }
 }

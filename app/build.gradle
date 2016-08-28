@@ -46,6 +46,10 @@ dependencies {
     compile "com.android.support:appcompat-v7:$rootProject.ext.supportLibraryVersion"
     compile 'com.google.android.gms:play-services-analytics:7.0.0'
     compile 'com.android.support:recyclerview-v7:+'
+
+    // https://mvnrepository.com/artifact/org.jsoup/jsoup
+    compile "org.jsoup:jsoup:1.9.2"
+
     // Daniel (2016-05-27 15:33:42): 메모리 누수 체크 라이브러리 추가
     debugCompile 'com.squareup.leakcanary:leakcanary-android:1.4-beta2'
     releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.4-beta2'

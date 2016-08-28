@@ -8,11 +8,14 @@ import android.content.Intent;
 import android.os.Build;
 import android.speech.tts.TextToSpeech;
 import android.util.AttributeSet;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.namgyuworld.utility.Logger;
@@ -80,6 +83,20 @@ public class TopMenuBar extends LinearLayout implements View.OnClickListener {
         addView(v);
 
         requestNewInterstitial(mContext);
+
+        mEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView textView, int actionId, KeyEvent keyEvent) {
+                switch (actionId) {
+                    case EditorInfo.IME_ACTION_SEARCH:
+                        goToSearchVocaActivity(getContext());
+                        break;
+                    default:
+                        return false;
+                }
+                return true;
+            }
+        });
     }
 
     /**

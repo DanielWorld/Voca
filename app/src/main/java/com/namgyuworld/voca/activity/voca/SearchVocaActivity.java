@@ -8,12 +8,15 @@ import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -66,6 +69,7 @@ public class SearchVocaActivity extends Activity implements View.OnClickListener
     private ProgressDialog pd; // Progress dialog
     private TextView vocaSearchResult;
 
+    private ImageView vocaSearchBtn;
     private TextView vocaTitle;
     private EditText vocaSearchInWebview;
     private String contents;
@@ -107,11 +111,26 @@ public class SearchVocaActivity extends Activity implements View.OnClickListener
         vocaAdd = (RelativeLayout) findViewById(R.id.voca_add);
         vocaTitle = (TextView) findViewById(R.id.voca_that_we_need_to_search_for);
         vocaSearchInWebview = (EditText) findViewById(R.id.voca_search_in_webview);
+        vocaSearchBtn = (ImageView) findViewById(R.id.voca_search_in_webview_btn);
 
-        findViewById(R.id.voca_search_in_webview_btn).setOnClickListener(this);
         vocaAdd.setOnClickListener(this);
         vocaTitle.setOnClickListener(this);
         vocaSearchInWebview.setOnClickListener(this);
+        vocaSearchBtn.setOnClickListener(this);
+
+        vocaSearchInWebview.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView textView, int actionId, KeyEvent keyEvent) {
+                switch (actionId) {
+                    case EditorInfo.IME_ACTION_SEARCH:
+                        onClick(vocaSearchBtn);
+                        break;
+                    default:
+                        return false;
+                }
+                return true;
+            }
+        });
 
         // Set word
         vocaTitle.setText(word);
@@ -313,8 +332,9 @@ public class SearchVocaActivity extends Activity implements View.OnClickListener
 
     @Override
     public void onClick(View v) {
-        final int id = v.getId();
+        if (v == null) return;
 
+        final int id = v.getId();
         switch (id){
             case R.id.voca_add:
             case R.id.voca_that_we_need_to_search_for:
