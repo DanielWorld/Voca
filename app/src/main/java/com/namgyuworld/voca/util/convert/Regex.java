@@ -1,6 +1,7 @@
 package com.namgyuworld.voca.util.convert;
 
-import com.namgyuworld.utility.Logger;
+
+import com.namgyuworld.voca.util.logger.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +13,6 @@ import java.util.regex.Pattern;
  */
 public class Regex {
 
-    private static final String TAG = Regex.class.getSimpleName();
     private static Logger LOG = Logger.getInstance();
 
     /**
@@ -47,18 +47,18 @@ public class Regex {
      * @return
      */
     public String convertToOnlyAlphabets(String word){
-        LOG.i(TAG, "Previous word : " + word);
+        LOG.i("Previous word : " + word);
 
         String changedWord = "";
 
-        LOG.i(TAG, "Online word : " + word);
+        LOG.i("Online word : " + word);
         // Only alphabet characters are accepted..
         String[] a = word.split("");
         List<String> newVoca = new ArrayList<String>();
         for(String str : a){
             if(Pattern.matches("[a-zA-z]+", str)){
                 newVoca.add(str);
-                LOG.i(TAG, "patterning string : " + str);
+                LOG.i("patterning string : " + str);
             }
         }
         // List to String
@@ -66,7 +66,7 @@ public class Regex {
             changedWord += s;
         }
 
-        LOG.i(TAG, "Changed word :" + word);
+        LOG.i("Changed word :" + word);
         return changedWord;
     }
 

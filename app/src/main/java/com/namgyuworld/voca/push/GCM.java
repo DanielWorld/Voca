@@ -10,7 +10,6 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.namgyuworld.utility.Logger;
 import com.namgyuworld.utility.StringUtil;
 import com.namgyuworld.utility.cryptography.CryptoUtil;
 import com.namgyuworld.voca.network.URLs;
@@ -19,6 +18,7 @@ import com.namgyuworld.voca.push.util.ConvertJavaToJson;
 import com.namgyuworld.voca.push.util.GoogleCloudMessaging;
 import com.namgyuworld.voca.util.AppUtil;
 import com.namgyuworld.voca.util.SharedPrefUtil;
+import com.namgyuworld.voca.util.logger.Logger;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
@@ -67,14 +67,14 @@ public class GCM {
                 int previousVersionCode = mPref.getAppVersionCode();
 
                 if (previousVersionCode == currentVersionCode && mPref.getAppVersionCode() != 0) {
-                    LOG.i(TAG, "Same versionCode.. No need to request Registration ID");
+                    LOG.i("Same versionCode.. No need to request Registration ID");
 //                    return "previous registraion ID";
                     // If GCM registration id exists
                     if(!StringUtil.isNullorEmpty(mPref.getGCMRegistrationID())) {
                         return mPref.getGCMRegistrationID();
                     }
                 } else {
-                    LOG.i(TAG, "Different versionCode. Request new Registration ID");
+                    LOG.i("Different versionCode. Request new Registration ID");
                     // Initialize the record that previous redId was sent to Server
                     mPref.setGCMRegIdToServer(false);
                 }
@@ -82,9 +82,9 @@ public class GCM {
                 String regId = "";
                 try {
                     regId = gcm.register(SENDER_ID);
-                    LOG.i(TAG, "Registraion ID : \n" + regId);
+                    LOG.i("Registraion ID : \n" + regId);
                 } catch (Exception e) {
-                    LOG.e(TAG, e.getMessage());
+                    LOG.e(e.getMessage());
                 }
 
                 // Save app versionCode to Sharedpreferences
@@ -94,7 +94,7 @@ public class GCM {
 
                 // Check if regid was sent to Server
                 if (!mPref.isGCMRegIdToServer()) {
-                    LOG.i(TAG, "Try to send GCM regId to server");
+                    LOG.i("Try to send GCM regId to server");
                     mPref.setGCMRegIdToServer(true);
                     // Send to Server your registration ID
                     sendRegIDtoServer(mContext, regId);
@@ -124,14 +124,14 @@ public class GCM {
             @Override
             public void onResponse(String response) {
 
-                LOG.i(TAG, "response: " + response);
+                LOG.i("response: " + response);
 
             }
         },
         new Response.ErrorListener(){
             @Override
             public void onErrorResponse(VolleyError error) {
-                LOG.i(TAG, "error: " + error.getMessage());
+                LOG.i("error: " + error.getMessage());
             }
         }){
             @Override
@@ -205,7 +205,7 @@ public class GCM {
 
                     // Get the response
                     int responseCode = conn.getResponseCode();
-                    LOG.i(TAG, "response code : " + responseCode);
+                    LOG.i("response code : " + responseCode);
 
 
                     BufferedReader in = new BufferedReader(
@@ -219,14 +219,14 @@ public class GCM {
                     in.close();
 
                     // Print result
-                    LOG.i(TAG, response.toString());
+                    LOG.i(response.toString());
 
                 } catch (MalformedURLException e) {
-                    LOG.e(TAG, e.getMessage());
+                    LOG.e(e.getMessage());
                 } catch (IOException e) {
-                    LOG.e(TAG, e.getMessage());
+                    LOG.e(e.getMessage());
                 } catch (Exception e) {
-                    LOG.e(TAG, e.getMessage());
+                    LOG.e(e.getMessage());
                 }
                 return null;
             }

@@ -18,7 +18,6 @@ import android.widget.Toast;
 import com.google.android.gms.analytics.GoogleAnalytics;
 import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
-import com.namgyuworld.utility.Logger;
 import com.namgyuworld.voca.MyApplication;
 import com.namgyuworld.voca.R;
 import com.namgyuworld.voca.activity.voca.SearchVocaActivity;
@@ -30,6 +29,7 @@ import com.namgyuworld.voca.model.VocaPOJO;
 import com.namgyuworld.voca.util.Consts;
 import com.namgyuworld.voca.util.SharedPrefUtil;
 import com.namgyuworld.voca.util.convert.ZeroUtil;
+import com.namgyuworld.voca.util.logger.Logger;
 
 import java.util.List;
 
@@ -38,7 +38,6 @@ import java.util.List;
  */
 public class MainActivity extends Activity implements View.OnClickListener {
 
-    private final String TAG = MainActivity.class.getSimpleName();
     private Logger LOG = Logger.getInstance();
 
     private ViewPager pager = null;
@@ -67,7 +66,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     @Override
     public void onCreate(Bundle savedInstanceState) {
 
-        LOG.i(TAG, "onCreate()");
+        LOG.i("onCreate()");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -95,7 +94,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                     // Change Seekbar as well
                     mVocaSeekBar.setProgress(position);
                 } catch (Exception e) {
-                    LOG.e(TAG, e.getMessage());
+                    LOG.e(e.getMessage());
                 }
             }
 
@@ -121,7 +120,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
                 switch (msg.what) {
                     case Consts.DELETE_VOCA:
-                        LOG.i(TAG, "Delete the current vocabulary. and refresh the page");
+                        LOG.i("Delete the current vocabulary. and refresh the page");
                         // Remove this vocabulary from database.
                         new VocaDBOpenHelper(MainActivity.this).removeVoca(pager.getCurrentItem());
                         break;
@@ -197,7 +196,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
     @Override
     protected void onStart() {
-        LOG.i(TAG, "onStart()");
+        LOG.i("onStart()");
         // Start Google Analytics tracking
         GoogleAnalytics.getInstance(this).reportActivityStart(this);
         super.onStart();
@@ -206,7 +205,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
     @Override
     protected void onStop() {
-        LOG.i(TAG, "onStop()");
+        LOG.i("onStop()");
         // Stop Google Analytics tracking
         GoogleAnalytics.getInstance(this).reportActivityStop(this);
         super.onStop();
@@ -216,9 +215,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
     protected void onResume() {
         super.onResume();
 
-        LOG.i(TAG, "onResume()");
+        LOG.i("onResume()");
         RefreshVocaPage();
-        LOG.i(TAG, "pagerAdapter getCount(): " + pagerAdapter.getCount());
+        LOG.i("pagerAdapter getCount(): " + pagerAdapter.getCount());
 
         // Voca seekbar state
         mVocaSeekBar.setMax(ZeroUtil.convertMinusToZero(pagerAdapter.getCount() - 1));
@@ -277,11 +276,11 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 // Make sure to deliver word to TopMenuBar.class
                 mTopMenuBar.setCurrentWord(mList.get(mPref.getCurrentPage()).getVocaWord());
             } catch (Exception e) {
-                LOG.e(TAG, e.getMessage());
+                LOG.e(e.getMessage());
                 // If something is wrong, just forget to that page
             }
         } catch (Exception e) {
-            LOG.e(TAG, e.getMessage());
+            LOG.e(e.getMessage());
         }
     }
 

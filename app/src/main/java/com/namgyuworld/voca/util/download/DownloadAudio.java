@@ -2,7 +2,8 @@ package com.namgyuworld.voca.util.download;
 
 import android.os.AsyncTask;
 
-import com.namgyuworld.utility.Logger;
+
+import com.namgyuworld.voca.util.logger.Logger;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -28,7 +29,7 @@ public class DownloadAudio {
      * @param audioDownDirPath
      */
     public static void startDownload(final String audioURL, final String audioDownDirPath) {
-        LOG.i(TAG, audioURL);
+        LOG.i(audioURL);
 
         final File file = new File(audioDownDirPath);
 
@@ -42,10 +43,10 @@ public class DownloadAudio {
                 try {
                     file.createNewFile();
                 } catch (IOException e1) {
-                    LOG.e(TAG, e1.getMessage());
+                    LOG.e(e1.getMessage());
                 }
             } finally {
-                LOG.i(TAG, "File was created");
+                LOG.i("File was created");
             }
         }
 
@@ -68,7 +69,7 @@ public class DownloadAudio {
                     int totalSize = conn.getContentLength();
 
                     if (HttpURLConnection.HTTP_OK == conn.getResponseCode()) {
-                        LOG.i(TAG, "Start downloading mp3 file...");
+                        LOG.i("Start downloading mp3 file...");
 
                         /** Start download */
                         BufferedInputStream bis = new BufferedInputStream(conn.getInputStream(), totalSize);
@@ -79,15 +80,15 @@ public class DownloadAudio {
                         while ((data = bis.read()) != -1)
                             bos.write(data);
 
-                        LOG.i(TAG, "Download audio file has completed!");
+                        LOG.i("Download audio file has completed!");
                         bos.close();
                         bis.close();
                         conn.disconnect();
                     } else {
-                        LOG.e(TAG, "failed to connect to Server...");
+                        LOG.e("failed to connect to Server...");
                     }
                 } catch (Exception e) {
-                    LOG.e(TAG, e.getMessage());
+                    LOG.e(e.getMessage());
                 }
 
                 return null;

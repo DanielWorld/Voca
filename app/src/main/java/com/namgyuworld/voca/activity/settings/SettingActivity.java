@@ -12,7 +12,6 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
-import com.namgyuworld.utility.Logger;
 import com.namgyuworld.voca.R;
 import com.namgyuworld.voca.activity.view.FilebrowserActivity;
 import com.namgyuworld.voca.customview.SearchVocaDatabase;
@@ -21,6 +20,7 @@ import com.namgyuworld.voca.service.AutoDownloadAudioService;
 import com.namgyuworld.voca.util.SharedPrefUtil;
 import com.namgyuworld.voca.util.convert.StringUtil;
 import com.namgyuworld.voca.util.filepath.FilePath;
+import com.namgyuworld.voca.util.logger.Logger;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -162,7 +162,7 @@ public class SettingActivity extends Activity implements View.OnClickListener {
 
             Toast.makeText(SettingActivity.this, getString(R.string.setting_backup_db_succeed), Toast.LENGTH_SHORT).show();
         } catch (Exception e) {
-            LOG.e(TAG, "Database backup error! " + e.getMessage());
+            LOG.e( "Database backup error! " + e.getMessage());
             Toast.makeText(SettingActivity.this, getString(R.string.setting_backup_db_failed), Toast.LENGTH_SHORT).show();
         } finally {
             try {
@@ -171,7 +171,7 @@ public class SettingActivity extends Activity implements View.OnClickListener {
                 if (myInput != null)
                     myInput.close();
             } catch (Exception e) {
-                LOG.e(TAG, e.getMessage());
+                LOG.e( e.getMessage());
             }
         }
     }
@@ -206,7 +206,7 @@ public class SettingActivity extends Activity implements View.OnClickListener {
 
             Toast.makeText(SettingActivity.this, getString(R.string.setting_load_db_succeed), Toast.LENGTH_SHORT).show();
         } catch (Exception e) {
-            LOG.e(TAG, "Database backup error! " + e.getMessage());
+            LOG.e( "Database backup error! " + e.getMessage());
             Toast.makeText(SettingActivity.this, getString(R.string.setting_load_db_failed), Toast.LENGTH_SHORT).show();
         } finally {
             try {
@@ -215,7 +215,7 @@ public class SettingActivity extends Activity implements View.OnClickListener {
                 if (myInput != null)
                     myInput.close();
             } catch (Exception e) {
-                LOG.e(TAG, e.getMessage());
+                LOG.e( e.getMessage());
             }
         }
     }

@@ -8,11 +8,11 @@ import android.content.Intent;
 import android.os.SystemClock;
 import android.widget.Toast;
 
-import com.namgyuworld.utility.Logger;
 import com.namgyuworld.voca.database.VocaDBOpenHelper;
 import com.namgyuworld.voca.model.VocaPOJO;
 import com.namgyuworld.voca.util.download.DownloadAudio;
 import com.namgyuworld.voca.util.filepath.FilePath;
+import com.namgyuworld.voca.util.logger.Logger;
 
 import java.util.List;
 
@@ -45,7 +45,7 @@ public class AutoDownloadAudioService extends IntentService{
             synchronized (AutoDownloadAudioService.class){
                 if(!existsAlarm()){
                     Toast.makeText(context, "Start downloading auto mp3 Service...", Toast.LENGTH_SHORT).show();
-                    LOG.i(TAG, "Create new audio download schedule..");
+                    LOG.i("Create new audio download schedule..");
                     AlarmManager am = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
 
                     // app이 debug mode라면 sPriorityDebug, 아니라면 sPriority초 + 부팅 시간 뒤에 동작합니다.v
@@ -56,17 +56,17 @@ public class AutoDownloadAudioService extends IntentService{
 
                     // 마지막 예약 시간 저장
                     sTriggerTime = triggerAtMillis;
-                    LOG.i(TAG, "Saved service alarm time, After " + String.valueOf(triggerAtMillis / 1000) + " passed, start Service.");
+                    LOG.i("Saved service alarm time, After " + String.valueOf(triggerAtMillis / 1000) + " passed, start Service.");
                 }
             }
         }else{
-            LOG.i(TAG, "Already reserved Service exists..");
+            LOG.i("Already reserved Service exists..");
         }
     }
 
     @Override
     protected void onHandleIntent(Intent intent) {
-        LOG.i(TAG, "onHandleIntent()");
+        LOG.i("onHandleIntent()");
 
         String audioPath = "http://ssl.gstatic.com/dictionary/static/sounds/de/0/";
         // Get All word list

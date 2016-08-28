@@ -8,9 +8,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
 
-import com.namgyuworld.utility.Logger;
 import com.namgyuworld.voca.activity.MainActivity;
 import com.namgyuworld.voca.R;
+import com.namgyuworld.voca.util.logger.Logger;
 
 /**
  * Get push notification for GCM (Google Cloud Messaging).
@@ -33,7 +33,7 @@ public class PushReceiver extends BroadcastReceiver{
             if (messageType.equals("gcm")) {
                 String pushMsg = intent.getStringExtra("msg");
                 String pushTitle = intent.getStringExtra("title");
-                LOG.i(TAG, "GCM Message\n title : "+ pushTitle + "\n" + " message : "+ pushMsg);
+                LOG.i("GCM Message\n title : "+ pushTitle + "\n" + " message : "+ pushMsg);
 
                 // show push
                 notifyNotification(context, pushTitle, pushMsg);

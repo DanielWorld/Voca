@@ -15,10 +15,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.namgyuworld.utility.Logger;
 import com.namgyuworld.voca.R;
 import com.namgyuworld.voca.database.VocaDBOpenHelper;
 import com.namgyuworld.voca.util.convert.StringUtil;
+import com.namgyuworld.voca.util.logger.Logger;
 
 /**
  * Created by Daniel Park on 2015-04-09.
@@ -82,12 +82,12 @@ public class TopMenuBarForWebview extends LinearLayout implements View.OnClickLi
      */
     public void setWord(String word) {
         vocaTitle.setText(StringUtil.setNullToEmpty(word));
-        LOG.i(TAG, word);
+        LOG.i(word);
     }
 
     public void setVocaContents(String contents) {
         this.contents = StringUtil.setNullToEmpty(contents);
-        LOG.i(TAG, contents);
+        LOG.i(contents);
     }
 
     public String getWord() {

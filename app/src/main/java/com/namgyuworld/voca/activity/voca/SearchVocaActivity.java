@@ -32,7 +32,6 @@ import com.android.volley.toolbox.Volley;
 import com.google.android.gms.analytics.GoogleAnalytics;
 import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
-import com.namgyuworld.utility.Logger;
 import com.namgyuworld.voca.MyApplication;
 import com.namgyuworld.voca.R;
 import com.namgyuworld.voca.database.VocaDBOpenHelper;
@@ -41,6 +40,7 @@ import com.namgyuworld.voca.util.convert.StringUtil;
 import com.namgyuworld.voca.util.convert.Regex;
 import com.namgyuworld.voca.util.download.DownloadAudio;
 import com.namgyuworld.voca.util.filepath.FilePath;
+import com.namgyuworld.voca.util.logger.Logger;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -258,7 +258,7 @@ public class SearchVocaActivity extends Activity implements View.OnClickListener
                         String audioDownDirPath = FilePath.getVocaMP3ExternalPath(SearchVocaActivity.this, word);
                         DownloadAudio.startDownload(realSource, audioDownDirPath);
                     } catch (Exception e) {
-                        LOG.e(TAG, e.getMessage());
+                        LOG.e(e.getMessage());
                     }
                 }
 
@@ -314,12 +314,12 @@ public class SearchVocaActivity extends Activity implements View.OnClickListener
 
     public void setWord(String word) {
         vocaTitle.setText(StringUtil.setNullToEmpty(word));
-        LOG.i(TAG, word);
+        LOG.i(word);
     }
 
     public void setVocaContents(String contents) {
         this.contents = StringUtil.setNullToEmpty(contents);
-        LOG.i(TAG, contents);
+        LOG.i(contents);
     }
 
     public String getWord() {

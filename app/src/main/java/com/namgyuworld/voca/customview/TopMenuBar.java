@@ -18,7 +18,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.namgyuworld.utility.Logger;
 import com.namgyuworld.voca.activity.MainActivity;
 import com.namgyuworld.voca.R;
 import com.namgyuworld.voca.activity.voca.SearchVocaActivity;
@@ -26,6 +25,7 @@ import com.namgyuworld.voca.activity.settings.SettingActivity;
 import com.namgyuworld.voca.util.Consts;
 import com.namgyuworld.voca.util.convert.StringUtil;
 import com.namgyuworld.voca.util.filepath.FilePath;
+import com.namgyuworld.voca.util.logger.Logger;
 import com.namgyuworld.voca.util.media.MediaPlayers;
 
 import java.io.File;
@@ -37,8 +37,6 @@ import java.util.Locale;
  * Created by Daniel Park on 2015-04-09.
  */
 public class TopMenuBar extends LinearLayout implements View.OnClickListener {
-    private final String TAG = TopMenuBar.class.getSimpleName();
-    private Logger LOG = Logger.getInstance();
 
     private Context mContext;
     private EditText mEditText;

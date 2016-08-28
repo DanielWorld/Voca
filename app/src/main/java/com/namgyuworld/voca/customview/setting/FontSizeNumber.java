@@ -11,8 +11,8 @@ import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.namgyuworld.utility.Logger;
 import com.namgyuworld.voca.util.SharedPrefUtil;
+import com.namgyuworld.voca.util.logger.Logger;
 
 /**
  * Created by Daniel Park on 4/14/15.
@@ -100,7 +100,7 @@ public class FontSizeNumber extends HorizontalScrollView{
                 try {
                     scrollTo(positionIndex[currentFontSizeIndex - 1], 0);
                 }catch (Exception e){
-                    LOG.e(TAG, e.getMessage());
+                    LOG.e(e.getMessage());
                     scrollTo(0, 0);
                 }
 
@@ -112,7 +112,7 @@ public class FontSizeNumber extends HorizontalScrollView{
 
     @Override
     protected void onScrollChanged(int l, int t, int oldl, int oldt) {
-        LOG.i(TAG, "Current X coordination : " + l );
+        LOG.i("Current X coordination : " + l );
 
         // Change font size whenever you scroll numbers...
 

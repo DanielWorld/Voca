@@ -13,12 +13,12 @@ import android.provider.Settings;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.namgyuworld.utility.Logger;
 import com.namgyuworld.voca.BuildConfig;
 import com.namgyuworld.voca.R;
 import com.namgyuworld.voca.network.URLs;
 import com.namgyuworld.voca.push.GCM;
 import com.namgyuworld.voca.util.AppUtil;
+import com.namgyuworld.voca.util.logger.Logger;
 
 /**
  * This is for Splash Activity
@@ -43,13 +43,13 @@ public class SplashActivity extends Activity {
 
         appVersionView = (TextView) findViewById(R.id.appVersionView);
 
-        if (AppUtil.isDebuggable(getApplicationContext())) {
-            URLs.setDebug(true);
-            LOG.enableLog();  // Enable Log...
-        } else {
-            URLs.setDebug(false);
-            LOG.disableLog(); // Disable Log...
-        }
+//        if (AppUtil.isDebuggable(getApplicationContext())) {
+//            URLs.setDebug(true);
+//            LOG.enableLog();  // Enable Log...
+//        } else {
+//            URLs.setDebug(false);
+//            LOG.disableLog(); // Disable Log...
+//        }
 
         try {
             if (BuildConfig.DEBUG)    // 디버그는 색 다르게 표시.

@@ -2,7 +2,7 @@ package com.namgyuworld.voca.util.media;
 
 import android.media.MediaPlayer;
 
-import com.namgyuworld.utility.Logger;
+import com.namgyuworld.voca.util.logger.Logger;
 
 /**
  * Created by Daniel Park on 2015-04-11.
@@ -19,7 +19,7 @@ public class MediaPlayers {
      * @param audioPath
      */
     public static void AudioPlay(String audioPath){
-        LOG.i(TAG, audioPath);
+        LOG.i(audioPath);
 
         mp3 = new MediaPlayer();
         try{
@@ -27,7 +27,7 @@ public class MediaPlayers {
             mp3.prepare();
             mp3.start();
         }catch (Exception e){
-            LOG.e(TAG, e.getMessage());
+            LOG.e(e.getMessage());
         }
     }
 }

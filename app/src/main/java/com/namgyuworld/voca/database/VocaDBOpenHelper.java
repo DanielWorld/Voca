@@ -6,11 +6,11 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.namgyuworld.utility.Logger;
 import com.namgyuworld.voca.activity.MainActivity;
 import com.namgyuworld.voca.model.VocaPOJO;
 import com.namgyuworld.voca.util.Consts;
 import com.namgyuworld.voca.util.convert.StringUtil;
+import com.namgyuworld.voca.util.logger.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -82,7 +82,7 @@ public class VocaDBOpenHelper extends SQLiteOpenHelper {
                 c.moveToNext();
             }
         }catch (Exception e){
-            LOG.e(TAG, e.getMessage());
+            LOG.e(e.getMessage());
         }finally {
             if(c != null)
                 c.close();
@@ -111,14 +111,14 @@ public class VocaDBOpenHelper extends SQLiteOpenHelper {
             if (!c.moveToFirst())
                 return mList;
 
-//            LOG.i(TAG, "the numbers of rows :" + c.getCount());
-//            LOG.i(TAG, "dd" + c.getString(c.getColumnIndexOrThrow(COLUMN_NAME_VOCA)));
+//            LOG.i("the numbers of rows :" + c.getCount());
+//            LOG.i("dd" + c.getString(c.getColumnIndexOrThrow(COLUMN_NAME_VOCA)));
             for (int i = 0; i < c.getCount(); i++) {
                 mList.add(new VocaPOJO(c.getString(c.getColumnIndexOrThrow(COLUMN_NAME_VOCA)), c.getString(c.getColumnIndexOrThrow(COLUMN_NAME_CONTENTS))));
                 c.moveToNext();
             }
         } catch (Exception e) {
-            LOG.e(TAG, e.getMessage());
+            LOG.e(e.getMessage());
         } finally {
             if (c != null)
                 c.close();
@@ -140,7 +140,7 @@ public class VocaDBOpenHelper extends SQLiteOpenHelper {
         if (StringUtil.isNullorEmpty(word) || StringUtil.isNullorEmpty(contents))
             return;
 
-        LOG.i(TAG, "Before saving voca... " + "\nWord:" + word + "\nContents:" + contents);
+        LOG.i("Before saving voca... " + "\nWord:" + word + "\nContents:" + contents);
         SQLiteDatabase db = null;
         ContentValues values = null;
         Cursor c = null;
@@ -153,35 +153,35 @@ public class VocaDBOpenHelper extends SQLiteOpenHelper {
 
             c = db.query(DB_TABLE, COLUMN_NAMES, null, null, null, null, null);
             if (!c.moveToFirst()) {
-                LOG.i(TAG, "Can't move To First.. I don't know why.. maybe there was no data in DB at all.");
+                LOG.i("Can't move To First.. I don't know why.. maybe there was no data in DB at all.");
                 if (c.getCount() != 0) {
-                    LOG.i(TAG, "Don't know what happened.. check your source code!!!");
+                    LOG.i("Don't know what happened.. check your source code!!!");
                     return;
                 } else {
-                    LOG.i(TAG, "It turns out that no rows in DB. No problem, just keep going..");
+                    LOG.i("It turns out that no rows in DB. No problem, just keep going..");
                 }
 
             }
 
             for (int i = 0; i < c.getCount(); i++) {
-                LOG.i(TAG, "search word[" + i + "] : " + c.getString(c.getColumnIndexOrThrow(COLUMN_NAMES[0])));
-                LOG.i(TAG, "what i am looking for : " + word);
+                LOG.i("search word[" + i + "] : " + c.getString(c.getColumnIndexOrThrow(COLUMN_NAMES[0])));
+                LOG.i("what i am looking for : " + word);
                 if (c.getString(c.getColumnIndexOrThrow(COLUMN_NAME_VOCA)).equals(word)) {
                     // the same vocabulary already exist
                     // just update vocabulary
                     db.update(DB_TABLE, values, COLUMN_NAMES[0] + "= ?", new String[]{c.getString(c.getColumnIndexOrThrow(COLUMN_NAMES[0]))});
-                    LOG.i(TAG, "This '" + word + "' already exists. Just update contents of that same word.");
+                    LOG.i("This '" + word + "' already exists. Just update contents of that same word.");
                     return;
                 }
                 c.moveToNext();
             }
             // No same word was found. Add it to Database.
-            LOG.i(TAG, "db.insert");
+            LOG.i("db.insert");
             db.insert(DB_TABLE, null, values);
 
 
         } catch (Exception e) {
-            LOG.e(TAG, e.getMessage());
+            LOG.e(e.getMessage());
         } finally {
             if (values != null)
                 values.clear();
@@ -212,7 +212,7 @@ public class VocaDBOpenHelper extends SQLiteOpenHelper {
             db.update(DB_TABLE, values, COLUMN_NAMES[0] + "= ?", new String[]{c.getString(c.getColumnIndexOrThrow(COLUMN_NAMES[0]))});
 
         } catch (Exception e) {
-            LOG.e(TAG, e.getMessage());
+            LOG.e(e.getMessage());
         } finally {
             if (values != null)
                 values.clear();
@@ -234,7 +234,7 @@ public class VocaDBOpenHelper extends SQLiteOpenHelper {
             db = getWritableDatabase();
             db.delete(DB_TABLE, COLUMN_NAMES[0] + "= ?", new String[]{word});
         } catch (Exception e) {
-            LOG.e(TAG, e.getMessage());
+            LOG.e(e.getMessage());
         } finally {
             if (db != null)
                 db.close();
@@ -254,16 +254,16 @@ public class VocaDBOpenHelper extends SQLiteOpenHelper {
             c = db.query(DB_TABLE, COLUMN_NAMES, null, null, null, null, null);
 
             if (c.moveToPosition(position)) {
-                LOG.i(TAG, "Delete this " + c.getString(c.getColumnIndexOrThrow(COLUMN_NAME_VOCA)));
+                LOG.i("Delete this " + c.getString(c.getColumnIndexOrThrow(COLUMN_NAME_VOCA)));
                 db.delete(DB_TABLE, COLUMN_NAMES[0] + "= ?", new String[]{c.getString(c.getColumnIndexOrThrow(COLUMN_NAMES[0]))});
                 // Refresh Main page
                 MainActivity.mHanlder.sendEmptyMessage(Consts.REFRESH_VOCA);
             } else {
-                LOG.e(TAG, "Sorry, Failed to find a word that needs to be deleted.");
+                LOG.e("Sorry, Failed to find a word that needs to be deleted.");
             }
 
         } catch (Exception e) {
-            LOG.e(TAG, e.getMessage());
+            LOG.e(e.getMessage());
         } finally {
             if (c != null)
                 c.close();

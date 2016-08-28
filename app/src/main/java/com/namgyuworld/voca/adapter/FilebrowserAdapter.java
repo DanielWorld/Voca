@@ -11,11 +11,11 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.namgyuworld.utility.Logger;
 import com.namgyuworld.utility.file.FilePath;
 import com.namgyuworld.utility.file.FileUtil;
 import com.namgyuworld.voca.R;
 import com.namgyuworld.voca.model.FilebrowserModel;
+import com.namgyuworld.voca.util.logger.Logger;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
@@ -87,7 +87,7 @@ public class FilebrowserAdapter extends RecyclerView.Adapter<FilebrowserAdapter.
         // if This isn't
         else {
             if(FileUtil.getFileExtension(item.getFilePath()).equals("db")){
-                LOG.d(TAG, "This is db file");
+                LOG.d("This is db file");
 
                 Message msg = Message.obtain();
                 msg.obj = item.getFilePath();
@@ -95,7 +95,7 @@ public class FilebrowserAdapter extends RecyclerView.Adapter<FilebrowserAdapter.
                 mHandler.sendMessage(msg);
             }
             else{
-                LOG.d(TAG, "This is not db file");
+                LOG.d("This is not db file");
             }
         }
     }
@@ -200,7 +200,7 @@ public class FilebrowserAdapter extends RecyclerView.Adapter<FilebrowserAdapter.
                 arrayList.add(new FilebrowserModel(i.getName(), i.lastModified(), i.length(), i.isDirectory(), i.getAbsolutePath()));
             }
         }catch(Exception e){
-            LOG.e(TAG, e.getMessage() + "\n" + e.getStackTrace());
+            LOG.e(e.getMessage() + "\n" + e.getStackTrace());
         }
 
         return arrayList;
